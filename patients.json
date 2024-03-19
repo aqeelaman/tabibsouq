@@ -1,0 +1,18 @@
+[
+    {
+        "_id": "1231242435",
+        "name": "John Doe",
+        "number": "1231231231",
+        "email": "john@example.com",
+        "password": "john123",
+        "gender": "M"
+    },
+    {
+        "_id": "21231442435",
+        "name": "Jane Lee",
+        "number": "1231231231",
+        "email": "jane@example.com",
+        "password": "jane123",
+        "gender": "F"
+    }
+]

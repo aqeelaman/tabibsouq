@@ -1,0 +1,97 @@
+[
+    {
+        "_id": "123456",
+        "name": "Dr. Mona Amin Mohamed Elmelega",
+        "specialization": "Specialist Obstetrics & Gynecology",
+        "img_url": "https://medeor.ae/abu-dhabi/wp-content/uploads/sites/2/2024/02/ON2A4501.png",
+        "doc_url": "https://medeor.ae/abu-dhabi/doctors/mona-amin-mohamed-elmelega/",
+        "hospital": "273893",
+        "languages": ["English", "Arabic"],
+        "years_exp": "21",
+        "education": "MBBS, MS (ENT)",
+        "work_exp": "Not Available", 
+        "rating": "4.00"
+    },
+    {
+        "_id": "234567",
+        "name": "Dr. Leon Alexander",
+        "specialization": "Consultant Plastic and Hand Surgery",
+        "img_url": "https://medeor.ae/abu-dhabi/wp-content/uploads/sites/2/2024/03/Dr-Leon.png",
+        "doc_url": "https://medeor.ae/abu-dhabi/doctors/dr-leon-alexander/",
+        "hospital":"233893",
+        "languages": ["English", "Arabic"],
+        "years_exp": "Not Available",
+        "education": "Not Available",
+        "work_exp": "Not Available",
+        "rating": "Not Available"
+    },
+    {
+        "_id":"364567",
+        "dr_name": "Dr. Varun Bidi",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-varun-bidi/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2022/06/DR._VARUN_BIDI-removebg-preview.png",
+        "dr_speciality": "ENT",
+        "hospital": "939202",
+        "dr_languages": [
+          "English",
+          "Hindi",
+          "Kannada",
+          "Marathi"
+        ],
+        "dr_education": [
+          "Undergraduate : Bachelor of Medicine and Bachelor of Surgery (M.B.B.S.)University: Maharashtra University of Health Sciences (MUHS)College : NDMVPS Medical College, Nashik , Maharashtra.Year : 2009.",
+          "Post-Graduate: Masters of Surgery in Otolaryngology (M.S. ENT)University: Maharashtra University of Health Sciences (MUHS)",
+          "College: B.J.Medical College & Sassoon General Hospital, Pune, Maharashtra.Year : 2014.",
+          "Fellowship in Functional Endoscopic Sinus Surgery at M.C.V. Memorial Hospital, Pollachi, Tamilnadu under Dr. V. Anand. Year: 2015."
+        ],
+        "dr_experience": [
+          "ENT Surgeon at 3 Senses ENT Clinic 2016-2021",
+          "ENT Surgeon at Phoenix Hospital Pvt.Ltd. 2016-2021",
+          "ENT Surgeon at Shree Ganesha Hospital 2017-2021",
+          "ENT Surgeon at Lions S.P.Jain Hospital 2016-2020",
+          "ENT Surgeon at United Hospital 2019-2021",
+          "ENT Registrar at V.N. Desai Hospital 2015 -2016",
+          "Speciality Bonded Medical Officer (ENT) at M.W. Desai Hospital, Malad(E),Mumbai 2014-2015"
+        ],
+        "rating":"3.50"
+      },
+      {
+        "_id":"335567",
+        "dr_name": "Dr. Rachel Gandi",
+        "dr_link": "https://saudigerman.com/doctors/dr-rachel-gandi/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2022/12/14175405/Dr-Rachel-Radio-.jpg",
+        "dr_speciality": [
+          "Radiology"
+        ],
+        "hospital": [
+          "389303"
+        ],
+        "dr_languages": [],
+        "dr_education": [
+          "MBBS, MD radiology."
+        ],
+        "dr_experience": [
+          "More than 10 Years"
+        ],
+        "rating":"4.50"
+      },
+      {
+        "_id":"334567",
+        "dr_name": "Dr. Ahmed Ezzat M Hassan",
+        "dr_link": "https://saudigerman.com/doctors/dr-ahmed-ezzat-m-hassan/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2022/12/26164357/Dr.-Ahmed-Ezzat-M-Hassan-Website-Photo-1024x689-1.jpg",
+        "dr_speciality": [
+          ""
+        ],
+        "dr_location": [
+          "383930","920202"
+        ],
+        "dr_languages": [
+          "English",
+          "Arabic"
+        ],
+        "dr_education": [],
+        "dr_experience": [],
+        "rating":"Not Available"
+      }
+]

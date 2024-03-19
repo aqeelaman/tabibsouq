@@ -1,0 +1,29 @@
+[
+    {
+        "_id": "12335457",
+        "dr_id": "234567",
+        "patient_id":"349829",
+        "review_source":"TabibSouq",
+        "review_date": "23/02/2024",
+        "review_time": "13:26",
+        "review_text": "This doctor was professional in analysing my sysmptoms."
+    },
+    {
+        "_id": "8235457",
+        "dr_id": "111567",
+        "patient_id":"739829",
+        "review_source":"Google",
+        "review_date": "23/02/2024",
+        "review_time": "",
+        "review_text": "This doctor was professional in analysing my sysmptoms."
+    },
+    {
+        "_id": "14435457",
+        "dr_id": "479202",
+        "patient_id":"356739",
+        "review_source":"Doctify",
+        "review_date": "",
+        "review_time": "",
+        "review_text": "This doctor was professional in analysing my sysmptoms."
+    }
+]
