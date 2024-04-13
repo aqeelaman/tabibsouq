@@ -1,0 +1,80 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #F9F3EB;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-section {
+    padding: 23px;
+    margin-bottom: 5px;
+}
+
+.about-text-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-text-box p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows feature items to wrap as needed */
+    gap: 10px; /* Provides space between items */
+}
+
+.feature-item {
+    width: 240px; /* Decreased width */
+    height: 200px; /* Increased height */
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(#EFF2FC, #ffffff);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Adjusts space distribution */
+    align-items: center; /* Aligns items horizontally */
+}
+
+.feature-item img.feature-icon {
+    width: auto; /* Allows image to scale automatically */
+    height: 140px; /* Larger image size */
+    margin-bottom: 2px;
+}
+
+.feature-item h3 {
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 10px; /* Provides space above the text */
+}
+
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #343a40;
+    color: white;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}

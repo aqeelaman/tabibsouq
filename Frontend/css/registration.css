@@ -1,0 +1,64 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F3EB;
+}
+
+/* Auth Forms CSS */
+.auth-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+    background-color: #EFF2FC; /* Set background color for the form */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Added drop shadow */
+    padding: 20px; /* Decreased padding */
+    text-align: center;
+}
+
+.auth-form h2 {
+    color: #0B1956;
+    margin-bottom: 20px;
+}
+
+.auth-form input {
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    padding: 10px;
+    margin-bottom: 10px; /* Increased space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff; /* Set background color for input */
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Added space below the button */
+}
+
+.auth-form button:hover {
+    background-color: #003b82;
+}
+
+/* Toggle Links CSS */
+.toggle-links {
+    margin-top: 10px; /* Added space above the toggle links */
+}
+
+.toggle-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 10px; /* Added space between the links */
+}
+
+.toggle-links a:hover {
+    text-decoration: underline;
+}

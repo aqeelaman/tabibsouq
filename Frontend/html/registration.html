@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In & Sign Up - TabibSouq</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="example.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="profile-pic">
+            <img src="profile-picture.jpg" alt="Profile Picture" width="83.82" height="86">
+        </div>
+    </header>
+    
+    <!-- Auth Container -->
+    <div class="auth-container">
+        <!-- Sign Up Form -->
+        <div id="sign-up-form" class="auth-form">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Phone Number">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+            <button>Sign Up</button>
+        </div>
+        
+        <!-- Sign In Form -->
+        <div id="sign-in-form" class="auth-form" style="display:none;">
+            <h2>Sign In</h2>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Sign In</button>
+        </div>
+        
+        <!-- Toggle Links -->
+        <div class="toggle-links">
+            <a href="javascript:void(0);" onclick="showSignUp()">Sign Up</a> |
+            <a href="javascript:void(0);" onclick="showSignIn()">Sign In</a>
+        </div>
+    </div>
+
+    <script>
+        function showSignUp() {
+            document.getElementById('sign-up-form').style.display = 'block';
+            document.getElementById('sign-in-form').style.display = 'none';
+        }
+        
+        function showSignIn() {
+            document.getElementById('sign-in-form').style.display = 'block';
+            document.getElementById('sign-up-form').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
