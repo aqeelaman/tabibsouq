@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #313244;
+    background-color: #F9F3EB;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #ccc; /* Optional: Add border to separate header from main content */
+}
+
+.logo img {
+    padding: 30px;
+    height: 50px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px; /* Adjust spacing between nav items */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from last item */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    background: #008cba;
+    color: #fff;
+}
+
+.profile-pic img {
+    padding: 30px;
+    border-radius: 50%; /* Makes the image circular */
+}
+
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.hero-content {
+    float: left;
+    width: calc(50%);
+}
+
+.title-health,
+.title-choice,
+.title-platform {
+    font-size: 64px;
+    padding-top: 10px;
+    /* margin-top: 20px; */
+    margin-bottom: 20px; /* 5px padding between headings */
+}
+
+.title-choice {
+    font-size: 74px; /* larger size for 'Your Choice.' */
+    color: #0B1956;
+    padding-top: 10px; /* remove any default padding */
+    line-height: 1; /* adjust line-height to control space between lines */
+}
+
+.hero-description {
+    font-size: 20px;
+}
+
+.start-journey {
+    background-color: #0B1956;
+    color: #FAF3EB;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-image img {
+    float: right;
+    height: 507px;
+    width: 752.98px;
+}
+
+#map-area {
+    padding-top: 5px;
+}
+
+.map-title {
+    font-size: 64px;
+}
+
+.map-image {
+    height: 670px;
+    width: 1416px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.footer-logo {
+    width: auto;
+    height: 50px; /* Adjust based on actual logo size */
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #313244;
+}
+
+.footer-title, .socials-title {
+    margin: 0;
+    padding: 10px 0;
+}
