@@ -15,7 +15,7 @@ header {
 }
 
 .logo img, .profile-pic img {
-    width: 150px; /* Adjust as needed */
+    width: 50px; /* Adjust as needed */
     height: auto;
     border-radius: 50%; /* Makes the image circular for profile pic */
 }
