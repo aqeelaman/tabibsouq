@@ -6,39 +6,28 @@ body, html {
     background-color: #F9F3EB;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
-    border-bottom: 1px solid #ccc; /* Optional: Add border to separate header from main content */
+    padding: 10px 5%;
+    border-bottom: 1px solid #ccc;
 }
 
-.logo img {
-    padding: 30px;
-    height: 50px; /* Adjust as needed */
-    width: auto; /* Maintain aspect ratio */
+.logo img, .profile-pic img {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    border-radius: 50%; /* Makes the image circular for profile pic */
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
     display: flex;
+    padding: 0;
 }
 
 nav ul li {
-    margin-right: 20px; /* Adjust spacing between nav items */
-}
-
-nav ul li:last-child {
-    margin-right: 0; /* Remove margin from last item */
+    padding: 0 20px;
 }
 
 nav ul li a {
@@ -47,99 +36,121 @@ nav ul li a {
     font-weight: bold;
 }
 
-nav ul li a.active,
-nav ul li a:hover {
-    background: #008cba;
+nav ul li a.active, nav ul li a:hover {
     color: #fff;
-}
-
-.profile-pic img {
-    padding: 30px;
-    border-radius: 50%; /* Makes the image circular */
+    background-color: #0B1956;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 #hero {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    justify-content: center;
+    padding: 20px 5%;
 }
 
 .hero-content {
-    float: left;
-    width: calc(50%);
+    max-width: 50%;
 }
 
-.title-health,
-.title-choice,
-.title-platform {
-    font-size: 64px;
-    padding-top: 10px;
-    /* margin-top: 20px; */
-    margin-bottom: 20px; /* 5px padding between headings */
-}
-
-.title-choice {
-    font-size: 74px; /* larger size for 'Your Choice.' */
+.hero-content h1 {
+    font-size: 70px;
     color: #0B1956;
-    padding-top: 10px; /* remove any default padding */
-    line-height: 1; /* adjust line-height to control space between lines */
 }
 
-.hero-description {
-    font-size: 20px;
+.hero-content p {
+    font-size: 25px;
 }
 
-.start-journey {
+.hero-content button {
+    padding: 10px 20px;
     background-color: #0B1956;
     color: #FAF3EB;
-    padding: 10px 20px;
     border: none;
     cursor: pointer;
 }
 
 .hero-image img {
-    float: right;
-    height: 507px;
-    width: 752.98px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 #map-area {
-    padding-top: 5px;
+    text-align: center;
+    padding: 50px 5%;
 }
 
-.map-title {
-    font-size: 64px;
+#map-area h2 {
+    font-size: 2em;
+    color: #0B1956;
+    margin-bottom: 20px;
 }
 
-.map-image {
-    height: 670px;
-    width: 1416px;
+
+
+.map-container {
+    position: relative;
+    /* other styles */
 }
 
-.footer-container {
+.map-container img {
+    width: 100%;
+    height: auto;
+    max-width: 900px; /* Adjust to suit your layout */
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display:inline-block; /*Ensures there is no extra space at the bottom of the image*/
+}
+
+.map-button {
+    position: absolute;
+    bottom: 5px;
+    margin-bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* color: #313244; */
+    /* padding: 10px 20px; */
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #0B1956;
+    border-radius: 5px;
+    padding: 10px 20px;
+    /* Optional: add more styling to match the design like border-radius, font-size etc. */
+}
+
+
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 5%;
+    background-color: #313244;
+    color: #FAF3EB;
 }
 
-.footer-logo {
-    width: auto;
-    height: 50px; /* Adjust based on actual logo size */
+.footer-logo img {
+    width: 50px;
+    height: auto;
 }
 
-.footer-links {
-    list-style-type: none;
+.footer-content p, .footer-socials p {
+    margin: 0 0 10px 0;
+}
+
+.footer-content ul {
+    list-style: none;
     padding: 0;
 }
 
-.footer-links li a {
+.footer-content ul li a {
+    color: #FAF3EB;
     text-decoration: none;
-    color: #313244;
 }
 
-.footer-title, .socials-title {
-    margin: 0;
-    padding: 10px 0;
+.footer-socials {
+    /* Add styles for social media icons */
 }
