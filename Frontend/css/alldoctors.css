@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles for body */
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color:FAF3EB;
+    padding: 0;
+    margin: 0;
+}
+
+/* Main content spacing */
+main {
+    padding: 20px; /* Adds space around the main content */
+}
+
+/* Filters bar styles */
+/* Filters bar styles */
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    /* border-style: solid; */
+    padding: 10px 20px; 
+    border-radius: 20px;
+}
+
+
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #FAF3EB;
+    color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color:#EFF2FC;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size:medium;
+    border-radius: 5px;
+}
+
+
+.search-container {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.search-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #0E0F52;
+    background-color:#EFF2FC ;
+    font-size: 15px;
+    margin-right: -5px; /* Adjust if necessary */
+}
+
+/* .search-container button {
+    padding: 10px;
+    border: none;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+} */
+
+/* Doctor cards container */
+.doctor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Creates a gap between the cards */
+    justify-content: flex-start; /* Aligns cards to the start of the main container */
+    align-items: flex-start; /* Aligns cards to the top */
+}
+
+/* Individual doctor card styles */
+.doctor-card {
+    background: linear-gradient(#EFF2FC, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* width: calc(33.333% - 20px);  */
+    /* Adjust width for three cards per row, accounting for gap */
+    margin-bottom: 30px; /* Space below each card */
+    overflow: hidden; /* Ensures nothing spills outside the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Doctor image styles */
+.doctor-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 10px; 
+    /* Pulls the image up half its height */
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #f4f4f4; /* Border color should match the body background */
+}
+
+.doctor-image img {
+    width: auto; /* Maintains aspect ratio */
+    height: 100%;
+}
+
+/* Doctor info styles */
+.doctor-info {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.doctor-info h3, .doctor-info p {
+    margin-bottom: 10px;
+}
+
+
+.doctor-info h3 {
+    color: #333;
+    margin-top: 5px;
+}
+
+.doctor-info .specialty,
+.doctor-info .hospital {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+}
+.hospital-container {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.hospital-container img {
+    height: 51px;
+    width: 53px;
+    margin-right: 1px; /* Add some spacing between the image and the text */
+    text-align: center;
+}
+
+
+.doctor-info .languages {
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.doctor-info .languages:before {
+    content: '';
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    background-image: url('../images/location-icon.png');
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.view-profile-btn {
+    display: block;
+    width: 141px;
+    height: 53.81px;
+    margin: 10px auto 20px;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #D8E5FF;
+    color: #0E0F52;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size:medium;
+}
+
+
+.view-profile-btn:hover {
+    background-color: #003d82;
+}
+
+
+/* Add this CSS block at the end of your existing CSS */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute items evenly with maximum space */
+}
+
+.doctor-card {
+    width: calc(33.33% - 20px); /* Adjust width for three cards per row, accounting for gap */
+    margin-bottom: 30px; /* Space below each card */
+}
