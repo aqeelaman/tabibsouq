@@ -14,7 +14,13 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
-.logo img, .profile-pic img {
+.logo img{
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    border-radius: 50%; /* Makes the image circular for profile pic */
+}
+
+.profile-pic img{
     width: 50px; /* Adjust as needed */
     height: auto;
     border-radius: 50%; /* Makes the image circular for profile pic */
@@ -124,33 +130,13 @@ nav ul li a.active, nav ul li a:hover {
 
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: #313244;
-    color: #FAF3EB;
+    text-align: center;
+    padding: 1em;
+    background-color: #343a40;
+    color: white;
+    margin-top: auto; /* Push footer to the bottom of the page */
 }
 
-.footer-logo img {
-    width: 50px;
-    height: auto;
-}
-
-.footer-content p, .footer-socials p {
-    margin: 0 0 10px 0;
-}
-
-.footer-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-content ul li a {
-    color: #FAF3EB;
-    text-decoration: none;
-}
-
-.footer-socials {
-    /* Add styles for social media icons */
+footer p {
+    margin: 0;
 }
