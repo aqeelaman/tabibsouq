@@ -146,6 +146,7 @@ main {
 .hospital-container {
     display: flex; /* Use flexbox to align items horizontally */
     align-items: center; /* Align items vertically in the center */
+    justify-content: center;
 }
 
 .hospital-container img {
