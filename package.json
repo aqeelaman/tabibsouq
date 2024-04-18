@@ -1,0 +1,15 @@
+{
+  "name": "tabibsouq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^3.6.6"
+  }
+}
