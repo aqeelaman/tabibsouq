@@ -140,3 +140,43 @@ footer {
 footer p {
     margin: 0;
 }
+
+.doctors-table {
+    width: 894px;
+    height: 300px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    overflow-x: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.doctors-table h2 {
+    text-align: center;
+    /* padding-bottom: 20px; */
+    font-size: 24px;
+    color: #0B1956;
+}
+
+.doctors-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.doctors-table th, .doctors-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.doctors-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.doctors-table th {
+    background-color: #0B1956;
+    color: white;
+}
