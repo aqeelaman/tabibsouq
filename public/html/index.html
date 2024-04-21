@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <title>TabibSouq - Your Healthcare Connection</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -27,7 +29,8 @@
     <section id="hero">
         <div class="hero-content">
             <h1>Your Health.<br>Your Choice.<br>Our Platform.</h1>
-            <p>Join us to simplify your health journey. Experience personalized care and ultimate convenience, all in a single platform.</p>
+            <p>Join us to simplify your health journey. Experience personalized care and ultimate convenience, all in a
+                single platform.</p>
             <a href="../html/alldoctors.html">
                 <button>Start my journey!</button>
             </a>
@@ -39,71 +42,71 @@
 
     <section id="map-area">
         <h2>Available Doctors Nearby</h2>
-    <div class="map-container">
-       <img src="../images/map.jpeg" alt="Map">
-        <a href="../html/alldoctors.html">
-            <button class="map-button">Search for more Doctors</button>
-        </a>
-    </div>
-
+        <div id="map-container" class="map-container">
+            <!-- <img src="../images/map.jpeg" alt="Map"> -->
+            <!-- <a href="../html/alldoctors.html">
+            <button id="map-button" class="map-button">Search for more Doctors</button>
+        </a> -->
+        </div>
+        <button id="map-button" class="map-button">Get Location</button>
     </section>
 
     <section id="doctors">
         <div class="doctors-table">
-    <h2>Nearby Doctors</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Speciality</th>
-            <th>Hospital</th>
-        </tr>
-        <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
+            <h2>Nearby Doctors</h2>
+            <table>
                 <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
+                    <th>Name</th>
+                    <th>Speciality</th>
+                    <th>Hospital</th>
+                </tr>
                 <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
                 <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
                 <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
-                        <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
-                        <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
-                        <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
-                        <tr>
-            <td>Dr. Ajay Kumar</td>
-            <td>General Practitioner</td>
-            <td>NMC Hospital</td>
-        </tr>
-    </table>
-</div>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
+                <tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
+                <tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
+                <tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
+                <tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
+                <tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
+                <tr>
+                    <td>Dr. Ajay Kumar</td>
+                    <td>General Practitioner</td>
+                    <td>NMC Hospital</td>
+                </tr>
+            </table>
+        </div>
     </section>
 
     <footer>
@@ -111,5 +114,9 @@
             <p>© 2024 TabibSouq. All rights reserved.</p>
         </a>
     </footer>
+    <script src="../js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArz60tNGmSkqT3K5kEq-ChsPpNhAxTgcw&callback=initMap"
+        async defer></script>
 </body>
+
 </html>
