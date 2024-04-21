@@ -1,31 +1,38 @@
 /* Main content styles */
 .content {
-    display: flex; /* Use flexbox to layout children */
-    max-width: 1200px; /* Adjust to control the maximum width */
-    margin: auto; /* Centers the content on the page */
+    display: flex; /* Use flexbox for layout */
+    max-width: 1200px; /* Maximum width of content */
+    margin: auto; /* Center content */
     padding: 20px;
-    flex-wrap: wrap; /* Allows items to wrap as needed */
 }
 
-/* Doctor info container */
+/* Doctor info section styling */
 .doctor-info {
-    display: flex; /* Use flexbox to layout children */
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between the items */
-    background: #ffffff;
+    display: flex; /* Flex container for the card */
+    align-items: stretch; /* Stretch items to fill the height */
+    /* background: #ffffff; */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    width: 100%; /* Take full width of the container */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+    width: 100%; /* Full width of the content area */
 }
 
 /* Doctor image styling */
 .doctor-image {
-    flex: 0 0 200px; /* Do not grow or shrink, fixed width */
+    flex: 0 0 200px; /* Fixed width for the image */
     border-radius: 5px;
-    margin-right: 20px; /* Space between image and details */
+    margin-right: 20px;
 }
 
+/* Star ratings */
+.stars {
+    display: inline-block; /* Allows stars to sit next to the heading */
+    color: #e6b800;
+    font-size: 1.25em; /* Adjust as needed */
+    margin-right: 10px; /* Space after stars */
+}
+
+/* Info section within the doctor info, contains details and map */
 /* Information about the doctor */
 .info {
     flex: 1; /* Grow to use available space */
@@ -35,25 +42,14 @@
     justify-content: center; /* Center items vertically */
 }
 
-/* Styling for headings and buttons */
-.info h2, .speciality, .location, .book-button {
-    margin-bottom: 10px; /* Consistent spacing */
+/* Details section within the info */
+.doctor-details {
+    display: flex; /* Flex container for details */
+    flex-direction: column; /* Stack details vertically */
+    justify-content: center; /* Center details */
 }
 
-/* Star ratings */
-.stars {
-    display: flex; /* Use flexbox to layout stars */
-    align-items: center; /* Align stars vertically */
-}
-
-/* Placeholder for star icons (replace with actual icons or images) */
-.star-icon {
-    color: #e6b800;
-    margin-right: 4px; /* Small space between stars */
-    /* Add content for stars, e.g., using FontAwesome or text */
-}
-
-/* Book button styling */
+/* Book now button */
 .book-button {
     background-color: #4CAF50;
     color: white;
@@ -63,23 +59,21 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align button to the start of the flex item */
+    margin-top: 20px; /* Space above the button */
 }
 
 .book-button:hover {
     background-color: #367c39;
 }
 
-/* Map container */
-.map-container {
-    flex: 0 0 300px; /* Do not grow or shrink, fixed width */
-    height: auto; /* Adjust height automatically */
-    border-radius: 23px;
-    overflow: hidden; /* Keeps the image within the border-radius */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Map styling */
+/* Map styling, positioned absolutely within the doctor-info */
 #map {
-    width: 100%; /* Full width of its container */
-    height: auto; /* Adjust height automatically */
+    width: 45%; /* Fixed width for the map */
+    height: 85%; /* Full height of the doctor-info */
+    border-radius: 10px; /* Radius to match the card */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: absolute; /* Absolute positioning */
+    right: 20px; /* Position to the right within the doctor-info container */
+    top: 20px; /* Align with the top of the doctor-info container */
 }
