@@ -11,12 +11,16 @@ var map;
 var marker;
 var hospitalMarkersArray = []; // Array to store hospital markers
 var currentWindow = null;
+var myCoords = "25.204751, 55.270942";
 
-window.onload = init();
+init();
 
 async function init() {
     await getHospitals();
-    initMap();
+    await getDoctors();
+    calculateInitialDistance();
+    await initMap();
+    //console.log(hospitals);
 };
 
 async function getHospitals() {
@@ -38,6 +42,52 @@ async function getHospitals() {
 
 }
 
+function calculateInitialDistance() {
+    for (let i = 0; i < hospitals.length; i++) {
+        hospitals[i].distance = calculateDistance(createLatLng(myCoords), createLatLng(hospitals[i].coordinates));
+    }
+    sortDoctors();
+}
+
+function createLatLng(str) {
+    const [latStr, lngStr] = str.split(',').map(parseFloat);
+    return {
+        lat: () => latStr,
+        lng: () => lngStr
+    };
+}
+
+async function getDoctors() {
+
+    try {
+        const response = await fetch('/collection/doctors');
+
+        if (response.ok) {
+            doctors = await response.json();
+            console.log(doctors);
+        }
+        else {
+            console.log("HTTP error: " + response.status)
+        }
+
+    } catch (error) {
+        console.error("Error fetching hospitals: " + error);
+    }
+
+}
+
+function sortDoctors() {
+    // Iterate over each hospital
+    hospitals.forEach(hospital => {
+        // Sort doctors array based on the distance to this hospital
+        doctors.sort((a, b) => {
+            const hospitalA = hospitals.find(h => h._id === a.dr_hospital[0]);
+            const hospitalB = hospitals.find(h => h._id === b.dr_hospital[0]);
+            return hospitalA.distance - hospitalB.distance;
+        });
+    });
+}
+
 function initMap() {
 
     document.getElementById('map-button').addEventListener('click', function () {
@@ -49,7 +99,7 @@ function initMap() {
         }
     });
 
-    
+
     var myLatlng = new google.maps.LatLng(25.204751, 55.270942);
     map = new google.maps.Map(document.getElementById('map-container'), {
         center: myLatlng,
@@ -130,7 +180,7 @@ function calculateDistance(coord1, coord2) {
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c; // Distance in kilometers
-    return distance.toFixed(2);
+    return parseFloat(distance.toFixed(2));
 }
 
 // Function to display hospital markers
@@ -175,6 +225,7 @@ function hospitalMarkers() {
 
         // Store marker in array
         hospitalMarkersArray.push(hospitalMarker);
+        sortDoctors();
     }
 }
 
@@ -186,6 +237,3 @@ function clearHospitalMarkers() {
     hospitalMarkersArray = [];
     currentWindow = null;
 }
-
-
-
