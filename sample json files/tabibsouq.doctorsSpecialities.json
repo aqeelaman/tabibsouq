@@ -1,0 +1,1028 @@
+[{
+  "_id": "General Medicine",
+  "count": 127
+},
+{
+  "_id": "Internal Medicine",
+  "count": 83
+},
+{
+  "_id": "Paediatrics",
+  "count": 74
+},
+{
+  "_id": "Gynaecology / Obstetrics",
+  "count": 49
+},
+{
+  "_id": "Dentistry",
+  "count": 46
+},
+{
+  "_id": "Cardiology",
+  "count": 36
+},
+{
+  "_id": "Pediatrics",
+  "count": 35
+},
+{
+  "_id": "Obs-Gynaecology",
+  "count": 33
+},
+{
+  "_id": "Radiology",
+  "count": 32
+},
+{
+  "_id": "Orthopedics",
+  "count": 29
+},
+{
+  "_id": "Neonatology",
+  "count": 28
+},
+{
+  "_id": "Gynecology",
+  "count": 27
+},
+{
+  "_id": "Obstetrics",
+  "count": 27
+},
+{
+  "_id": "Orthopaedic Surgery",
+  "count": 26
+},
+{
+  "_id": "Gastroenterology",
+  "count": 26
+},
+{
+  "_id": "ENT",
+  "count": 25
+},
+{
+  "_id": "Rehabilitation (Physiotherapy)",
+  "count": 25
+},
+{
+  "_id": "General Surgery",
+  "count": 24
+},
+{
+  "_id": "",
+  "count": 23
+},
+{
+  "_id": "Urology",
+  "count": 23
+},
+{
+  "_id": "Family Medicine",
+  "count": 23
+},
+{
+  "_id": "General Practitioner",
+  "count": 23
+},
+{
+  "_id": "Neurology",
+  "count": 22
+},
+{
+  "_id": "Emergency",
+  "count": 18
+},
+{
+  "_id": "Endocrinology",
+  "count": 16
+},
+{
+  "_id": "General",
+  "count": 16
+},
+{
+  "_id": "Laparoscopic Surgery",
+  "count": 16
+},
+{
+  "_id": "Dermatology",
+  "count": 16
+},
+{
+  "_id": "Orthopaedics",
+  "count": 15
+},
+{
+  "_id": "Otolaryngology (ENT)",
+  "count": 14
+},
+{
+  "_id": "Dermatology / Cosmetology",
+  "count": 14
+},
+{
+  "_id": "Laparoscopic Gynaecology",
+  "count": 13
+},
+{
+  "_id": "Dental",
+  "count": 13
+},
+{
+  "_id": "Anesthesia",
+  "count": 12
+},
+{
+  "_id": "Ophthalmology",
+  "count": 11
+},
+{
+  "_id": "Emergency Medicine",
+  "count": 11
+},
+{
+  "_id": "Anaesthesia",
+  "count": 11
+},
+{
+  "_id": "Specialist Internal Medicine",
+  "count": 11
+},
+{
+  "_id": "Hepatology",
+  "count": 10
+},
+{
+  "_id": "Specialist Pediatrics",
+  "count": 9
+},
+{
+  "_id": "Ophthalmology (EYE)",
+  "count": 9
+},
+{
+  "_id": "Physiotherapist",
+  "count": 9
+},
+{
+  "_id": "Specialist Dermatology",
+  "count": 9
+},
+{
+  "_id": "Advanced Heart Clinic",
+  "count": 8
+},
+{
+  "_id": "Physiotherapy",
+  "count": 8
+},
+{
+  "_id": "Oncology",
+  "count": 7
+},
+{
+  "_id": "Endometriosis",
+  "count": 7
+},
+{
+  "_id": "Physiotherapist ",
+  "count": 7
+},
+{
+  "_id": "Specialist General Surgery",
+  "count": 7
+},
+{
+  "_id": "Specialist Anesthesia",
+  "count": 7
+},
+{
+  "_id": "Pulmonology",
+  "count": 6
+},
+{
+  "_id": "Rheumatology",
+  "count": 6
+},
+{
+  "_id": "General Practitioner ",
+  "count": 6
+},
+{
+  "_id": "Specialist Cardiology",
+  "count": 6
+},
+{
+  "_id": "Specialist Orthopedic Surgeon",
+  "count": 6
+},
+{
+  "_id": "Bariatric Surgery",
+  "count": 5
+},
+{
+  "_id": "Neurosurgery & Spine Department",
+  "count": 5
+},
+{
+  "_id": "Specialist Ophthalmology",
+  "count": 5
+},
+{
+  "_id": "Pulmonology (Respiratory Medicine)",
+  "count": 5
+},
+{
+  "_id": "Specialist ENT",
+  "count": 5
+},
+{
+  "_id": "Nephrology",
+  "count": 5
+},
+{
+  "_id": "Critical Care Medicine",
+  "count": 4
+},
+{
+  "_id": "Specialist Internal Medicine ",
+  "count": 4
+},
+{
+  "_id": "Vascular Surgery",
+  "count": 4
+},
+{
+  "_id": "Specialist Orthopedic Surgery ",
+  "count": 4
+},
+{
+  "_id": "Dietetics",
+  "count": 4
+},
+{
+  "_id": "General Practitioner Dental",
+  "count": 4
+},
+{
+  "_id": "Nephrology & Dialysis",
+  "count": 4
+},
+{
+  "_id": "Speech Therapy",
+  "count": 4
+},
+{
+  "_id": "Pathology",
+  "count": 4
+},
+{
+  "_id": "Specialist Obstetrics and Gynecology",
+  "count": 4
+},
+{
+  "_id": "Plastic Surgery",
+  "count": 4
+},
+{
+  "_id": "Specialist Obstetrics & Gynecology",
+  "count": 3
+},
+{
+  "_id": "Consultant Endocrinology",
+  "count": 3
+},
+{
+  "_id": "Specialist Otolaryngology",
+  "count": 3
+},
+{
+  "_id": "Psychiatry & Mental Health",
+  "count": 3
+},
+{
+  "_id": "Audiology",
+  "count": 3
+},
+{
+  "_id": "Specialist Radiology",
+  "count": 3
+},
+{
+  "_id": "Psychiatry",
+  "count": 3
+},
+{
+  "_id": "Nutrition",
+  "count": 3
+},
+{
+  "_id": "General Dentist",
+  "count": 3
+},
+{
+  "_id": "Specialist Medical Oncology ",
+  "count": 3
+},
+{
+  "_id": "Obesity & Weight Loss Centre",
+  "count": 3
+},
+{
+  "_id": "Diet",
+  "count": 3
+},
+{
+  "_id": "Endodontics",
+  "count": 3
+},
+{
+  "_id": "Specialist Orthopedic Surgery",
+  "count": 3
+},
+{
+  "_id": "Specialist Neurology",
+  "count": 3
+},
+{
+  "_id": "Specialist Pediatrics ",
+  "count": 3
+},
+{
+  "_id": "Consultant Pediatrics",
+  "count": 3
+},
+{
+  "_id": "Specialist Gastroenterologist",
+  "count": 3
+},
+{
+  "_id": "Laparoscopy",
+  "count": 3
+},
+{
+  "_id": "Consultant Orthopedic Surgeon - Specialized in Sports Medicine ",
+  "count": 2
+},
+{
+  "_id": "Consultant Orthopedic Surgeon",
+  "count": 2
+},
+{
+  "_id": "Specialist Urology ",
+  "count": 2
+},
+{
+  "_id": "General Practitioner Dentist ",
+  "count": 2
+},
+{
+  "_id": "Specialist Ophthalmologist",
+  "count": 2
+},
+{
+  "_id": "Specialist Urology",
+  "count": 2
+},
+{
+  "_id": "Radiotherapy",
+  "count": 2
+},
+{
+  "_id": "Consultant Gastroenterology (American Board Certified)",
+  "count": 2
+},
+{
+  "_id": "GP Dentist",
+  "count": 2
+},
+{
+  "_id": "Consultant Internal Medicine",
+  "count": 2
+},
+{
+  "_id": "Consultant Interventional Cardiology ",
+  "count": 2
+},
+{
+  "_id": "General Medicine Doctors",
+  "count": 2
+},
+{
+  "_id": "Specialist Pediatrician",
+  "count": 2
+},
+{
+  "_id": "Specialist Cardiologist",
+  "count": 2
+},
+{
+  "_id": "Ayurvedic Practitioner",
+  "count": 2
+},
+{
+  "_id": "Specialist Obstetrics & Gynecology ",
+  "count": 2
+},
+{
+  "_id": "Psychology",
+  "count": 2
+},
+{
+  "_id": "Specialist Family Medicine",
+  "count": 2
+},
+{
+  "_id": "Specialist Dermatology ",
+  "count": 2
+},
+{
+  "_id": "Consultant Vascular Surgeon",
+  "count": 2
+},
+{
+  "_id": "Specialist Anesthesiologist",
+  "count": 2
+},
+{
+  "_id": "Consultant Nephrology",
+  "count": 2
+},
+{
+  "_id": "Consultant Rheumatologist",
+  "count": 2
+},
+{
+  "_id": "Consultant General Surgery",
+  "count": 2
+},
+{
+  "_id": "Breast Health Centre",
+  "count": 2
+},
+{
+  "_id": "Sports Medicine",
+  "count": 2
+},
+{
+  "_id": null,
+  "count": 2
+},
+{
+  "_id": "Specialist Vascular Surgery",
+  "count": 2
+},
+{
+  "_id": "Paediatric Cardiology",
+  "count": 2
+},
+{
+  "_id": "Cardiac Surgery",
+  "count": 2
+},
+{
+  "_id": "Consultant Anesthesia ",
+  "count": 2
+},
+{
+  "_id": "GP Dentist ",
+  "count": 2
+},
+{
+  "_id": "Consultant Family Medicine",
+  "count": 2
+},
+{
+  "_id": "Specialist ENT ",
+  "count": 2
+},
+{
+  "_id": "Consultant Endocrinologist",
+  "count": 2
+},
+{
+  "_id": "Specialist Rheumatology",
+  "count": 2
+},
+{
+  "_id": "Specialist Radiologist",
+  "count": 2
+},
+{
+  "_id": "Nuero Surgery",
+  "count": 2
+},
+{
+  "_id": "Consultant in fertility (IVF) Obstetrics & Gynecology ",
+  "count": 1
+},
+{
+  "_id": "Consultant Neurologist ",
+  "count": 1
+},
+{
+  "_id": "Specialist Medical Oncology & Hematology",
+  "count": 1
+},
+{
+  "_id": "Specialist Dermatology & HOD ",
+  "count": 1
+},
+{
+  "_id": "Specialist Clinical Pathologist",
+  "count": 1
+},
+{
+  "_id": "Specialist - Dermatology",
+  "count": 1
+},
+{
+  "_id": "Clinical Dietitian ",
+  "count": 1
+},
+{
+  "_id": "Anesthesia Specialist",
+  "count": 1
+},
+{
+  "_id": "Specialist Prosthodontist ",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedic Surgeon (Foot & Ankle)",
+  "count": 1
+},
+{
+  "_id": "Specialist Neurologist",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedic Surgeon - Specialized in Hand, Elbow & Shoulder Surgery ",
+  "count": 1
+},
+{
+  "_id": "Consultant Radiologist",
+  "count": 1
+},
+{
+  "_id": "Sleep Medicine",
+  "count": 1
+},
+{
+  "_id": "Physiotherapist- (Specialist Musculoskeletal) ",
+  "count": 1
+},
+{
+  "_id": "Consultant Internal Medicine/Gastroenterology ",
+  "count": 1
+},
+{
+  "_id": "Allergy and Clinical Immunology",
+  "count": 1
+},
+{
+  "_id": "Specialist Dermatologist",
+  "count": 1
+},
+{
+  "_id": "Consultant Otolaryngology",
+  "count": 1
+},
+{
+  "_id": "General practitioner",
+  "count": 1
+},
+{
+  "_id": "Consultant Dermatology ",
+  "count": 1
+},
+{
+  "_id": "Pediatric Surgery",
+  "count": 1
+},
+{
+  "_id": "Family Medicine Specialist ",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopaedic and Sports Surgeon",
+  "count": 1
+},
+{
+  "_id": "Specialist Medical Oncology",
+  "count": 1
+},
+{
+  "_id": "Specialist Anaesthesiologist",
+  "count": 1
+},
+{
+  "_id": "Clinical Psychology",
+  "count": 1
+},
+{
+  "_id": "Consultant Interventional Cardiologist ",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthopedics Surgeon ",
+  "count": 1
+},
+{
+  "_id": "Specialist Pulmonologist",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthopedic Surgeon ",
+  "count": 1
+},
+{
+  "_id": "Consultant & Director Oncology Services, Burjeel Holdings",
+  "count": 1
+},
+{
+  "_id": "Ayurveda Specialist",
+  "count": 1
+},
+{
+  "_id": "Specialist Neonatologist ",
+  "count": 1
+},
+{
+  "_id": "Hyperbaric Oxygen Therapy",
+  "count": 1
+},
+{
+  "_id": "Medical Director and Consultant Internal Medicine ",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthodontist ",
+  "count": 1
+},
+{
+  "_id": "Specialist Psychiatrist",
+  "count": 1
+},
+{
+  "_id": "Occupational Medicine",
+  "count": 1
+},
+{
+  "_id": "General Practitioner Obstetrics & Gynecology ",
+  "count": 1
+},
+{
+  "_id": "Specialist General and Laparoscopic Surgery",
+  "count": 1
+},
+{
+  "_id": "Consultant Pediatric Gastroenterology",
+  "count": 1
+},
+{
+  "_id": "General Practitioner Pediatrics ",
+  "count": 1
+},
+{
+  "_id": "Consultant and Head of Bariatric Surgery",
+  "count": 1
+},
+{
+  "_id": "ENT Surgeon",
+  "count": 1
+},
+{
+  "_id": "Clinical Dietitian",
+  "count": 1
+},
+{
+  "_id": "Consultant Medical Oncology",
+  "count": 1
+},
+{
+  "_id": "Consultant Obstetrics and Gynecology",
+  "count": 1
+},
+{
+  "_id": "Specialist Obstetrics and Gynecology ",
+  "count": 1
+},
+{
+  "_id": "Orthodontics",
+  "count": 1
+},
+{
+  "_id": "Consultant - General Surgery",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedic Surgeon - Specialized in Spine Surgery",
+  "count": 1
+},
+{
+  "_id": "Specialist Urologist ",
+  "count": 1
+},
+{
+  "_id": "Specialist Obstetrics and Gynecology, Laparoscopic and vNOTES Surgeon ",
+  "count": 1
+},
+{
+  "_id": "Specialist Endocrinologist | Specialist Internal Medicine",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedic Surgeon - Specialized in Joint replacement (hip and knee)",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthopedic",
+  "count": 1
+},
+{
+  "_id": "HOD and Specialist Cardiologist",
+  "count": 1
+},
+{
+  "_id": "Specialist Neurosurgery ",
+  "count": 1
+},
+{
+  "_id": "ENT Specialist",
+  "count": 1
+},
+{
+  "_id": "GP Family Medicine ",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthopedics",
+  "count": 1
+},
+{
+  "_id": "Specialist Diagnostic Radiology",
+  "count": 1
+},
+{
+  "_id": "Specialist Pediatric Oncologist",
+  "count": 1
+},
+{
+  "_id": "General Practitioner (Pediatrics)",
+  "count": 1
+},
+{
+  "_id": "Specialist Vascular Surgeon ",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedics",
+  "count": 1
+},
+{
+  "_id": "Specialist Gastrointestinal Surgery",
+  "count": 1
+},
+{
+  "_id": "Consultant Cardiology & HOD ",
+  "count": 1
+},
+{
+  "_id": "Specialist Anatomic & Clinical Pathology ",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedic Surgeon - Specialized in Knee and Joint replacement ",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthodontics",
+  "count": 1
+},
+{
+  "_id": "Specialist Radiology & Chair of MDT",
+  "count": 1
+},
+{
+  "_id": "Specialist Pediatrics (Neonatology)",
+  "count": 1
+},
+{
+  "_id": "Consultant Plastic and Hand Surgery",
+  "count": 1
+},
+{
+  "_id": " Specialist General Surgery    ",
+  "count": 1
+},
+{
+  "_id": "Head of Department  & Consultant Orthopedic Surgeon",
+  "count": 1
+},
+{
+  "_id": "Orthopedic Physiotherapist ",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedic Surgeon - Specialized in Foot & Ankle Surgery",
+  "count": 1
+},
+{
+  "_id": "Paediatric Urology",
+  "count": 1
+},
+{
+  "_id": "Specialist Nephrologist & Transplant Physician",
+  "count": 1
+},
+{
+  "_id": "Specialist General Surgeon",
+  "count": 1
+},
+{
+  "_id": "Consultant Physical Medicine & Rehabilitation",
+  "count": 1
+},
+{
+  "_id": "Specialist Pediatrician ",
+  "count": 1
+},
+{
+  "_id": "Paediatric Dentistry",
+  "count": 1
+},
+{
+  "_id": "Consultant Anesthesia",
+  "count": 1
+},
+{
+  "_id": "Specialist Emergency Medicine ",
+  "count": 1
+},
+{
+  "_id": "Specialist Urologist",
+  "count": 1
+},
+{
+  "_id": "Women's Health Physiotherapist",
+  "count": 1
+},
+{
+  "_id": "Specialist in Anaesthesia",
+  "count": 1
+},
+{
+  "_id": "Consultant Orthopedic Surgeon - Specialized in Joint replacement (hip, knee, and ankle)",
+  "count": 1
+},
+{
+  "_id": "Specialist Pulmonology",
+  "count": 1
+},
+{
+  "_id": "Specialist Pulmonologist ",
+  "count": 1
+},
+{
+  "_id": "Specialist Family Medicine ",
+  "count": 1
+},
+{
+  "_id": "HOD & Consultant General & Laparoscopic Surgeon",
+  "count": 1
+},
+{
+  "_id": "Specialist, Obstetrics and Gynecology",
+  "count": 1
+},
+{
+  "_id": "General Practitioner Dental ",
+  "count": 1
+},
+{
+  "_id": "Occupational Therapist",
+  "count": 1
+},
+{
+  "_id": "Paediatric Neurology",
+  "count": 1
+},
+{
+  "_id": "Consultant Vascular Surgeon (American Board Certified)",
+  "count": 1
+},
+{
+  "_id": "Consultant Pediatrician",
+  "count": 1
+},
+{
+  "_id": "Consultant Pediatric Cardiologist ",
+  "count": 1
+},
+{
+  "_id": "Orthopedic, Arthroscopic & Arthroplasty Surgeon",
+  "count": 1
+},
+{
+  "_id": "Specialist - Cardiology",
+  "count": 1
+},
+{
+  "_id": "Consultant General Surgery ",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthopedics ",
+  "count": 1
+},
+{
+  "_id": "Specialist - Emergency Medicine",
+  "count": 1
+},
+{
+  "_id": "Consultant - Pediatric Cardiologist ",
+  "count": 1
+},
+{
+  "_id": "Chief Medical Officer & Head of Anesthesia  ",
+  "count": 1
+},
+{
+  "_id": "Specialist - Gastro-intestinal and Hepato-pancreatico-Biliary Surgery",
+  "count": 1
+},
+{
+  "_id": "Specialist Gastroenterology",
+  "count": 1
+},
+{
+  "_id": "Specialist Radiologist ",
+  "count": 1
+},
+{
+  "_id": "HOD & Specialist Anaesthesia",
+  "count": 1
+},
+{
+  "_id": "Consultant Nephrologist (Canadian Board Certified)",
+  "count": 1
+},
+{
+  "_id": "Specialist Anesthesia ",
+  "count": 1
+},
+{
+  "_id": "Clinical Dietician",
+  "count": 1
+},
+{
+  "_id": "Specialist Obstetrician & Gynecology ",
+  "count": 1
+},
+{
+  "_id": "Microbiology",
+  "count": 1
+},
+{
+  "_id": "Ayurveda Practitioner",
+  "count": 1
+},
+{
+  "_id": "Specialist - Obstetrics and Gynecology",
+  "count": 1
+},
+{
+  "_id": "Consultant - Neurologist",
+  "count": 1
+},
+{
+  "_id": "Specialist Pediatric Dentistry",
+  "count": 1
+},
+{
+  "_id": "Specialist Cardiologist ",
+  "count": 1
+},
+{
+  "_id": "Consultant Gynecological Oncology Surgeon",
+  "count": 1
+},
+{
+  "_id": "General Practitioner, IP Wards",
+  "count": 1
+},
+{
+  "_id": " GP Family Medicine, Medical Director LLH Medical Centre  ",
+  "count": 1
+},
+{
+  "_id": "Specialist Orthopedic Surgeon (Wrist, Hand, Elbow)",
+  "count": 1
+},
+{
+  "_id": "Specialist - Family Medicine",
+  "count": 1
+}]
