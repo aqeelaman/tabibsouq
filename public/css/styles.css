@@ -112,8 +112,7 @@ nav ul li a.active, nav ul li a:hover {
 
 .map-button {
     position: absolute;
-    bottom: -450px;
-    margin-bottom: 15px;
+    margin-top: 417px;
     left: 50%;
     transform: translateX(-50%);
     /* color: #313244; */
@@ -145,8 +144,9 @@ footer p {
     height: 300px;
     margin: auto;
     padding: 10px;
+    margin-top: 50px;
     margin-bottom: 20px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     overflow-x: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: white;
