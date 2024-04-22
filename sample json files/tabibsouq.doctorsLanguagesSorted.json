@@ -1,0 +1,312 @@
+[{
+  "_id": "English",
+  "totalDoctors": 1015
+},
+{
+  "_id": "Hindi",
+  "totalDoctors": 678
+},
+{
+  "_id": "Arabic",
+  "totalDoctors": 411
+},
+{
+  "_id": "Malayalam",
+  "totalDoctors": 382
+},
+{
+  "_id": "Tamil",
+  "totalDoctors": 252
+},
+{
+  "_id": "Urdu",
+  "totalDoctors": 175
+},
+{
+  "_id": "Kannada",
+  "totalDoctors": 166
+},
+{
+  "_id": "Telugu",
+  "totalDoctors": 86
+},
+{
+  "_id": "Marathi",
+  "totalDoctors": 68
+},
+{
+  "_id": "Punjabi",
+  "totalDoctors": 49
+},
+{
+  "_id": "French",
+  "totalDoctors": 36
+},
+{
+  "_id": "Gujarati",
+  "totalDoctors": 36
+},
+{
+  "_id": "German",
+  "totalDoctors": 27
+},
+{
+  "_id": "",
+  "totalDoctors": 25
+},
+{
+  "_id": "Russian",
+  "totalDoctors": 22
+},
+{
+  "_id": "Bengali",
+  "totalDoctors": 17
+},
+{
+  "_id": "Tulu",
+  "totalDoctors": 10
+},
+{
+  "_id": "Spanish",
+  "totalDoctors": 10
+},
+{
+  "_id": "Persian",
+  "totalDoctors": 10
+},
+{
+  "_id": "Konkani",
+  "totalDoctors": 10
+},
+{
+  "_id": "Turkish",
+  "totalDoctors": 9
+},
+{
+  "_id": "Sindhi",
+  "totalDoctors": 9
+},
+{
+  "_id": "Kashmiri",
+  "totalDoctors": 9
+},
+{
+  "_id": "Italian",
+  "totalDoctors": 8
+},
+{
+  "_id": "Tagalog",
+  "totalDoctors": 6
+},
+{
+  "_id": "Chinese",
+  "totalDoctors": 5
+},
+{
+  "_id": "Mandarin",
+  "totalDoctors": 4
+},
+{
+  "_id": "Nepali",
+  "totalDoctors": 4
+},
+{
+  "_id": "Odia",
+  "totalDoctors": 4
+},
+{
+  "_id": "Malyalam",
+  "totalDoctors": 4
+},
+{
+  "_id": "Filipino",
+  "totalDoctors": 4
+},
+{
+  "_id": "Korean",
+  "totalDoctors": 3
+},
+{
+  "_id": "Hungarian",
+  "totalDoctors": 3
+},
+{
+  "_id": "Armenian",
+  "totalDoctors": 3
+},
+{
+  "_id": "Portuguese",
+  "totalDoctors": 2
+},
+{
+  "_id": "Ukrainian",
+  "totalDoctors": 2
+},
+{
+  "_id": "Assamese",
+  "totalDoctors": 2
+},
+{
+  "_id": "Farsi",
+  "totalDoctors": 2
+},
+{
+  "_id": "Nepalese",
+  "totalDoctors": 2
+},
+{
+  "_id": "Moldovan",
+  "totalDoctors": 2
+},
+{
+  "_id": "Romanian",
+  "totalDoctors": 2
+},
+{
+  "_id": "Pushto",
+  "totalDoctors": 1
+},
+{
+  "_id": "Bangla",
+  "totalDoctors": 1
+},
+{
+  "_id": "Kutchi",
+  "totalDoctors": 1
+},
+{
+  "_id": "KosovoAlbanian",
+  "totalDoctors": 1
+},
+{
+  "_id": "Castilian",
+  "totalDoctors": 1
+},
+{
+  "_id": "EnglishMalayalamHindiTamil",
+  "totalDoctors": 1
+},
+{
+  "_id": "Swahili",
+  "totalDoctors": 1
+},
+{
+  "_id": "Nagamese",
+  "totalDoctors": 1
+},
+{
+  "_id": "ENGLISHMARATHIHINDI",
+  "totalDoctors": 1
+},
+{
+  "_id": "Lambhani",
+  "totalDoctors": 1
+},
+{
+  "_id": "Sinhalese",
+  "totalDoctors": 1
+},
+{
+  "_id": "Bisaya",
+  "totalDoctors": 1
+},
+{
+  "_id": "Assami",
+  "totalDoctors": 1
+},
+{
+  "_id": "Slovak",
+  "totalDoctors": 1
+},
+{
+  "_id": "Manipuri",
+  "totalDoctors": 1
+},
+{
+  "_id": "Azari",
+  "totalDoctors": 1
+},
+{
+  "_id": "Pashto",
+  "totalDoctors": 1
+},
+{
+  "_id": "EnglishMalayalamHindiUrduArabic",
+  "totalDoctors": 1
+},
+{
+  "_id": "Bulgarian",
+  "totalDoctors": 1
+},
+{
+  "_id": "Romania",
+  "totalDoctors": 1
+},
+{
+  "_id": "Kongini",
+  "totalDoctors": 1
+},
+{
+  "_id": "Deutsch",
+  "totalDoctors": 1
+},
+{
+  "_id": "Marwari",
+  "totalDoctors": 1
+},
+{
+  "_id": "Swedish",
+  "totalDoctors": 1
+},
+{
+  "_id": "Latin",
+  "totalDoctors": 1
+},
+{
+  "_id": "Czech",
+  "totalDoctors": 1
+},
+{
+  "_id": "Hindko",
+  "totalDoctors": 1
+},
+{
+  "_id": "Haryanvi",
+  "totalDoctors": 1
+},
+{
+  "_id": "Kapampangan",
+  "totalDoctors": 1
+},
+{
+  "_id": "Kurdish",
+  "totalDoctors": 1
+},
+{
+  "_id": "Marwadi",
+  "totalDoctors": 1
+},
+{
+  "_id": "Uzbek",
+  "totalDoctors": 1
+},
+{
+  "_id": "Belarusian",
+  "totalDoctors": 1
+},
+{
+  "_id": "Greek",
+  "totalDoctors": 1
+},
+{
+  "_id": "Harayanvi",
+  "totalDoctors": 1
+},
+{
+  "_id": "Afrikaan",
+  "totalDoctors": 1
+},
+{
+  "_id": "Suraiki",
+  "totalDoctors": 1
+}]
