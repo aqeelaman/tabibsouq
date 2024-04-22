@@ -60,7 +60,7 @@
 },
 {
   "_id": "Bengali",
-  "totalDoctors": 17
+  "totalDoctors": 18
 },
 {
   "_id": "Tulu",
@@ -108,7 +108,7 @@
 },
 {
   "_id": "Nepali",
-  "totalDoctors": 4
+  "totalDoctors": 6
 },
 {
   "_id": "Odia",
@@ -140,14 +140,10 @@
 },
 {
   "_id": "Assamese",
-  "totalDoctors": 2
+  "totalDoctors": 3
 },
 {
   "_id": "Farsi",
-  "totalDoctors": 2
-},
-{
-  "_id": "Nepalese",
   "totalDoctors": 2
 },
 {
@@ -160,10 +156,6 @@
 },
 {
   "_id": "Pushto",
-  "totalDoctors": 1
-},
-{
-  "_id": "Bangla",
   "totalDoctors": 1
 },
 {
@@ -204,10 +196,6 @@
 },
 {
   "_id": "Bisaya",
-  "totalDoctors": 1
-},
-{
-  "_id": "Assami",
   "totalDoctors": 1
 },
 {
