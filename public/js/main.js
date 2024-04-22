@@ -83,9 +83,14 @@ function sortDoctors() {
         doctors.sort((a, b) => {
             const hospitalA = hospitals.find(h => h._id === a.dr_hospital[0]);
             const hospitalB = hospitals.find(h => h._id === b.dr_hospital[0]);
-            return hospitalA.distance - hospitalB.distance;
+
+            // Check if hospitalA and hospitalB are valid objects
+            if (hospitalA && hospitalB) {
+                return hospitalA.distance - hospitalB.distance;
+            }
         });
     });
+    console.log(doctors);
 }
 
 function initMap() {
@@ -225,8 +230,8 @@ function hospitalMarkers() {
 
         // Store marker in array
         hospitalMarkersArray.push(hospitalMarker);
-        sortDoctors();
     }
+    sortDoctors();
 }
 
 // Function to clear existing hospital markers
