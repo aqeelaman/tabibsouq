@@ -52,21 +52,9 @@ app.get('/collection/:collectionName', (req, res, next) => {
 })
 
 
-// static file 
-var staticPath = path.resolve(__dirname, "static");
-app.use(express.static(staticPath));
+// Serve static files 
 var publicPath = path.resolve(__dirname, "public");
-var htmlPath = path.resolve(__dirname, "public/html");
-var imagePath = path.resolve(__dirname, "public/images");
-var cssPath = path.resolve(__dirname, "public/css")
-var jsPath = path.resolve(__dirname, "public/js")
-
-// Serve static files
-app.use('/public', express.static(publicPath));
-app.use('/html', express.static(htmlPath));
-app.use('/images', express.static(imagePath));
-app.use('/css', express.static(cssPath));
-app.use('/js', express.static(jsPath));
+app.use(express.static(publicPath));
 
 app.use(function (req, res, next) {
     res.writeHead(200, { "Content-Type": "text/plain" });
