@@ -18,7 +18,12 @@ app.use((req, res, next) => {
 //mongodb database connection
 let db;
 MongoClient.connect('mongodb+srv://aa5226:tiger@tabibsouq.00kxfko.mongodb.net', (err, client) => {
-    db = client.db('tabibsouq')
+    if (err) {
+        console.error("Error connecting to MongoDD: " + err);
+        return;
+    }
+    db = client.db('tabibsouq');
+    console.log("Connected to MongoDB TabibSouq");
 })
 
 //logger middleware
@@ -54,14 +59,14 @@ var publicPath = path.resolve(__dirname, "public");
 var htmlPath = path.resolve(__dirname, "public/html");
 var imagePath = path.resolve(__dirname, "public/images");
 var cssPath = path.resolve(__dirname, "public/css")
-var jsPath = path.resolve(__dirname,"public/js")
+var jsPath = path.resolve(__dirname, "public/js")
 
 // Serve static files
 app.use('/public', express.static(publicPath));
 app.use('/html', express.static(htmlPath));
 app.use('/images', express.static(imagePath));
 app.use('/css', express.static(cssPath));
-app.use('/js',express.static(jsPath));
+app.use('/js', express.static(jsPath));
 
 app.use(function (req, res, next) {
     res.writeHead(200, { "Content-Type": "text/plain" });
