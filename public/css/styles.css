@@ -112,7 +112,7 @@ nav ul li a.active, nav ul li a:hover {
 
 .map-button {
     position: absolute;
-    bottom: 5px;
+    bottom: -450px;
     margin-bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
