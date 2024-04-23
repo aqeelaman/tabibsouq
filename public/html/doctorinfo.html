@@ -46,38 +46,83 @@
                     <p class="location">Saudi German</p>
                     <button class="book-button">BOOK NOW!!</button>
                     <img id="map" src="../images/map.jpeg" alt="Map">
-
                 </div>
             </section>
-
         </div>
 
         <div class="doctor-details">
             <table class="details-table">
                 <tr>
                     <td><strong>Languages Spoken:</strong></td>
-                    <td>English, Hindi, Malayalam</td>
+                    <td><ul><li>English, Hindi, Malayalam</ul></li></td>
                 </tr>
                 <tr>
                     <td><strong>Experience:</strong></td>
                     <td>
-                        Aster Clinics & Aster RV Hospital, Bengaluru – Head of Dental Operations – 2019-2022<br>
-                        Saveetha Dental College, Chennai – General Dentist & Implantologist Resident – 2017-2019<br>
-                        Rajan Dental Clinic, Bengaluru – General Dentist – 2015-2017
+                        <ul>
+                            <li>Aster Clinics & Aster RV Hospital, Bengaluru – Head of Dental Operations – 2019-2022</li><br>
+                            <li>Saveetha Dental College, Chennai – General Dentist & Implantologist Resident – 2017-2019</li><br>
+                            <li>Rajan Dental Clinic, Bengaluru – General Dentist – 2015-2017</li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Education:</strong></td>
                     <td>
-                        BDS (Bachelor of Dental Surgery) from R V Dental College, Bengaluru<br>
-                        FGDS (Fellowship in Dental Surgery) in General Dentistry from Saveetha University, Chennai<br>
-                        FAD (Fellowship in Aesthetic Dentistry) from Greifswald University, Germany<br>
-                        FDS (Fellowship in Dental Surgery) in Implantology from Saveetha University, Chennai<br>
-                        FICOI (Fellow of International Congress of Oral Implantologists), USA.
+                        <ul>
+                            <li>BDS (Bachelor of Dental Surgery) from R V Dental College, Bengaluru</li><br>
+                            <li>FGDS (Fellowship in Dental Surgery) in General Dentistry from Saveetha University, Chennai</li><br>
+                            <li>FAD (Fellowship in Aesthetic Dentistry) from Greifswald University, Germany</li><br>
+                            <li>FDS (Fellowship in Dental Surgery) in Implantology from Saveetha University, Chennai</li><br>
+                            <li>FICOI (Fellow of International Congress of Oral Implantologists), USA.</li>
+                        </ul>
                     </td>
                 </tr>
             </table>
         </div>
+        <!-- Reviews Section -->
+<div class="reviews-section">
+    <div class="review-buttons">
+        <button id="online-reviews-btn" class="review-btn active">Online Reviews</button>
+        <button id="app-reviews-btn" class="review-btn">Reviews from our app</button>
+    </div>
+    <div id="online-reviews" class="review-content active">
+        <!-- Content for Online Reviews -->
+        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+        <p class="review-date">08/02/24</p>
+        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+        <p class="review-date">08/02/24</p>
+    </div>
+    <div id="app-reviews" class="review-content">
+        <!-- Content for Reviews from App -->
+        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+        <p class="review-date">08/02/24</p>
+        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+        <p class="review-date">08/02/24</p>
+    </div>
+</div>
+
+<!-- Review Form Section -->
+<div class="review-form-section">
+    <h3>To give us your reviews, please enter the following details</h3>
+    <p>We value your reviews and ratings</p>
+    <form id="review-form">
+        <div class="textarea-container">
+            <textarea id="review-text" name="review" placeholder="Write your review here..." required></textarea>
+            <div class="star-rating">
+                <span class="fa fa-star-o" data-rating="1"></span>
+                <span class="fa fa-star-o" data-rating="2"></span>
+                <span class="fa fa-star-o" data-rating="3"></span>
+                <span class="fa fa-star-o" data-rating="4"></span>
+                <span class="fa fa-star-o" data-rating="5"></span>
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="submit-review">
+    </form>
+</div>
+
+
+
 
     </main>
 
@@ -86,7 +131,50 @@
             <p>© 2024 TabibSouq. All rights reserved.</p>
         </a>
     </footer>
-    
-
 </body>
 </html>
+
+<script>
+    // online/in-app reviews
+document.addEventListener('DOMContentLoaded', function() {
+    var onlineReviewsBtn = document.getElementById('online-reviews-btn');
+    var appReviewsBtn = document.getElementById('app-reviews-btn');
+    var onlineReviews = document.getElementById('online-reviews');
+    var appReviews = document.getElementById('app-reviews');
+
+    onlineReviewsBtn.addEventListener('click', function() {
+        onlineReviews.classList.add('active');
+        appReviews.classList.remove('active');
+        onlineReviewsBtn.classList.add('active');
+        appReviewsBtn.classList.remove('active');
+    });
+
+    appReviewsBtn.addEventListener('click', function() {
+        appReviews.classList.add('active');
+        onlineReviews.classList.remove('active');
+        appReviewsBtn.classList.add('active');
+        onlineReviewsBtn.classList.remove('active');
+    });
+});
+
+// review form
+document.addEventListener('DOMContentLoaded', function() {
+    var stars = document.querySelectorAll('.star-rating .fa');
+    stars.forEach(function(star, index) {
+        star.addEventListener('click', function() {
+            // Remove active state from all stars
+            stars.forEach(function(star) {
+                star.classList.remove('fa-star');
+                star.classList.add('fa-star-o');
+            });
+            // Add active state to the selected star and those before it
+            for (var i = 0; i <= index; i++) {
+                stars[i].classList.remove('fa-star-o');
+                stars[i].classList.add('fa-star');
+            }
+            // Set the rating value
+            document.querySelector('.rating-value').value = index + 1;
+        });
+    });
+});
+</script>
