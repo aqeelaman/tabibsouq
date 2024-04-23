@@ -1,9 +1,3 @@
-// document.getElementById('start-journey').addEventListener('click', function () {
-//     window.location.href = 'signup.html'; // Assuming you want to direct users to sign up
-// });
-
-
-
 var hospitals = [];
 var doctors = [];
 // Define global variables
@@ -26,7 +20,7 @@ async function init() {
 async function getHospitals() {
 
     try {
-        const response = await fetch('/collection/hospitals');
+        const response = await fetch('/tabibsouq/hospitals');
 
         if (response.ok) {
             hospitals = await response.json();
@@ -60,7 +54,7 @@ function createLatLng(str) {
 async function getDoctors() {
 
     try {
-        const response = await fetch('/collection/doctors');
+        const response = await fetch('/tabibsouq/doctors');
 
         if (response.ok) {
             doctors = await response.json();

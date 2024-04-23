@@ -206,9 +206,9 @@ section {
 .hospital-container img {
     height: 51px;
     width: 53px;
-    text-align: left;
+    /* text-align: left; */
     margin:auto;
-    margin-left: -10%;
+    /* margin-left: -10%; */
 }
 
 
