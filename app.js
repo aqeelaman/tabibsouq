@@ -44,10 +44,19 @@ app.param('collectionName', (req, res, next, collectionName) => {
 })
 
 //retrieve all the objects from a collection
-app.get('/collection/:collectionName', (req, res, next) => {
+app.get('/tabibsouq/:collectionName', (req, res, next) => {
     req.collection.find({}).toArray((e, results) => {
         if (e) return next(e)
         res.send(results)
+    })
+})
+
+//retrieve document by collection ObjectID
+const ObjectID = require('mongodb').ObjectID;
+app.get('/tabibsouq/:collectionName/:id', (req, res, next) => {
+    req.collection.findOne({ _id: new ObjectID(req.params.id) }, (e, result) => {
+        if (e) return next(e)
+        res.send(result)
     })
 })
 
