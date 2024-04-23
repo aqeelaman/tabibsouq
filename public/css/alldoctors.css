@@ -74,7 +74,7 @@ main {
 }
 
 .sorting-options select {
-    width: 50%; /* Adjust width to fill the container */
+    width: 41%; /* Adjust width to fill the container */
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -93,9 +93,9 @@ main {
 
 .sorting-options {
     display:flex;
-    width: 20%; /* Adjust width as needed */
+    width: 25%; /* Adjust width as needed */
     margin-bottom: 20px;
-
+    
 }
 .sorting-options p {
     margin-top: 5%;
@@ -108,7 +108,21 @@ section {
     /* justify-content: space-between; */
 }
 
+.view-options {
+    width:25%;
+    display: flex; 
+    justify-content: right;
+}
 
+.view-options a {
+    margin-left: 10px; /* Add spacing between buttons */
+}
+
+.view-options a img {
+    width: 30px; /* Adjust size of the images as needed */
+    height: 30px;
+    cursor: pointer;
+}
 
 /* .search-container button {
     padding: 10px;
