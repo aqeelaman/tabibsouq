@@ -75,6 +75,23 @@ section {
 }
 
 
+.view-options {
+    width:25%;
+    display: flex; 
+    justify-content: right;
+}
+
+.view-options a {
+    margin-left: 10px; /* Add spacing between buttons */
+}
+
+.view-options a img {
+    width: 30px; /* Adjust size of the images as needed */
+    height: 30px;
+    cursor: pointer;
+}
+
+
 /* Filtering Sidebar styles */
 .filter-sidebar {
     font-family: 'Arial', sans-serif;
@@ -241,7 +258,7 @@ h2 {
 
 /* Reviews section styling */
 .reviews-section {
-    width: 80%; /* Full width of the section container */
+    width: 95%; /* Full width of the section container */
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -313,7 +330,7 @@ h2 {
 /* Textarea styles */
 #review-text {
     width: 100%;
-    height: 140px; /* Increased height to accommodate stars */
+    height: 100px; /* Increased height to accommodate stars */
     padding: 10px;
     padding-bottom: 40px; /* Increased padding-bottom to make space for the stars */
     border: 1px solid #ccc;
