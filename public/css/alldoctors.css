@@ -20,11 +20,10 @@ main {
 
 /* Filters bar styles */
 /* Filters bar styles */
-.filters {
+/* .filters {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    /* border-style: solid; */
     padding: 10px 20px; 
     border-radius: 20px;
 }
@@ -50,23 +49,66 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size:medium;
     border-radius: 5px;
-}
+} */
 
 
 .search-container {
-    display: inline-block;
-    margin-left: 20px;
+    display: flex;
+    margin-right: 10px; /* Add margin to create space between search and sorting */
+    margin-bottom: 20px;
+    width: 50%;
 }
 
 .search-container input {
+    width: 100%; /* Adjust width to fill the container */
     padding: 10px;
     border: none;
     border-radius: 10px;
     color: #0E0F52;
-    background-color:#EFF2FC ;
+    background-color: #d8dff8;
     font-size: 15px;
-    margin-right: -5px; /* Adjust if necessary */
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
 }
+
+.sorting-options select {
+    width: 50%; /* Adjust width to fill the container */
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #0E0F52;
+    background-color: #d8dff8; /* Match background color of search bar */
+    font-size: 15px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.sorting-options select option {
+    background-color: #d8dff8; /* Match background color of search bar */
+}
+
+.sorting-options {
+    display:flex;
+    width: 20%; /* Adjust width as needed */
+    margin-bottom: 20px;
+
+}
+.sorting-options p {
+    margin-top: 5%;
+    margin-right:1%;
+    font-size: 14 px;
+}
+/* Additional styles for consistency */
+section {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+
 
 /* .search-container button {
     padding: 10px;
@@ -77,6 +119,7 @@ main {
     cursor: pointer;
 } */
 
+
 /* Doctor cards container */
 .doctor-cards {
     display: flex;
@@ -84,6 +127,7 @@ main {
     gap: 20px; /* Creates a gap between the cards */
     justify-content: flex-start; /* Aligns cards to the start of the main container */
     align-items: flex-start; /* Aligns cards to the top */
+    width:80%;
 }
 
 /* Individual doctor card styles */
@@ -104,7 +148,7 @@ main {
 .doctor-image {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 30%;
     overflow: hidden;
     margin-top: 10px; 
     /* Pulls the image up half its height */
@@ -118,6 +162,15 @@ main {
 .doctor-image img {
     width: auto; /* Maintains aspect ratio */
     height: 100%;
+}
+.rating {
+    margin-top: -13px; /* Adjust margin as needed */
+   
+}
+
+.star {
+    color: #FFD700; /* Set star color */
+
 }
 
 /* Doctor info styles */
@@ -134,26 +187,28 @@ main {
 
 .doctor-info h3 {
     color: #333;
-    margin-top: 5px;
+    margin-top: -6px;
 }
 
 .doctor-info .specialty,
 .doctor-info .hospital {
     color: #666;
     font-size: 14px;
-    margin: 5px 0;
+    margin-top: 3%;
+    /* margin: 5px 0; */
 }
 .hospital-container {
     display: flex; /* Use flexbox to align items horizontally */
-    align-items: center; /* Align items vertically in the center */
-    justify-content: center;
+    /* align-items: center; 
+    justify-content: center; */
 }
 
 .hospital-container img {
     height: 51px;
     width: 53px;
-    margin-right: 1px; /* Add some spacing between the image and the text */
-    text-align: center;
+    text-align: left;
+    margin:auto;
+    margin-left: -10%;
 }
 
 
@@ -163,7 +218,17 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0;
+    margin: 7px 0;
+}
+.distance {
+    display:block;
+    margin-top: -5%; /* Adjust margin as needed */
+    color: #666;
+    font-size: 14px;
+}
+
+.container2{
+    text-align: left;
 }
 
 .doctor-info .languages:before {
@@ -207,6 +272,79 @@ main {
 }
 
 .doctor-card {
-    width: calc(33.33% - 20px); /* Adjust width for three cards per row, accounting for gap */
+    width: calc(25% - 20px); /* Adjust width for four cards per row, accounting for gap */
     margin-bottom: 30px; /* Space below each card */
+}
+
+
+
+/* Add this CSS block at the end of your existing CSS */
+
+/* Filtering Sidebar styles */
+.filter-sidebar {
+    font-family: 'Arial', sans-serif;
+    width: 17%; /* Adjust the width as necessary */
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    background-color: #fff;
+    margin-right: 3%;
+    position:relative;
+    display:block;
+    height:100%;
+    
+}
+
+.filter-category {
+    margin-bottom: 20px;
+}
+
+.filter-category h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.filter-category label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.filter-category input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Existing CSS styles below */
+/* Base styles for body */
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #FAF3EB;
+    padding: 0;
+    margin: 0;
+}
+
+/* Main content spacing */
+main {
+    padding: 20px; /* Adds space around the main content */
+}
+
+/* Filters bar styles */
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    padding: 10px 20px; 
+    border-radius: 20px;
+}
+
+/* Add the rest of your existing CSS styles */
+
+.main-section{
+    display:flex;
+    /* float:left; */
+    overflow: hidden;
 }

@@ -28,19 +28,49 @@
     </header>
     <main>
         <section>
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Hospitals</button>
-                <button class="filter-btn" data-filter="languages">Languages</button>
-                <button class="filter-btn" data-filter="specialist">Specialist</button>
-                <div class="search-container">
-                    <input type="text" placeholder="Search.." name="search">
-                </div>
+            <div class="search-container">
+                <input type="text" placeholder="What are you looking for ?" name="search">
+            </div>
+            <div class="sorting-options">
+                <p>Sort By:</p>
+                <select name="sort" id="sort">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
             </div>
         </section>
+        <section class="main-section">
+            <!-- Filtering Sidebar -->
+            <div class="filter-sidebar">
+                <div class="filter-category">
+                    <h3>Hospitals</h3>
+                    <label><input type="checkbox" name="hospital" value="aster-hospital"> Aster Hospital</label>
+                    <label><input type="checkbox" name="hospital" value="burjeel"> Burjeel</label>
+                    <label><input type="checkbox" name="hospital" value="saudi-german"> Saudi German</label>
+                    <label><input type="checkbox" name="hospital" value="aster-clinic"> Aster Clinic</label>
+                    <label><input type="checkbox" name="hospital" value="llh"> LLH</label>
+                    <label><input type="checkbox" name="hospital" value="medeor"> Medeor</label>
+                </div>
 
-        <section class="doctor-cards">
-            <div class="card-container" id="doctor-container">
-                <!-- Doctor cards will be dynamically added here -->
+                <div class="filter-category">
+                    <h3>Specialty</h3>
+                    <label><input type="checkbox" name="specialty" value="dentist"> Dentist</label>
+                    <!-- Add more specialty checkboxes as needed -->
+                </div>
+
+                <div class="filter-category">
+                    <h3>Languages</h3>
+                    <label><input type="checkbox" name="language" value="hindi"> Hindi</label>
+                    <label><input type="checkbox" name="language" value="english"> English</label>
+                    <label><input type="checkbox" name="language" value="marathi"> Marathi</label>
+                    <label><input type="checkbox" name="language" value="malayalam"> Malayalam</label>
+                </div>
+            </div>
+            <!-- End of Filtering Sidebar -->
+            <div class="doctor-cards">
+                <div class="card-container" id="doctor-container">
+                    <!-- Doctor cards will be dynamically added here -->
+                </div>
             </div>
         </section>
     </main>
@@ -53,7 +83,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             var doctorContainer = document.getElementById("doctor-container");
             var doctorData = [
-                { name: "Dr. Gokulraj T R", specialty: "Dentistry", hospital: "Saudi German Hospital", languages: "English, Hindi, Malayalam" },
+                { name: "Dr. Gokulraj T R", specialty: "Dentistry", hospital: "Saudi German Hospital", languages: "English, Hindi, Malayalam", distance: "2.5 km", rating: 5 },
                 // Add more doctor data here
             ];
 
@@ -64,14 +94,23 @@
                 doctorCard.innerHTML = `
                     <div class="doctor-image">
                         <img src="../images/doctor.jpeg" alt="${doctor.name}">
+                        
                     </div>
+                    
                     <div class="doctor-info">
                         <h3>${doctor.name}</h3>
                         <p class="specialty">${doctor.specialty}</p>
+                        <div class="rating">
+                            ${generateRatingStars(doctor.rating)}
+                        </div>
                         <div class="hospital-container">
                             <img src="../images/locate.png" alt="Hospital Image" class="hospital-image">
+                            <div class="container2">
                             <p class="hospital">${doctor.hospital}</p>
+                            <p class="distance">${doctor.distance}</p>
                         </div>
+                        </div>
+                       
                         <p class="languages">Languages: ${doctor.languages}</p>
                         <a href="../html/doctorinfo.html">
                             <button class="view-profile-btn">View Profile</button>
@@ -80,6 +119,27 @@
                 doctorContainer.appendChild(doctorCard);
             }
         });
+
+        function generateRatingStars(rating) {
+            var stars = '';
+            var fullStars = Math.floor(rating);
+            var halfStars = Math.ceil(rating - fullStars);
+            var emptyStars = 5 - fullStars - halfStars;
+
+            for (var i = 0; i < fullStars; i++) {
+                stars += '<span class="star">&#9733;</span>';
+            }
+
+            if (halfStars === 1) {
+                stars += '<span class="star">&#9734;&#9733;</span>'; // Half star
+            }
+
+            for (var j = 0; j < emptyStars; j++) {
+                stars += '<span class="star">&#9734;</span>';
+            }
+
+            return stars;
+        }
     </script>
 </body>
 
