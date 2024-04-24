@@ -380,3 +380,32 @@ h2 {
 .submit-review:hover {
     background-color: #4cae4c; /* Darker shade of green on hover */
 }
+
+@media screen and (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+  }
+  
+  .filter-sidebar,
+  .doctor-cards-container {
+    width: 100%; /* Make sidebar and container take full width */
+    margin-right: 0; /* Reset any specified margins */
+  }
+
+  .doctor-card {
+    margin-left: 0; /* Reset left margin */
+    margin-top: 20px; /* Add top margin for spacing */
+    flex-direction: column; /* Stack image and info vertically */
+  }
+  
+  .doctor-image,
+  .doctor-info {
+    flex-basis: 100%; /* Take full width of the container */
+  }
+
+  .review-form-section {
+    max-width: 100%; /* Allow form to take full width */
+    margin-left: 0; /* Reset left margin */
+    margin-bottom: 20%; /* Add top margin for spacing */
+  }
+}
