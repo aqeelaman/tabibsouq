@@ -59,7 +59,7 @@ main {
 
 .sorting-options {
     display:flex;
-    width: 20%; /* Adjust width as needed */
+    width: 15%; /* Adjust width as needed */
     margin-bottom: 20px;
 
 }
@@ -134,7 +134,6 @@ section {
 
 /* doctor card */
 .doctor-card {
-    max-width: 100%;
     margin-left: 30%;
     margin-top: -40%;
     border: 1px solid #ddd;
@@ -142,7 +141,7 @@ section {
     background-image: linear-gradient(to bottom, #D8E5FF , #FCFCFF);;
     display: flex;
     flex-wrap: wrap;
-    width: 100%; /* Full width of the container */
+    width: 95%; /* Full width of the container */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds shadow for depth */
     border-radius: 5px;
     overflow: hidden;
@@ -166,7 +165,17 @@ section {
 
 .doctor-info {
     flex-basis: 70%;
-    padding: 10px;
+    /* padding: 50px; */
+    padding-top: 19px;
+    justify-content: left;
+}
+
+.specialization, 
+.consulting, 
+.languages, 
+.experience, 
+.education {
+    padding-bottom: 20px;
 }
 
 h2 {
@@ -241,9 +250,7 @@ h2 {
 
 .doctor-cards-container {
     width: 75%; /* Adjust the width as needed */
-        flex: 0 0 78%; /* Adjusted width to account for sidebar and gap */
-
-    /* Add padding or margin if required for spacing */
+    flex: 0 0 78%; /* Adjusted width to account for sidebar and gap */
 }
 
 /* Responsive adjustment */
@@ -259,11 +266,12 @@ h2 {
 /* Reviews section styling */
 .reviews-section {
     width: 95%; /* Full width of the section container */
-    margin: 20px auto;
-    padding: 20px;
+    margin: auto;
+    margin-top: -20px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-image: linear-gradient(to right, #D8E5FF , #FCFCFF);;
+    background-image: linear-gradient(to right, #D8E5FF , #FCFCFF);
 }
 
 .review-buttons {
@@ -297,7 +305,7 @@ h2 {
 .review-date {
     color: #777;
     font-size: 0.85em;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
 }
 
 /* Review Form Section Styling */
@@ -310,7 +318,7 @@ h2 {
     background-color: #f9f9f9;
     text-align: center; /* Center align the text */
     margin-left: 60%;
-    margin-top: -17%;
+    margin-top: -31%;
 }
 
 .review-form-section h3 {
