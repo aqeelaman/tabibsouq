@@ -73,10 +73,10 @@
 }
 
 /* Map styling, positioned absolutely within the doctor-info */
-#map {
+#map-container {
     /* flex-grow: 0; Map takes up 1/3 of the space */
-    height: 300px;
-    width: 500px;
+    height: 280px;
+    width:400px;
     border-radius: 10px; /* Radius to match the card */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: absolute; /* Absolute positioning */

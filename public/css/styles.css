@@ -140,6 +140,11 @@ footer p {
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
 .doctors-table {
     width: 894px;
     height: 300px;

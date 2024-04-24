@@ -255,6 +255,9 @@ section {
     margin-right: 10px;
 }
 
+a{
+    text-decoration: none;
+}
 .view-profile-btn {
     display: block;
     width: 141px;
@@ -274,6 +277,7 @@ section {
 
 .view-profile-btn:hover {
     background-color: #003d82;
+    color: #fff;
 }
 
 
