@@ -95,7 +95,7 @@ section {
 /* Filtering Sidebar styles */
 .filter-sidebar {
     font-family: 'Arial', sans-serif;
-        flex: 0 0 20%; /* Do not grow, do not shrink, base width */
+    /* flex: 0 0 20%; Do not grow, do not shrink, base width */
     margin-right: 2%; /* Consistent gap between sidebar and card */
     width: 17%; /* Adjust the width as necessary */
     border: 1px solid #ccc;
@@ -107,7 +107,6 @@ section {
     position:relative;
     display:block;
     height:100%;
-    
 }
 
 .filter-category {
@@ -134,14 +133,13 @@ section {
 
 /* doctor card */
 .doctor-card {
-    margin-left: 30%;
-    margin-top: -40%;
+    /* margin-top: -40%; */
     border: 1px solid #ddd;
     padding: 10px;
     background-image: linear-gradient(to bottom, #D8E5FF , #FCFCFF);;
     display: flex;
     flex-wrap: wrap;
-    width: 95%; /* Full width of the container */
+    width: 100%; /* Full width of the container */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds shadow for depth */
     border-radius: 5px;
     overflow: hidden;
@@ -240,27 +238,28 @@ h2 {
 
 .main-section {
     display: flex;
-    flex-wrap: wrap; /* Wrap the sidebar and card on small screens */
+    overflow: hidden;
+    /* flex-wrap: wrap; Wrap the sidebar and card on small screens */
 }
 
-.filter-sidebar {
+/* .filter-sidebar {
     width: 20%; /* Adjust the width as needed */
     /* If you want some padding around the filters or a border, add them here */
-}
+/*} */
 
 .doctor-cards-container {
-    width: 75%; /* Adjust the width as needed */
-    flex: 0 0 78%; /* Adjusted width to account for sidebar and gap */
+    width: 80%; /* Adjust the width as needed */
+    /* flex: 0 0 78%; Adjusted width to account for sidebar and gap */
 }
 
 /* Responsive adjustment */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .filter-sidebar,
     .doctor-cards-container {
         flex: 0 0 100%; /* Both sidebar and card take full width on small screens */
-        margin-right: 0; /* Remove the margin on small screens */
-    }
-}
+        /* margin-right: 0; Remove the margin on small screens */
+    /* } */
+/* } */ 
 
 
 /* Reviews section styling */

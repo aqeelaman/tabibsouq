@@ -72,61 +72,64 @@
                     <label><input type="checkbox" name="language" value="malayalam"> Malayalam</label>
                 </div>
             </div>
-        </section>
 
-    <div class="doctor-cards-container">
-            <div class="doctor-card">
-            <div class="doctor-image">
-                <img src="../images/doctor.jpeg" alt="Dr Gokulraj T R">
-                <div class="rating">
-                    ★★★★★
+
+            <div class="doctor-cards-container">
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="../images/doctor.jpeg" alt="Dr Gokulraj T R">
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h2>Dr Gokulraj T R</h2>
+                        <p class="specialization"><b>Dentistry</b></p>
+                        <p class="consulting"><b>Consulting at:</b> <span>Saudi German</span> <button
+                                onclick="viewOnMaps()">View on maps</button></p>
+                        <p class="languages"><b>Languages Spoken:</b> English, Hindi, Malayalam</p>
+                        <p class="experience"><b>Experience:</b> 10+ years experience in various hospitals</p>
+                        <p class="education"><b>Education:</b> Studied at AIIMS, Delhi</p>
+                        <!-- Review Form Section -->
+                        <div class="review-form-section">
+                            <h3>We value your reviews and ratings</h3>
+                            <form id="review-form">
+                                <div class="textarea-container">
+                                    <textarea id="review-text" name="review" placeholder="Write your review here..."
+                                        required></textarea>
+                                    <div class="star-rating">
+                                        <span class="fa fa-star-o" data-rating="1"></span>
+                                        <span class="fa fa-star-o" data-rating="2"></span>
+                                        <span class="fa fa-star-o" data-rating="3"></span>
+                                        <span class="fa fa-star-o" data-rating="4"></span>
+                                        <span class="fa fa-star-o" data-rating="5"></span>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Submit" class="submit-review">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="reviews-section">
+                        <div class="review-buttons">
+                            <button id="online-reviews-btn" class="review-btn active">Online Reviews</button>
+                            <button id="app-reviews-btn" class="review-btn">Reviews from our app</button>
+                        </div>
+                        <div id="online-reviews" class="review-content active">
+                            <!-- Content for Online Reviews -->
+                            <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+                            <p class="review-date">08/02/24</p>
+                            <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+                            <p class="review-date">08/02/24</p>
+                        </div>
+                        <div id="app-reviews" class="review-content">
+                            <!-- Content for Reviews from App -->
+                            <p>“i was the doctor.”</p>
+                            <p class="review-date">08/02/24</p>
+                            <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+                            <p class="review-date">08/02/24</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="doctor-info">
-                <h2>Dr Gokulraj T R</h2>
-                <p class="specialization"><b>Dentistry</b></p>
-                <p class="consulting"><b>Consulting at:</b> <span>Saudi German</span> <button onclick="viewOnMaps()">View on maps</button></p>
-                <p class="languages"><b>Languages Spoken:</b> English, Hindi, Malayalam</p>
-                <p class="experience"><b>Experience:</b> 10+ years experience in various hospitals</p>
-                <p class="education"><b>Education:</b> Studied at AIIMS, Delhi</p>
-<!-- Review Form Section -->
-<div class="review-form-section">
-    <h3>We value your reviews and ratings</h3>
-    <form id="review-form">
-        <div class="textarea-container">
-            <textarea id="review-text" name="review" placeholder="Write your review here..." required></textarea>
-            <div class="star-rating">
-                <span class="fa fa-star-o" data-rating="1"></span>
-                <span class="fa fa-star-o" data-rating="2"></span>
-                <span class="fa fa-star-o" data-rating="3"></span>
-                <span class="fa fa-star-o" data-rating="4"></span>
-                <span class="fa fa-star-o" data-rating="5"></span>
-            </div>
-        </div>
-        <input type="submit" value="Submit" class="submit-review">
-    </form>
-</div>
-            </div>
-<div class="reviews-section">
-    <div class="review-buttons">
-        <button id="online-reviews-btn" class="review-btn active">Online Reviews</button>
-        <button id="app-reviews-btn" class="review-btn">Reviews from our app</button>
-    </div>
-    <div id="online-reviews" class="review-content active">
-        <!-- Content for Online Reviews -->
-        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-        <p class="review-date">08/02/24</p>
-        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-        <p class="review-date">08/02/24</p>
-    </div>
-    <div id="app-reviews" class="review-content">
-        <!-- Content for Reviews from App -->
-        <p>“i was the doctor.”</p>
-        <p class="review-date">08/02/24</p>
-        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-        <p class="review-date">08/02/24</p>
-    </div>
-</div>
-        </div>
-    </div>
+        </section>
     </main>
