@@ -62,7 +62,8 @@
                     <label><input type="checkbox" name="specialty" value="General Medicine">General Medicine</label>
                     <label><input type="checkbox" name="specialty" value="Internal Medicine">Internal Medicine</label>
                     <label><input type="checkbox" name="specialty" value="Paediatrics">Paediatrics</label>
-                    <label><input type="checkbox" name="specialty" value="Gynaecology / Obstetrics">Gynaecology / Obstetrics</label>
+                    <label><input type="checkbox" name="specialty" value="Gynaecology / Obstetrics">Gynaecology /
+                        Obstetrics</label>
                     <label><input type="checkbox" name="specialty" value="Dentistry">Dentistry</label>
                     <label><input type="checkbox" name="specialty" value="Cardiology">Cardiology</label>
                     <label><input type="checkbox" name="specialty" value="ENT">ENT</label>
@@ -99,84 +100,80 @@
     </main>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Fetch and display doctor data
-    fetch('/dummyData/doctors.json')
-        .then(response => response.json())
-        .then(doctorData => {
-            renderDoctors(doctorData);
-        })
-        .catch(error => console.error('Failed to load doctor data:', error));
+        var doctors;
+        var hospitals;
+        getData()
 
-    // Initialize review tab toggling
-    const onlineReviewsBtn = document.getElementById('online-reviews-btn');
-    const appReviewsBtn = document.getElementById('app-reviews-btn');
-    const onlineReviews = document.getElementById('online-reviews');
-    const appReviews = document.getElementById('app-reviews');
+        function getData() {
+            // Fetch doctors data
+            fetch('/getDoctors')
+                .then(function (doctorsResponse) {
+                    // Parse JSON data
+                    return doctorsResponse.json();
+                })
+                .then(function (doctorsData) {
+                    // Update global variable with doctors data
+                    doctors = doctorsData;
 
-    onlineReviewsBtn.addEventListener('click', () => toggleReviews(onlineReviews, appReviews, onlineReviewsBtn, appReviewsBtn));
-    appReviewsBtn.addEventListener('click', () => toggleReviews(appReviews, onlineReviews, appReviewsBtn, onlineReviewsBtn));
+                    // Fetch hospitals data
+                    return fetch('/getHospitals');
+                })
+                .then(function (hospitalsResponse) {
+                    // Parse JSON data
+                    return hospitalsResponse.json();
+                })
+                .then(function (hospitalsData) {
+                    // Update global variable with hospitals data
+                    hospitals = hospitalsData;
+                    // Call displayDoctors function
+                    displayDoctors();
+                })
+                .catch(function (error) {
+                    // Handle errors
+                    console.error('Error fetching data:', error);
+                });
+        }
 
-    // Initialize star rating functionality
-    const stars = document.querySelectorAll('.star-rating .fa');
-    stars.forEach((star, index) => {
-        star.addEventListener('click', () => setRating(stars, index));
-    });
+        function displayDoctors() {
+            const container = document.getElementById('doctorCardsContainer');
+            for (var i = 0; i < 100; i++) {
+                container.innerHTML += createDoctorCard(doctors[i]);
+            }
+            //reviews();
+        }
 
-    // Handle form submission
-    const reviewForm = document.getElementById('review-form');
-    reviewForm.addEventListener('submit', event => {
-        event.preventDefault();
-        const reviewText = document.getElementById('review-text').value;
-        const rating = document.querySelector('.rating-value').value;
-        console.log('Review:', reviewText, 'Rating:', rating);
-    });
-});
-
-function renderDoctors(doctorData) {
-    const container = document.getElementById('doctorCardsContainer');
-    container.innerHTML = ''; // Clear existing content
-    doctorData.forEach(doctor => {
-        container.innerHTML += createDoctorCard(doctor);
-    });
-}
-
-function createDoctorCard(doctor) {
-    return `
-        <div class="doctor-card">
-            <div class="doctor-image">
-                <img src="${doctor.dr_imgLink}" alt="${doctor.dr_name}">
-                <div class="rating">★★★★★</div>
-            </div>
-            <div class="doctor-info">
-                <h2>${doctor.dr_name}</a></h2>
-                <p class="specialization"><b>Specialization:</b> ${doctor.dr_speciality.join(", ")}</p>
-                <p class="consulting"><b>Consulting at:</b> <span>${doctor.dr_hospital.join(", ")}
-                </span> <button onclick="viewOnMaps()">View on maps</button></p>
-                <p class="languages"><b>Languages Spoken:</b> ${doctor.dr_languages.join(", ")}</p>
-                <p class="experience"><b>Experience:</b> ${doctor.dr_experience.join(", ")}</p>
-                <p class="education"><b>Education:</b> ${doctor.dr_education.join(", ")}</p>
-            
-            <div class="review-form-section">
-                <h3>We value your reviews and ratings</h3>
-                <form id="review-form">
-                    <div class="textarea-container">
-                        <textarea id="review-text" name="review" placeholder="Write your review here..." required></textarea>
-                        <div class="star-rating">
-                            <span class="fa fa-star-o" data-rating="1"></span>
-                            <span class="fa fa-star-o" data-rating="2"></span>
-                            <span class="fa fa-star-o" data-rating="3"></span>
-                            <span class="fa fa-star-o" data-rating="4"></span>
-                            <span class="fa fa-star-o" data-rating="5"></span>
+        function createDoctorCard(doctor) {
+            const cardHtml = `
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="${doctor.dr_imgLink}" alt="${doctor.dr_name}">
+                        <div class="rating">${generateRatingStars(5)}</div>
+                    </div>
+                    <div class="doctor-info">
+                        <h2>${doctor.dr_name}</h2>
+                        <p class="specialization"><b>${drSpeciality(doctor.dr_speciality)}</b></p>
+                        <p class="consulting"><b>Consulting at:</b> <span>${drHospital(doctor.dr_hospital).location}</span> <button onclick="viewOnMaps()">View on maps</button></p>
+                        <p class="languages"><b>Languages Spoken:</b> ${drLanguages(doctor.dr_languages)}</p>
+                        <p class="experience"><b>Experience:</b> ${drExperience(doctor.dr_experience)}</p>
+                        <p class="education"><b>Education:</b> ${drEducation(doctor.dr_education)}</p>
+                        <div class="review-form-section">
+                            <h3>We value your reviews and ratings</h3>
+                            <form id="review-form">
+                                <div class="textarea-container">
+                                    <textarea id="review-text" name="review" placeholder="Write your review here..." required></textarea>
+                                    <div class="star-rating">
+                                        <span class="fa fa-star-o" data-rating="1"></span>
+                                        <span class="fa fa-star-o" data-rating="2"></span>
+                                        <span class="fa fa-star-o" data-rating="3"></span>
+                                        <span class="fa fa-star-o" data-rating="4"></span>
+                                        <span class="fa fa-star-o" data-rating="5"></span>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Submit" class="submit-review">
+                            </form>
                         </div>
                     </div>
-                    <input type="submit" value="Submit" class="submit-review">
-                </form>
-            </div>
-
-            </div>
-
-            <div class="reviews-section">
+                    <div class="reviews-section">
                         <div class="review-buttons">
                             <button id="online-reviews-btn" class="review-btn active">Online Reviews</button>
                             <button id="app-reviews-btn" class="review-btn">Reviews from our app</button>
@@ -190,31 +187,68 @@ function createDoctorCard(doctor) {
                             <p class="review-date">08/02/24</p>
                         </div>
                     </div>
-            </div>
+                </div>
+            </div>`;
+            return cardHtml;
+        };
 
-        </div>
-    `;
-}
+        // function reviews() {
+        // Initialize review tab toggling
+        // const onlineReviewsBtn = document.getElementById('online-reviews-btn');
+        // const appReviewsBtn = document.getElementById('app-reviews-btn');
+        // const onlineReviews = document.getElementById('online-reviews');
+        // const appReviews = document.getElementById('app-reviews');
+
+        // onlineReviewsBtn.addEventListener('click', () => toggleReviews(onlineReviews, appReviews, onlineReviewsBtn, appReviewsBtn));
+        // appReviewsBtn.addEventListener('click', () => toggleReviews(appReviews, onlineReviews, appReviewsBtn, onlineReviewsBtn));
+
+        // Initialize star rating functionality
 
 
+        function initializeReviewFunctionality() {
+            // Initialize review tab toggling for each doctor card
+            const doctorCards = document.querySelectorAll('.doctor-card');
+            doctorCards.forEach(card => {
+                const onlineReviewsBtn = card.querySelector('.review-btn.online-reviews-btn');
+                const appReviewsBtn = card.querySelector('.review-btn.app-reviews-btn');
+                const onlineReviews = card.querySelector('.review-content.online-reviews');
+                const appReviews = card.querySelector('.review-content.app-reviews');
 
+                onlineReviewsBtn.addEventListener('click', () => toggleReviews(onlineReviews, appReviews, onlineReviewsBtn, appReviewsBtn));
+                appReviewsBtn.addEventListener('click', () => toggleReviews(appReviews, onlineReviews, appReviewsBtn, onlineReviewsBtn));
+            });
+        }
+        // const stars = document.querySelectorAll('.star-rating .fa');
+        // stars.forEach((star, index) => {
+        //     star.addEventListener('click', () => setRating(stars, index));
+        // });
 
+        // // Handle form submission
+        // const reviewForm = document.getElementById('review-form');
+        // reviewForm.addEventListener('submit', event => {
+        //     event.preventDefault();
+        //     const reviewText = document.getElementById('review-text').value;
+        //     const rating = document.querySelector('.rating-value').value;
+        //     console.log('Review:', reviewText, 'Rating:', rating);
+        // });
 
+        function toggleReviews(active, inactive, activeBtn, inactiveBtn) {
+            active.classList.add('active');
+            inactive.classList.remove('active');
+            activeBtn.classList.add('active');
+            inactiveBtn.classList.remove('active');
+        }
 
-function toggleReviews(active, inactive, activeBtn, inactiveBtn) {
-    active.classList.add('active');
-    inactive.classList.remove('active');
-    activeBtn.classList.add('active');
-    inactiveBtn.classList.remove('active');
-}
-
-function setRating(stars, index) {
-    stars.forEach((star, i) => {
-        star.className = i <= index ? 'fa fa-star' : 'fa fa-star-o';
-    });
-    document.querySelector('.rating-value').value = index + 1;
-}
+        function setRating(stars, index) {
+            stars.forEach((star, i) => {
+                star.className = i <= index ? 'fa fa-star' : 'fa fa-star-o';
+            });
+            document.querySelector('.rating-value').value = index + 1;
+        }
+        // }
 
     </script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>
