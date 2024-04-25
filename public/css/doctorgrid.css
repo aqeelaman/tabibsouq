@@ -136,6 +136,7 @@ section {
     /* margin-top: -40%; */
     border: 1px solid #ddd;
     padding: 10px;
+    margin-bottom: 3%;
     background-image: linear-gradient(to bottom, #D8E5FF , #FCFCFF);;
     display: flex;
     flex-wrap: wrap;

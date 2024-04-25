@@ -23,9 +23,13 @@
                 <li><a href="aboutus.html">About Us</a></li>
             </ul>
         </nav>
-        <div class="profile-pic">
-            <img src="../images/pfp-patient.png" alt="Profile Picture">
-        </div>
+<div class="profile-pic">
+    <img src="../images/pfp-patient.png" alt="Profile Picture" id="profileMenuButton">
+    <div class="profile-menu" id="profileMenu">
+        <a href="registration.html">Login</a>
+    </div>
+</div>
+
     </header>
 
     <section id="hero">
@@ -121,4 +125,27 @@
         async defer></script>
 </body>
 
+<script>
+    document.getElementById('profileMenuButton').onclick = function(event) {
+    document.getElementById('profileMenu').style.display = 'block';
+    event.stopPropagation(); // This stops the click from being detected elsewhere.
+};
+
+// This will hide the dropdown when you click outside of it.
+window.onclick = function(event) {
+    if (!event.target.matches('#profileMenuButton')) {
+        var dropdowns = document.getElementsByClassName("profile-menu");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === 'block') {
+                openDropdown.style.display = 'none';
+            }
+        }
+    }
+};
+
+</script>
+
 </html>
+
+
