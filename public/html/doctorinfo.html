@@ -79,7 +79,15 @@
             </table>
         </div>
 
-        
+        <div class="doctor-cards">
+    <h2>Similar Doctors</h2>
+    <div class="card-container" id="doctor-container">
+        <!-- Doctor cards will be dynamically added here -->
+    </div>
+</div>
+
+
+
 
         <!-- Reviews Section -->
 <div class="reviews-section">
@@ -136,6 +144,46 @@
 </html>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('/dummyData/doctors.json')  // Adjust the URL to where your JSON file is served
+        .then(response => response.json())
+        .then(doctorData => {
+            var doctorContainer = document.getElementById("doctor-container");
+            doctorData.forEach(function (doctor) {
+                var doctorCard = document.createElement("div");
+                doctorCard.classList.add("doctor-card");
+                doctorCard.innerHTML = `
+                    <div class="doctor-image">
+                        <img src="${doctor.dr_imgLink}" alt="${doctor.dr_name}">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>${doctor.dr_name}</h3>
+                        <p class="specialty">${doctor.dr_speciality.join(', ') || 'Specialty not listed'}</p>
+                        <div class="rating">
+                            ${generateRatingStars(5)} 
+                        </div>
+                        <div class="hospital-container">
+                            <img src="../images/locate.png" alt="Hospital Image" class="hospital-image">
+                            <div class="container2">
+                                <p class="hospital">${doctor.dr_hospital.join(', ')}</p>
+                                <p class="distance">${doctor.distance} km</p>
+                            </div>
+                        </div>
+                        <p class="languages">Languages: ${doctor.dr_languages.join(', ')}</p>
+                        <div class="view-profile-btn-container">
+                           <a href="doctorinfo.html" target="_blank">
+                              <button class="view-profile-btn">View Profile</button>
+                           </a>
+                        </div>
+                    </div>`;
+                doctorContainer.appendChild(doctorCard);
+            });
+        })
+        .catch(error => console.error('Error loading the doctors data:', error));
+});
+
+
+
     // online/in-app reviews
 document.addEventListener('DOMContentLoaded', function() {
     var onlineReviewsBtn = document.getElementById('online-reviews-btn');

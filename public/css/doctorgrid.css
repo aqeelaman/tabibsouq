@@ -249,19 +249,11 @@ h2 {
     /* flex-wrap: wrap; Wrap the sidebar and card on small screens */
 }
 
-/* .filter-sidebar {
-    width: 20%; /* Adjust the width as needed */
-    /* If you want some padding around the filters or a border, add them here */
-/*} */
 
 .doctor-cards-container {
     width: 80%; /* Adjust the width as needed */
     /* flex: 0 0 78%; Adjusted width to account for sidebar and gap */
 }
-
-
-
-
 
 /* Reviews section styling */
 .reviews-section {
