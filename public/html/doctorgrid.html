@@ -92,60 +92,62 @@
 
             <div class="doctor-cards-container" id="doctorCardsContainer">
                 <!-- Doctor cards will be appended here by JavaScript -->
-                <!-- Map Popup -->
-                <!-- <div id="mapPopup" class="map-popup">
-                    <div class="map-popup-content">
-                    <span class="close">&times;</span>
-                    <img src="../images/map.jpeg" alt="Map" class="map-image">
-                </div> -->
             </div>
 
+            <!-- Popup modal for map -->
+            <div id="mapModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img src="../images/map2.jpeg" alt="Map" style="width:100%;max-width:800px;">
+                </div>
             </div>
+
+            <!-- <button onclick="viewOnMaps()">View on maps</button> -->
         </section>
     </main>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Fetch and display doctor data
-    fetch('/dummyData/doctors.json')
-        .then(response => response.json())
-        .then(doctorData => {
-            renderDoctors(doctorData);
-        })
-        .catch(error => console.error('Failed to load doctor data:', error));
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch and display doctor data
+            fetch('/dummyData/doctors.json')
+                .then(response => response.json())
+                .then(doctorData => {
+                    renderDoctors(doctorData);
+                })
+                .catch(error => console.error('Failed to load doctor data:', error));
 
-    // Initialize review tab toggling
-    const onlineReviewsBtn = document.getElementById('online-reviews-btn');
-    const appReviewsBtn = document.getElementById('app-reviews-btn');
-    const onlineReviews = document.getElementById('online-reviews');
-    const appReviews = document.getElementById('app-reviews');
+            // Initialize review tab toggling
+            const onlineReviewsBtn = document.getElementById('online-reviews-btn');
+            const appReviewsBtn = document.getElementById('app-reviews-btn');
+            const onlineReviews = document.getElementById('online-reviews');
+            const appReviews = document.getElementById('app-reviews');
 
-    onlineReviewsBtn.addEventListener('click', () => toggleReviews(onlineReviews, appReviews, onlineReviewsBtn, appReviewsBtn));
-    appReviewsBtn.addEventListener('click', () => toggleReviews(appReviews, onlineReviews, appReviewsBtn, onlineReviewsBtn));
+            onlineReviewsBtn.addEventListener('click', () => toggleReviews(onlineReviews, appReviews, onlineReviewsBtn, appReviewsBtn));
+            appReviewsBtn.addEventListener('click', () => toggleReviews(appReviews, onlineReviews, appReviewsBtn, onlineReviewsBtn));
 
-    // Initialize star rating functionality
-    const stars = document.querySelectorAll('.star-rating .fa');
-    stars.forEach((star, index) => {
-        star.addEventListener('click', () => setRating(stars, index));
-    });
+            // Initialize star rating functionality
+            const stars = document.querySelectorAll('.star-rating .fa');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => setRating(stars, index));
+            });
 
-    // Handle form submission
-    const reviewForm = document.getElementById('review-form');
-    reviewForm.addEventListener('submit', event => {
-        event.preventDefault();
-        const reviewText = document.getElementById('review-text').value;
-        const rating = document.querySelector('.rating-value').value;
-        console.log('Review:', reviewText, 'Rating:', rating);
-    });
-});
+            // Handle form submission
+            const reviewForm = document.getElementById('review-form');
+            reviewForm.addEventListener('submit', event => {
+                event.preventDefault();
+                const reviewText = document.getElementById('review-text').value;
+                const rating = document.querySelector('.rating-value').value;
+                console.log('Review:', reviewText, 'Rating:', rating);
+            });
+        });
 
-function renderDoctors(doctorData) {
-    const container = document.getElementById('doctorCardsContainer');
-    container.innerHTML = ''; // Clear existing content
-    doctorData.forEach(doctor => {
-        container.innerHTML += createDoctorCard(doctor);
-    });
-}
+        function renderDoctors(doctorData) {
+            const container = document.getElementById('doctorCardsContainer');
+            container.innerHTML = ''; // Clear existing content
+            doctorData.forEach(doctor => {
+                container.innerHTML += createDoctorCard(doctor);
+            });
+        }
 
 function createDoctorCard(doctor) {
     return `
@@ -157,7 +159,8 @@ function createDoctorCard(doctor) {
             <div class="doctor-info">
                 <h2>${doctor.dr_name}</a></h2>
                 <p class="specialization"><b>Specialization:</b> ${doctor.dr_speciality.join(", ")}</p>
-                <p class="consulting"><b>Consulting at:</b> <span>${doctor.dr_hospital.join(", ")}</span> <button onclick="viewOnMaps()">View on maps</button></p>
+                <p class="consulting"><b>Consulting at:</b> <span>${doctor.dr_hospital.join(", ")}
+                <button onclick="viewOnMaps()">View on maps</button></p>
                 <p class="languages"><b>Languages Spoken:</b> ${doctor.dr_languages.join(", ")}</p>
                 <p class="experience"><b>Experience:</b> ${doctor.dr_experience.join(", ")}</p>
                 <p class="education"><b>Education:</b> ${doctor.dr_education.join(", ")}</p>
@@ -201,49 +204,42 @@ function createDoctorCard(doctor) {
     `;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const mapBtns = document.querySelectorAll('button[onclick^="viewOnMaps"]');
-    const mapPopup = document.getElementById('mapPopup');
-    const closeBtn = document.querySelector('.map-popup .close');
+// Get the modal
+        var modal = document.getElementById("mapModal");
 
-    mapBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            mapPopup.style.display = 'block';
-        });
-    });
-
-    closeBtn.addEventListener('click', function() {
-        mapPopup.style.display = 'none';
-    });
-
-    // Close the popup if outside click
-    window.onclick = function(event) {
-        if (event.target == mapPopup) {
-            mapPopup.style.display = 'none';
+        // Function to open the modal
+        function viewOnMaps() {
+            modal.style.display = "block";
         }
-    }
-});
 
-function viewOnMaps() {
-    // Optionally set dynamic content here
-    document.getElementById('mapPopup').style.display = 'block';
-}
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
 
-function toggleReviews(active, inactive, activeBtn, inactiveBtn) {
-    active.classList.add('active');
-    inactive.classList.remove('active');
-    activeBtn.classList.add('active');
-    inactiveBtn.classList.remove('active');
-}
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
-function setRating(stars, index) {
-    stars.forEach((star, i) => {
-        star.className = i <= index ? 'fa fa-star' : 'fa fa-star-o';
-    });
-    document.querySelector('.rating-value').value = index + 1;
-}
+        function toggleReviews(active, inactive, activeBtn, inactiveBtn) {
+            active.classList.add('active');
+            inactive.classList.remove('active');
+            activeBtn.classList.add('active');
+            inactiveBtn.classList.remove('active');
+        }
 
+        function setRating(stars, index) {
+            stars.forEach((star, i) => {
+                star.className = i <= index ? 'fa fa-star' : 'fa fa-star-o';
+            });
+            document.querySelector('.rating-value').value = index + 1;
+        }
     </script>
 </body>
 </html>
