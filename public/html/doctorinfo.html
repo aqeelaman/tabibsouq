@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 
     <title>TabibSouq - Your Healthcare Connection</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -32,10 +34,11 @@
     <main>
         <div class="content">
             <section class="doctor-info" style="position: relative;">
-                <img src="https://www.asterclinic.ae/wp-content/uploads/2021/02/Dr.-Ahmed-Shaz-Orthodontist.jpg" alt="Dr. Gokulraj T Ramakrishnan" class="doctor-image">
+
+                <img src alt class="doctor-image">
                 <div class="info">
-                    <h2>Dr. Ahmed Shaz</h2>
-                    <p class="speciality">Orthodontics</p>
+                    <h2></h2>
+                    <p class="speciality"></p>
                     <div class="stars">
                         <!-- Assume we are using Font Awesome for stars -->
                         <i class="fa fa-star"></i>
@@ -44,9 +47,9 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <p class="location">Aster Clinic Arabian Ranches, Dubai</p>
-                    <button class="book-button">BOOK NOW!!</button>
-                    <div> <img id="map" src="../images/map.jpeg" alt="Map"></div>
+                    <p class="location"></p>
+                    <a href><button class="book-button">BOOK NOW!!</button></a>
+                    <div id="map-container"></div>
                 </div>
             </section>
         </div>
@@ -55,24 +58,21 @@
             <table class="details-table">
                 <tr>
                     <td><strong>Languages Spoken:</strong></td>
-                    <td><ul><li>English, Malayalam</ul></li></td>
+                    <td>
+                        <ul class="languages"></ul>
+                    </td>
                 </tr>
                 <tr>
                     <td><strong>Experience:</strong></td>
                     <td>
-                        <ul>
-                            <li>Aster Clinics & Aster RV Hospital, Bengaluru – Head of Dental Operations – 2019-2022</li><br>
-                            <li>Saveetha Dental College, Chennai – General Dentist & Implantologist Resident – 2017-2019</li><br>
-                            <li>Rajan Dental Clinic, Bengaluru – General Dentist – 2015-2017</li>
+                        <ul class="experience">
                         </ul>
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Education:</strong></td>
                     <td>
-                        <ul>
-                            <li>BDS</li><br>
-                            <li>MDS</li>
+                        <ul class="education">
                         </ul>
                     </td>
                 </tr>
@@ -80,59 +80,52 @@
         </div>
 
         <div class="doctor-cards">
-    <h2>Similar Doctors</h2>
-    <div class="card-container" id="doctor-container">
-        <!-- Doctor cards will be dynamically added here -->
-    </div>
-</div>
-
-
-
-
-        <!-- Reviews Section -->
-<div class="reviews-section">
-    <div class="review-buttons">
-        <button id="online-reviews-btn" class="review-btn active">Online Reviews</button>
-        <button id="app-reviews-btn" class="review-btn">Reviews from our app</button>
-    </div>
-    <div id="online-reviews" class="review-content active">
-        <!-- Content for Online Reviews -->
-        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-        <p class="review-date">08/02/24</p>
-        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-        <p class="review-date">08/02/24</p>
-    </div>
-    <div id="app-reviews" class="review-content">
-        <!-- Content for Reviews from App -->
-        <p>“i was the doctor.”</p>
-        <p class="review-date">08/02/24</p>
-        <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-        <p class="review-date">08/02/24</p>
-    </div>
-</div>
-
-<!-- Review Form Section -->
-<div class="review-form-section">
-    <h3>To give us your reviews, please enter the following details</h3>
-    <p>We value your reviews and ratings</p>
-    <form id="review-form">
-        <div class="textarea-container">
-            <textarea id="review-text" name="review" placeholder="Write your review here..." required></textarea>
-            <div class="star-rating">
-                <span class="fa fa-star-o" data-rating="1"></span>
-                <span class="fa fa-star-o" data-rating="2"></span>
-                <span class="fa fa-star-o" data-rating="3"></span>
-                <span class="fa fa-star-o" data-rating="4"></span>
-                <span class="fa fa-star-o" data-rating="5"></span>
+            <h2>Similar Doctors</h2>
+            <div class="card-container" id="doctor-container">
+                <!-- Doctor cards will be dynamically added here -->
             </div>
         </div>
-        <input type="submit" value="Submit" class="submit-review">
-    </form>
-</div>
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <div class="review-buttons">
+                <button id="online-reviews-btn" class="review-btn active">Online Reviews</button>
+                <button id="app-reviews-btn" class="review-btn">Reviews from our app</button>
+            </div>
+            <div id="online-reviews" class="review-content active">
+                <!-- Content for Online Reviews -->
+                <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+                <p class="review-date">08/02/24</p>
+                <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+                <p class="review-date">08/02/24</p>
+            </div>
+            <div id="app-reviews" class="review-content">
+                <!-- Content for Reviews from App -->
+                <p>“i was the doctor.”</p>
+                <p class="review-date">08/02/24</p>
+                <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
+                <p class="review-date">08/02/24</p>
+            </div>
+        </div>
 
-
-
-
+        <!-- Review Form Section -->
+        <div class="review-form-section">
+            <h3>To give us your reviews, please enter the following details</h3>
+            <p>We value your reviews and ratings</p>
+            <form id="review-form">
+                <div class="textarea-container">
+                    <textarea id="review-text" name="review" placeholder="Write your review here..."
+                        required></textarea>
+                    <div class="star-rating">
+                        <span class="fa fa-star-o" data-rating="1"></span>
+                        <span class="fa fa-star-o" data-rating="2"></span>
+                        <span class="fa fa-star-o" data-rating="3"></span>
+                        <span class="fa fa-star-o" data-rating="4"></span>
+                        <span class="fa fa-star-o" data-rating="5"></span>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="submit-review">
+            </form>
+        </div>
     </main>
 
     <footer>
@@ -141,78 +134,168 @@
         </a>
     </footer>
 </body>
+
 </html>
 
+<script src="../js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArz60tNGmSkqT3K5kEq-ChsPpNhAxTgcw" async defer></script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    fetch('/dummyData/doctors.json')  // Adjust the URL to where your JSON file is served
-        .then(response => response.json())
-        .then(doctorData => {
-            var doctorContainer = document.getElementById("doctor-container");
-            doctorData.forEach(function (doctor) {
-                var doctorCard = document.createElement("div");
-                doctorCard.classList.add("doctor-card");
-                doctorCard.innerHTML = `
-                    <div class="doctor-image">
-                        <img src="${doctor.dr_imgLink}" alt="${doctor.dr_name}">
-                    </div>
-                    <div class="doctor-info">
-                        <h3>${doctor.dr_name}</h3>
-                        <p class="specialty">${doctor.dr_speciality.join(', ') || 'Specialty not listed'}</p>
-                        <div class="rating">
-                            ${generateRatingStars(5)} 
-                        </div>
-                        <div class="hospital-container">
-                            <img src="../images/locate.png" alt="Hospital Image" class="hospital-image">
-                            <div class="container2">
-                                <p class="hospital">${doctor.dr_hospital.join(', ')}</p>
-                                <p class="distance">${doctor.distance} km</p>
-                            </div>
-                        </div>
-                        <p class="languages">Languages: ${doctor.dr_languages.join(', ')}</p>
-                        <div class="view-profile-btn-container">
-                           <a href="doctorinfo.html" target="_blank">
-                              <button class="view-profile-btn">View Profile</button>
-                           </a>
-                        </div>
-                    </div>`;
-                doctorContainer.appendChild(doctorCard);
+
+    var doctor;
+    init();
+    function init() {
+        const params = new URLSearchParams(window.location.search);
+        const doctorId = params.get('doctorid');
+        console.log(doctorId);
+
+        fetch('/tabibsouq/doctors/' + doctorId)
+            .then(function (doctorResponse) {
+                // Parse JSON data
+                return doctorResponse.json();
+            })
+            .then(function (doctorData) {
+                // Update global variable with doctors data
+                doctor = doctorData;
+                console.log(doctor);
+
+                // Fetch hospitals data
+                return fetch('/getHospitals');
+            })
+            .then(function (hospitalsResponse) {
+                // Parse JSON data
+                return hospitalsResponse.json();
+            })
+            .then(function (hospitalsData) {
+                // Update global variable with hospitals data
+                hospitals = hospitalsData;
+                // Call displayDoctorInfo function
+                displayDoctorInfo();
+                displayHospitalMap();
+            })
+            .catch(function (error) {
+                // Handle errors
+                console.error('Error:', error);
             });
-        })
-        .catch(error => console.error('Error loading the doctors data:', error));
-});
+    }
 
+    function displayDoctorInfo() {
+        // Access the HTML elements and update their content with the doctor data
+        const doctorImage = document.querySelector('.doctor-image');
+        const doctorName = document.querySelector('.info h2');
+        const doctorSpeciality = document.querySelector('.speciality');
+        const doctorLocation = document.querySelector('.location');
+        const doctorLink = document.querySelector('.info a');
+        const doctorLanguages = document.querySelector('.languages');
+        const doctorExperience = document.querySelector('.experience');
+        const doctorEducation = document.querySelector('.education');
 
+        // Set the attributes and content with the doctor data
+        doctorImage.src = doctor.dr_imgLink;
+        doctorImage.alt = doctor.dr_name;
+        doctorName.textContent = doctor.dr_name;
+        doctorSpeciality.textContent = doctor.dr_speciality.join(', ');
+        // Assuming the doctor's location is stored in the doctor object
+        doctorLocation.textContent = drHospital(doctor.dr_hospital).location; // Change this to the actual location property
+        doctorLink.href = doctor.dr_link;
 
+        // Clear existing content
+        doctorLanguages.innerHTML = '';
+
+        // Iterate over the languages spoken by the doctor and create list items
+        doctor.dr_languages.forEach(language => {
+            const listItem = document.createElement('li');
+            listItem.textContent = language;
+            doctorLanguages.appendChild(listItem);
+        });
+
+        // Clear existing content
+        doctorExperience.innerHTML = '';
+
+        // Iterate over the languages spoken by the doctor and create list items
+        doctor.dr_experience.forEach(experience => {
+            const listItem = document.createElement('li');
+            listItem.textContent = experience;
+            doctorExperience.appendChild(listItem);
+        });
+
+        // Clear existing content
+        doctorEducation.innerHTML = '';
+
+        // Iterate over the languages spoken by the doctor and create list items
+        doctor.dr_education.forEach(education => {
+            const listItem = document.createElement('li');
+            listItem.textContent = education;
+            doctorEducation.appendChild(listItem);
+        });
+    }
+
+    function displayHospitalMap() {
+        var hospitalData = drHospital(doctor.dr_hospital);
+        console.log(hospitalData);
+        var coords = hospitalData.coordinates.split(', ');
+        var hospitalLatlng = new google.maps.LatLng(parseFloat(coords[0]), parseFloat(coords[1]));
+
+        map = new google.maps.Map(document.getElementById('map-container'), {
+            center: hospitalLatlng,
+            zoom: 16,
+            disableDefaultUI: true,
+            mapTypeControl: false,
+            styles: [
+                {
+                    featureType: "poi",
+                    stylers: [{ visibility: "off" }],
+                },
+                {
+                    featureType: "transit",
+                    elementType: "labels.icon",
+                    stylers: [{ visibility: "off" }]
+                }
+            ],
+        });
+
+        var hospitalIcon = {
+            url: 'https://maps.google.com/mapfiles/ms/icons/hospitals.png', // URL of the custom icon
+            scaledSize: new google.maps.Size(30, 30) // Size of the icon
+        };
+
+        // Create marker for each hospital
+        let hospitalMarker = new google.maps.Marker({
+            map: map,
+            position: hospitalLatlng,
+            title: hospitalData.location,
+            icon: hospitalIcon
+        });
+
+    }
     // online/in-app reviews
-document.addEventListener('DOMContentLoaded', function() {
+    //document.addEventListener('DOMContentLoaded', function() {
     var onlineReviewsBtn = document.getElementById('online-reviews-btn');
     var appReviewsBtn = document.getElementById('app-reviews-btn');
     var onlineReviews = document.getElementById('online-reviews');
     var appReviews = document.getElementById('app-reviews');
 
-    onlineReviewsBtn.addEventListener('click', function() {
+    onlineReviewsBtn.addEventListener('click', function () {
         onlineReviews.classList.add('active');
         appReviews.classList.remove('active');
         onlineReviewsBtn.classList.add('active');
         appReviewsBtn.classList.remove('active');
     });
 
-    appReviewsBtn.addEventListener('click', function() {
+    appReviewsBtn.addEventListener('click', function () {
         appReviews.classList.add('active');
         onlineReviews.classList.remove('active');
         appReviewsBtn.classList.add('active');
         onlineReviewsBtn.classList.remove('active');
     });
-});
+    //});
 
-// review form
-document.addEventListener('DOMContentLoaded', function() {
+    // review form
+    //document.addEventListener('DOMContentLoaded', function() {
     var stars = document.querySelectorAll('.star-rating .fa');
-    stars.forEach(function(star, index) {
-        star.addEventListener('click', function() {
+    stars.forEach(function (star, index) {
+        star.addEventListener('click', function () {
             // Remove active state from all stars
-            stars.forEach(function(star) {
+            stars.forEach(function (star) {
                 star.classList.remove('fa-star');
                 star.classList.add('fa-star-o');
             });
@@ -225,5 +308,5 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.rating-value').value = index + 1;
         });
     });
-});
+    //});
 </script>
