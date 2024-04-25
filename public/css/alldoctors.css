@@ -5,17 +5,19 @@
 }
 
 /* Base styles for body */
-body, html {
+body,
+html {
     height: 100%;
     font-family: 'Arial', sans-serif;
-    background-color:FAF3EB;
+    background-color: FAF3EB;
     padding: 0;
     margin: 0;
 }
 
 /* Main content spacing */
 main {
-    padding: 20px; /* Adds space around the main content */
+    padding: 20px;
+    /* Adds space around the main content */
 }
 
 /* Filters bar styles */
@@ -54,13 +56,15 @@ main {
 
 .search-container {
     display: flex;
-    margin-right: 10px; /* Add margin to create space between search and sorting */
+    margin-right: 10px;
+    /* Add margin to create space between search and sorting */
     margin-bottom: 20px;
     width: 50%;
 }
 
 .search-container input {
-    width: 100%; /* Adjust width to fill the container */
+    width: 100%;
+    /* Adjust width to fill the container */
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -74,12 +78,14 @@ main {
 }
 
 .sorting-options select {
-    width: 41%; /* Adjust width to fill the container */
+    width: 41%;
+    /* Adjust width to fill the container */
     padding: 10px;
     border: none;
     border-radius: 10px;
     color: #0E0F52;
-    background-color: #d8dff8; /* Match background color of search bar */
+    background-color: #d8dff8;
+    /* Match background color of search bar */
     font-size: 15px;
     border-color: black;
     border-width: 1px;
@@ -88,20 +94,24 @@ main {
 }
 
 .sorting-options select option {
-    background-color: #d8dff8; /* Match background color of search bar */
+    background-color: #d8dff8;
+    /* Match background color of search bar */
 }
 
 .sorting-options {
-    display:flex;
-    width: 25%; /* Adjust width as needed */
+    display: flex;
+    width: 25%;
+    /* Adjust width as needed */
     margin-bottom: 20px;
-    
+
 }
+
 .sorting-options p {
     margin-top: 5%;
-    margin-right:1%;
+    margin-right: 1%;
     font-size: 14 px;
 }
+
 /* Additional styles for consistency */
 section {
     display: flex;
@@ -109,17 +119,19 @@ section {
 }
 
 .view-options {
-    width:25%;
-    display: flex; 
+    width: 25%;
+    display: flex;
     justify-content: right;
 }
 
 .view-options a {
-    margin-left: 10px; /* Add spacing between buttons */
+    margin-left: 10px;
+    /* Add spacing between buttons */
 }
 
 .view-options a img {
-    width: 30px; /* Adjust size of the images as needed */
+    width: 30px;
+    /* Adjust size of the images as needed */
     height: 30px;
     cursor: pointer;
 }
@@ -138,21 +150,26 @@ section {
 .doctor-cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Creates a gap between the cards */
-    justify-content: flex-start; /* Aligns cards to the start of the main container */
-    align-items: flex-start; /* Aligns cards to the top */
-    width:80%;
+    gap: 20px;
+    /* Creates a gap between the cards */
+    justify-content: flex-start;
+    /* Aligns cards to the start of the main container */
+    align-items: flex-start;
+    /* Aligns cards to the top */
+    width: 80%;
 }
 
 /* Individual doctor card styles */
 .doctor-card {
     background: linear-gradient(#EFF2FC, #ffffff);
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* width: calc(33.333% - 20px);  */
     /* Adjust width for three cards per row, accounting for gap */
-    margin-bottom: 30px; /* Space below each card */
-    overflow: hidden; /* Ensures nothing spills outside the card */
+    margin-bottom: 30px;
+    /* Space below each card */
+    overflow: hidden;
+    /* Ensures nothing spills outside the card */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,26 +181,31 @@ section {
     height: 150px;
     border-radius: 30%;
     overflow: hidden;
-    margin-top: 10px; 
+    margin-top: 10px;
     /* Pulls the image up half its height */
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 5px solid #f4f4f4; /* Border color should match the body background */
+    border: 5px solid #f4f4f4;
+    /* Border color should match the body background */
 }
 
 .doctor-image img {
-    width: auto; /* Maintains aspect ratio */
+    width: auto;
+    /* Maintains aspect ratio */
     height: 100%;
 }
+
 .rating {
-    margin-top: -13px; /* Adjust margin as needed */
-   
+    margin-top: -13px;
+    /* Adjust margin as needed */
+
 }
 
 .star {
-    color: #FFD700; /* Set star color */
+    color: #FFD700;
+    /* Set star color */
 
 }
 
@@ -194,7 +216,8 @@ section {
     width: 100%;
 }
 
-.doctor-info h3, .doctor-info p {
+.doctor-info h3,
+.doctor-info p {
     margin-bottom: 10px;
 }
 
@@ -211,8 +234,10 @@ section {
     margin-top: 3%;
     /* margin: 5px 0; */
 }
+
 .hospital-container {
-    display: flex; /* Use flexbox to align items horizontally */
+    display: flex;
+    /* Use flexbox to align items horizontally */
     /* align-items: center; 
     justify-content: center; */
 }
@@ -221,7 +246,7 @@ section {
     height: 51px;
     width: 53px;
     /* text-align: left; */
-    margin:auto;
+    margin: auto;
     /* margin-left: -10%; */
 }
 
@@ -234,14 +259,16 @@ section {
     justify-content: center;
     margin: 7px 0;
 }
+
 .distance {
-    display:block;
-    margin-top: -5%; /* Adjust margin as needed */
+    display: block;
+    margin-top: -5%;
+    /* Adjust margin as needed */
     color: #666;
     font-size: 14px;
 }
 
-.container2{
+.container2 {
     text-align: left;
 }
 
@@ -255,9 +282,10 @@ section {
     margin-right: 10px;
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 .view-profile-btn {
     display: block;
     width: 141px;
@@ -271,17 +299,13 @@ a{
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size:medium;
+    font-size: medium;
 }
 
 
 .view-profile-btn:hover {
     background-color: #003d82;
-<<<<<<< HEAD
-    color:#fff
-=======
     color: #fff;
->>>>>>> 5b66c91e9abf7dcd52bc51500770f3a3f75a913e
 }
 
 
@@ -290,12 +314,15 @@ a{
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Distribute items evenly with maximum space */
+    justify-content: space-between;
+    /* Distribute items evenly with maximum space */
 }
 
 .doctor-card {
-    width: calc(25% - 20px); /* Adjust width for four cards per row, accounting for gap */
-    margin-bottom: 30px; /* Space below each card */
+    width: calc(25% - 20px);
+    /* Adjust width for four cards per row, accounting for gap */
+    margin-bottom: 30px;
+    /* Space below each card */
 }
 
 
@@ -305,16 +332,17 @@ a{
 /* Filtering Sidebar styles */
 .filter-sidebar {
     font-family: 'Arial', sans-serif;
-    width: 17%; /* Adjust the width as necessary */
+    width: 17%;
+    /* Adjust the width as necessary */
     border: 1px solid #ccc;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background-color: #fff;
     margin-right: 3%;
-    position:relative;
-    display:block;
-    height:100%;
+    position: relative;
+    display: block;
+    height: 100%;
 }
 
 .filter-category {
@@ -340,7 +368,8 @@ a{
 
 /* Existing CSS styles below */
 /* Base styles for body */
-body, html {
+body,
+html {
     height: 100%;
     font-family: 'Arial', sans-serif;
     background-color: #FAF3EB;
@@ -350,7 +379,8 @@ body, html {
 
 /* Main content spacing */
 main {
-    padding: 20px; /* Adds space around the main content */
+    padding: 20px;
+    /* Adds space around the main content */
 }
 
 /* Filters bar styles */
@@ -358,14 +388,14 @@ main {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    padding: 10px 20px; 
+    padding: 10px 20px;
     border-radius: 20px;
 }
 
 /* Add the rest of your existing CSS styles */
 
-.main-section{
-    display:flex;
+.main-section {
+    display: flex;
     /* float:left; */
     overflow: hidden;
 }
