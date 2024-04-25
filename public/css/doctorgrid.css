@@ -90,11 +90,10 @@ section {
 
 /* Modal Content (image) */
 .modal-content {
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  max-width: 300px; /* Maximum width for the modal */
+    margin: 5% 35%;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 500px;
 }
 
 /* The Close Button */

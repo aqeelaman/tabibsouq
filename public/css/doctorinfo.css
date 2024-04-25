@@ -26,6 +26,11 @@
     margin-right: 20px;
 }
 
+.doctor-image img {
+    width: auto; /* Maintains aspect ratio */
+    height: 100%;
+}
+
 /* Star ratings */
 .stars {
     display: inline-block; /* Allows stars to sit next to the heading */
@@ -47,8 +52,9 @@
 /* Details section within the info */
 .doctor-details {
     display: flex; /* Flex container for details */
+    width: 70%;
     flex-direction: column; /* Stack details vertically */
-    justify-content: center; /* Center details */
+    /* justify-content: center; Center details */
     padding: 20px;
     border-radius: 8px; /* Rounded corners for the section */
     margin: 20px; /* Center the table with some margin around */
@@ -85,7 +91,7 @@
 }
 
 .details-table {
-    width: 60%; /* Full width of the section container */
+    width: 90%; /* Full width of the section container */
     border-collapse: collapse; /* Collapse borders to look like a single, continuous line */
     margin-top: 10px; /* Space above the table */
 }
@@ -241,8 +247,7 @@
     background: linear-gradient(#EFF2FC, #ffffff);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    /* width: calc(33.333% - 20px);  */
-    /* Adjust width for three cards per row, accounting for gap */
+    width: 90%;
     margin-bottom: 30px; /* Space below each card */
     overflow: hidden; /* Ensures nothing spills outside the card */
     display: flex;
@@ -251,7 +256,7 @@
 }
 
 /* Doctor image styles */
-.doctor-image {
+.similar-doctor-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -264,32 +269,31 @@
     justify-content: center;
     border: 5px solid #f4f4f4; /* Border color should match the body background */
 }
-
-.doctor-image img {
+.similar-doctor-image img{
     width: auto; /* Maintains aspect ratio */
     height: 100%;
 }
 
+
 /* Doctor info styles */
-.doctor-info {
+.similar-doctor-info {
     padding: 20px;
     text-align: center;
+    display: block;
     width: 100%;
 }
 
-.doctor-info h3,
-.doctor-info p {
+
+.similar-doctor-info h3,
+.similar-doctor-info p  {
     margin-bottom: 10px;
-}
-
-
-.doctor-info h3 {
     color: #333;
     margin-top: -6px;
 }
 
-.doctor-info .specialty,
-.doctor-info .hospital {
+
+.similar-doctor-info .specialty,
+.similar-doctor-info .hospital{
     color: #666;
     font-size: 14px;
     margin-top: 3%;
@@ -309,7 +313,7 @@
 }
 
 
-.doctor-info .languages {
+.similar-doctor-info .languages  {
     color: #666;
     font-size: 14px;
     display: flex;
@@ -318,7 +322,7 @@
     margin: 7px 0;
 }
 
-.doctor-info .languages:before {
+.similar-doctor-info .languages:before  {
     content: '';
     display: inline-block;
     height: 24px;
@@ -358,7 +362,23 @@
     justify-content: space-between; /* Distribute items evenly with maximum space */
 }
 
-.doctor-card {
-    width: calc(33.33% - 20px); /* Adjust width for three cards per row, accounting for gap */
-    margin-bottom: 30px; /* Space below each card */
+
+.doctorContainer{
+    display: flex;
+    max-height: 600px;
+}
+
+.similar-doctors-container{
+    margin-top: 2%;
+    width: 20%;
+    height: 540px;
+    overflow-y: scroll;
+    background-color: #c1c1c1;
+    text-align: center;
+    text-align: -webkit-center;
+    
+}
+
+.similar-doctor-h2{
+    position: relative;
 }
