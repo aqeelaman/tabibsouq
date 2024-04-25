@@ -1,0 +1,792 @@
+[
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1eae"
+        },
+        "dr_name": "Dr. Ahmed Shaz",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-ahmed-shaz/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2021/02/Dr.-Ahmed-Shaz-Orthodontist.jpg",
+        "dr_speciality": [
+            "Orthodontics"
+        ],
+        "distance": 15.67,
+        "dr_hospital": [
+            "Aster Clinic Arabian Ranches, Dubai"
+        ],
+        "dr_languages": [
+            "English",
+            "Malayalam"
+        ],
+        "dr_education": [
+            ": BDS",
+            ": MDS"
+        ],
+        "dr_experience": [
+            ""
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1ebb"
+        },
+        "dr_name": "Dr. Ankita Tuknayat",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-ankita-tuknayat/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2023/02/image0-scaled.jpeg",
+        "dr_speciality": [
+            ""
+        ],
+        "distance": 40.2,
+        "dr_hospital": [
+            "Aster Clinic Sheikh Zayed Road"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "dr_education": [
+            "MD Dermatology – Government Medical College and Hospital, Chandigarh, India (2016-2019)DNB DermatologyMNAMSSpecialty Certificate Examination SCE Dermatology (Royal College of Physicians- United Kingdom)MBBS -Government Medical College and Hospital, Chandigarh, India (2009-2014)"
+        ],
+        "dr_experience": [
+            "1. Consultant Dermatologist in Cutis Academy of Cutaneous Sciences (CACS), Bengaluru, Karnataka from November 2022 to January 2023.2. Senior Dermatologist in the Department of Dermatology, Government Medical College and Hospital, Chandigarh from January 2020 to October 20223. Senior resident in the Department of Dermatology, Kalpana Chawla Government Medical College, Karnal from August 2019 to January, 2020"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1ec8"
+        },
+        "dr_name": "Dr. Ashok Kumar Verma",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-ashok-kumar-verma/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2023/04/ashok-1-scaled.jpg",
+        "dr_speciality": [
+            "Paediatrics"
+        ],
+        "distance": 10.34,
+        "dr_hospital": [
+            "Aster Clinic Al Nakheel, RAK"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi"
+        ],
+        "dr_education": [
+            "MBBS from MD University, Rohtak ()",
+            "MD Pediatrics from MD University, Rohtak ()"
+        ],
+        "dr_experience": [
+            "Pt BDS PGIMS:- -",
+            "Consultant Pediatrician (Shri Balaji Charitable Hospital, India):- -",
+            "Consultant Pediatrician ( Ayushman Hospital, Haryana, India):- -",
+            "Specialist Pediatrician( Zulekha Hospital ) -",
+            "Specialist Pediatrician ( CLINICS – UAE ):- -"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1ede"
+        },
+        "dr_name": "Dr. Deepak Sadashiv Khalane",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-deepak-sadashiv-khalane/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2023/08/Website-7-1-scaled.jpg",
+        "dr_speciality": [
+            "ENT"
+        ],
+        "distance": 20.15,
+        "dr_hospital": [
+            "Aster Clinic Al Nahda, Sharjah"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Marathi"
+        ],
+        "dr_education": [
+            "MS (ENT)  BJ Medical College, Sassoon GeneraHospitals, University of Pune, India (Reg: # /)",
+            "MBBS  BJ Medical College University of Pune (Reg:)"
+        ],
+        "dr_experience": [
+            "Having  months of experience as Specialist ENT in Sara Medical Center, Sharjah,",
+            "Worked from th January,  to st March,  as a Specialist ENT in Aster Medical Center, Sharjah,",
+            "Having  years experience in NMC Medical Center, Sharjah from",
+            "Worked as an Otorhinolaryngologist and Director from August,  till December,  in Own Medical Center Kuldeep NT Hospital in Dhule, Maharashtra, India",
+            "NT Consultations and Operative Procedures were performed in this set up for more than  decades",
+            "Worked as Registrar in NT Department for  months in Rajawadi Corporation Hospital in Mumbai",
+            "Worked as Assistant Lecturer In NT Department for  months in Bhausaheb Hire Government Medical College Dhule, Maharashtra, India"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1ee8"
+        },
+        "dr_name": "Dr. Elizabeth Mary Thomas",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-elizabeth-mary-thomas/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2022/08/Dr.-Elizabeth-Mary-Thomas-Internal-Medicine.jpg",
+        "dr_speciality": [
+            "Internal Medicine"
+        ],
+        "distance": 56.11,
+        "dr_hospital": [
+            "Aster Clinic Sports City"
+        ],
+        "dr_languages": [
+            "English",
+            "Malayalam"
+        ],
+        "dr_education": [
+            "MD (Internal Medicine) – 2014-2017 MBBS : 2006-2013"
+        ],
+        "dr_experience": [
+            "She has provided patient centric care at high volume academic institution. Amrita Institute of Medical Science: 2017-2021 Worked in Internal Medicine department managing OP, IP, ICU, research and Medical education."
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1eeb"
+        },
+        "dr_name": "Dr. Fameeda Rahman",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-fameeda-rahman/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2023/01/Image-7.jpeg",
+        "dr_speciality": [
+            "General Medicine"
+        ],
+        "distance": 2.3,
+        "dr_hospital": [
+            "Aster Clinic Khalidiya, Abu Dhabi"
+        ],
+        "dr_languages": [
+            "English",
+            "Malayalam",
+            "Hindi",
+            "Urdu"
+        ],
+        "dr_education": [
+            "MBBS (Rajiv Gandhi University of Health Sciences, Bangalore)",
+            "BLS & ACLS certified"
+        ],
+        "dr_experience": [
+            "General Practitioner at Aster Hospital, Qusais, Dubai-",
+            "General Practitioner at Aster clinic, Qusais, Dubai-",
+            "GDMO at Daya Rehabilitation trust, Kerala -",
+            "GDMO in Department of Pulmonology and Department of Internal Medicine at Aster MIMS, Calicut -",
+            "Medical Review Officer at Daman – National Health Insurance Company – Abu dhabi –"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1fee"
+        },
+        "dr_name": "Dr. Lina Nammora",
+        "dr_link": "https://www.asterhospitals.ae/about-us/our-doctors/doctor-detail/dr-lina-nammora",
+        "dr_imgLink": "https://www.asterhospitals.ae/fileadmin/user_upload/image_2023_12_26T09_33_32_634Z.png",
+        "dr_speciality": [
+            "Obstetrics",
+            "Gynecology",
+            "Laparoscopic Gynaecology"
+        ],
+        "distance": 98.56,
+        "dr_hospital": [
+            "Aster Hospital Sharjah"
+        ],
+        "dr_languages": [
+            "English",
+            "Arabic"
+        ],
+        "dr_education": [
+            "MBBS, MS (ObGyn)"
+        ],
+        "dr_experience": [
+            "17 years of clinical experience in Syria and UAE"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b1eca"
+        },
+        "dr_name": "Dr. Sandeep R Sharma",
+        "dr_link": "https://www.asterhospitals.ae/about-us/our-doctors/doctor-detail/dr-sandeep-r-sharma",
+        "dr_imgLink": "https://www.asterhospitals.ae/fileadmin/user_upload/aster-doctor-6%402x.jpg",
+        "dr_speciality": [
+            "Gastroenterology",
+            "Hepatology"
+        ],
+        "distance": 61.03,
+        "dr_hospital": [
+            "Aster Cedars Hospital, Jebel Ali"
+        ],
+        "dr_languages": [
+            "English",
+            "Kannada",
+            "Hindi",
+            "Tamil",
+            "Malayalam"
+        ],
+        "dr_education": [
+            "MBBS, MD (Internal Medicine), DNB (Gastroenterology)"
+        ],
+        "dr_experience": [
+            "Overall experience - 14+ years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b212f"
+        },
+        "dr_name": "Dr. John Cherian Varghese",
+        "dr_link": "https://www.asterhospitals.ae/about-us/our-doctors/doctor-detail/dr-john-cherian-varghese",
+        "dr_imgLink": "https://www.asterhospitals.ae/fileadmin/user_upload/Dr.-John-Cherian-Varghese-re.jpg",
+        "dr_speciality": [
+            "Nephrology"
+        ],
+        "distance": 21.21,
+        "dr_hospital": [
+            "Aster Hospital Mankhool"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Tamil",
+            "Kannada",
+            "Arabic",
+            "Malayalam"
+        ],
+        "dr_education": [
+            "MD (Internal Medicine), DNB (Nephrology)"
+        ],
+        "dr_experience": [
+            "Specialist Nephrologist, Aster Hospital, Mankhool,Since",
+            "Specialist Nephrologist, Aster Jubilee Medical Complex,  –",
+            "Specialist Nephrologist, King Khalid Hospital and Research Hospital, Najran, Kingdom of Saudi Arabia,  –",
+            "Associate Professor, Nephrology, Amrita Institute of Medical Sciences, Kochi, India,  –",
+            "Registrar, Medical ICU, KLE Institute of Medical Science, Belgaum, India,  –"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b2138"
+        },
+        "dr_name": "Ms. Sushma Ghag",
+        "dr_link": "https://www.asterhospitals.ae/about-us/our-doctors/doctor-detail/ms-sushma-ghag",
+        "dr_imgLink": "https://www.asterhospitals.ae/fileadmin/user_upload/Ms._Sushma_Ghag.jpg",
+        "dr_speciality": [
+            "Diet",
+            "Nutrition"
+        ],
+        "distance": 39.27,
+        "dr_hospital": [
+            "Aster Hospital Mankhool"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Marathi"
+        ],
+        "dr_education": [
+            "Masters in Dietetics"
+        ],
+        "dr_experience": [
+            "Dietician, BSES Municipal General Hospital-Mumbai, India, Oct 10 – May 16"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b2141"
+        },
+        "dr_name": "Dr. Raji Mathew Varghese",
+        "dr_link": "https://www.asterhospitals.ae/about-us/our-doctors/doctor-detail/dr-raji-mathew-varghese",
+        "dr_imgLink": "https://www.asterhospitals.ae/fileadmin/user_upload/Dr.Raji_Mathew.png",
+        "dr_speciality": [
+            "Paediatrics",
+            "Neonatology"
+        ],
+        "distance": 30.45,
+        "dr_hospital": [
+            "Aster Hospital Mankhool"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi"
+        ],
+        "dr_education": [
+            "MD, DCH, M.Med (Family Medicine)"
+        ],
+        "dr_experience": [
+            "Co-facilitator, Distance",
+            "Education:, Family Medicine department, CMC, Vellore",
+            "Medical care across different countries like India, Libya, Syria, Maldives and Yugoslavia"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b208f"
+        },
+        "dr_name": "Dr. Mohammed Yousef",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-mohammed-yousef/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2014/07/Website-5-1-scaled.jpg",
+        "dr_speciality": [
+            "Psychiatry"
+        ],
+        "distance": 48.28,
+        "dr_hospital": [
+            "Aster Clinic Deira – Al Muteena, Dubai"
+        ],
+        "dr_languages": [
+            "English",
+            "Malayalam",
+            "Tamil",
+            "Hindi",
+            "Arabic"
+        ],
+        "dr_education": [
+            ": MBBS, TD Medical College, Alleppey, Kerala",
+            ": DPM, MD (Psychiatry), KMC, Manipal"
+        ],
+        "dr_experience": [
+            "– : General Practitioner, India and Oman",
+            "– : Psychiatrist in India",
+            "– : Psychiatrist, Alkazine Clinic, Dubai"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624d9bb761ba409c89b20ad"
+        },
+        "dr_name": "Dr. T. M. Jaison",
+        "dr_link": "https://www.asterclinic.ae/doctor/dr-t-m-jaison/",
+        "dr_imgLink": "https://www.asterclinic.ae/wp-content/uploads/2022/06/Dr._Thannikot_Mathai_Jaison-removebg-preview.png",
+        "dr_speciality": [
+            "Cardiology"
+        ],
+        "distance": 77.96,
+        "dr_hospital": [
+            "Aster Clinic Bur Dubai, Dubai"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Malayalam",
+            "Punjabi"
+        ],
+        "dr_education": [
+            ": MBBS, CMC Ludhiana, India",
+            ": MD (Medicine), CMC Ludhiana, India",
+            ": DM (Cardiology), CMC Vellore, India"
+        ],
+        "dr_experience": [
+            "1992 – 2006: Professor and Head of Cardiology, Christian Medical College, Ludhiana, India."
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624f45041a7df1086c18502"
+        },
+        "dr_name": "Dr. Rached El youssef",
+        "dr_link": "https://saudigerman.com/doctors/dr-rached-el-youssef/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2023/09/05063822/image2.jpg",
+        "dr_speciality": [
+            "General Surgery"
+        ],
+        "distance": 39.66,
+        "dr_hospital": [
+            "Saudi German Hospital Dubai"
+        ],
+        "dr_languages": [
+            "Arabic",
+            "English"
+        ],
+        "dr_education": [
+            "Diplomate American Board of Surgery -USA.",
+            "Fellowship in peripheral vascular surgery -USA.",
+            "MD degree from the free University of Brussels / Belgium.",
+            "Bachelor degree in medical sciences from the free University of Brussels / Belgium",
+            "Residency in General Surgery at Nassau University Hospital N.Y. -USA.",
+            "Laven Clinic Group Certified Surgeon"
+        ],
+        "dr_experience": [
+            "More than 25 years of experience in UAE"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624f45041a7df1086c1850c"
+        },
+        "dr_name": "Dr. Rehab Yousuf Al Saadi",
+        "dr_link": "https://saudigerman.com/doctors/dr-rehab-yousuf-al-saadi/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2023/09/20102321/WhatsApp-Image-2023-09-20-at-10.13.43-AM.jpeg",
+        "dr_speciality": [
+            "Family Medicine"
+        ],
+        "distance": 4.5,
+        "dr_hospital": [
+            "Saudi German Hospital Dubai"
+        ],
+        "dr_languages": [
+            "Arabic",
+            "English"
+        ],
+        "dr_education": [
+            "MBBS from Dubai Medical College for Girls",
+            "Master Degree in hospital management from HBMSU",
+            "Arab board Certification in Family Medicine"
+        ],
+        "dr_experience": [
+            "More than 10 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624f45041a7df1086c18517"
+        },
+        "dr_name": "Dr. Syed Adnan Munaf",
+        "dr_link": "https://saudigerman.com/doctors/dr-syed-adnan/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2023/08/09172612/Dr-Adnan.jpg",
+        "dr_speciality": [
+            "Pediatrics"
+        ],
+        "distance": 49.78,
+        "dr_hospital": [
+            "Saudi German Hospital Dubai"
+        ],
+        "dr_languages": [
+            "English",
+            "Urdu",
+            "Punjabi",
+            "Hindi"
+        ],
+        "dr_education": [
+            "CCT Paediatrics, United Kingdom.",
+            "MRCPCH UK ( Member of the Royal college of paediatrics and child health)",
+            "FRCPCH UK ( Fellow of the Royal College of paediatrics and Child health)",
+            "Post Graduate diploma in Medical education, University of South Wales, Cardiff",
+            "MBBS, Khyber Medical College, Pakistan"
+        ],
+        "dr_experience": [
+            "More than 17 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624f45041a7df1086c1856e"
+        },
+        "dr_name": "Dr. Mohamad Ahmad Almoataz Sayed Mohamad",
+        "dr_link": "https://saudigerman.com/doctors/dr-mohamad-ahmad-almoataz-sayed-mohamad/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2022/12/26163251/12.jpeg",
+        "dr_speciality": [
+            "Neurology"
+        ],
+        "distance": 47.87,
+        "dr_hospital": [
+            "Saudi German Hospital Sharjah"
+        ],
+        "dr_languages": [
+            "English",
+            "Arabic"
+        ],
+        "dr_education": [
+            "MBBCh of Medicine and Surgery, Alazhar University",
+            "Master degree in Neurology, Ain shams university",
+            "PhD in Neurology, Shams university",
+            "Professional accreditation certificate , Saudi commission for health specialties"
+        ],
+        "dr_experience": [
+            "Neurology Resident Physician, 6th October Health Insurance Hospital - 2009-2011",
+            "Neurology Resident, Al Zayton Specialized Hospital - 2010-2012",
+            "Neurology Specialist, The New Kasr-al-Ainy Teaching Hospital - 2012-2015",
+            "Neurology Specialist at Wadi Elnil Hospital - 2015-2017",
+            "Neurology Assistant Consultant, King Abdallah Medical Complex, Jeddah - 2017-2022"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624f45041a7df1086c1857c"
+        },
+        "dr_name": "Dr. Omar Sabri",
+        "dr_link": "https://saudigerman.com/doctors/dr-omar-sabri/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2023/02/17133705/Omar-Ahmed-Adel-Sabri.jpg",
+        "dr_speciality": [
+            "Orthopedics"
+        ],
+        "distance": 20.15,
+        "dr_hospital": [
+            "Saudi German Hospital Dubai"
+        ],
+        "dr_languages": [
+            "English",
+            "Arabic"
+        ],
+        "dr_education": [
+            "MBBCh, MS(Orth), FRCS(T&O)"
+        ],
+        "dr_experience": [
+            "More than 10 Years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6624f45041a7df1086c1858c"
+        },
+        "dr_name": "Dr. Lina Mhd. Amin Aljomoaat",
+        "dr_link": "https://saudigerman.com/doctors/dr-lina-mhd-amin-aljomoaat/",
+        "dr_imgLink": "https://img.saudigerman.com/wp-content/uploads/2023/02/17115207/Lina.jpg",
+        "dr_speciality": [
+            "Obs-Gynaecology"
+        ],
+        "distance": 20.15,
+        "dr_hospital": [
+            "Saudi German Hospital Dubai"
+        ],
+        "dr_languages": [
+            "English",
+            "Arabic"
+        ],
+        "dr_education": [
+            "Master Degree of Obstetrics & Gynecology, Syria",
+            "Arab Board in Obstetrics & Gynecology",
+            "Diploma in laparoscopy and hysteroscopy (Germany)",
+            "Fellowship in international society gynecology endoscopy",
+            "Master in sonography"
+        ],
+        "dr_experience": [
+            "More than 10 Years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "66269671819a7a52921874ad"
+        },
+        "dr_name": "Dr. Moataz Mohamed Radwan Abdalla",
+        "dr_link": "https://burjeel.com/bmcalain/doctors/dr-moataz-mohamed-radwan-abdalla-orthopedic-surgery-specialist/",
+        "dr_imgLink": "https://burjeel.com/wp-content/uploads/sites/11/2022/02/Moataz.png",
+        "dr_speciality": [
+            "Specialist Orthopedic Surgery "
+        ],
+        "distance": 120.55,
+        "dr_hospital": [
+            "Burjeel Medical Center- Barari Al Ain"
+        ],
+        "dr_languages": [
+            "English",
+            "Arabic"
+        ],
+        "dr_education": [
+            "Not available"
+        ],
+        "dr_experience": [
+            "20 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6626967b819a7a52921874dd"
+        },
+        "dr_name": "Dr. Ahmad Baha Mousa",
+        "dr_link": "https://burjeel.com/burjeelmedicalcity/doctors/ahmad-baha-mousa/",
+        "dr_imgLink": "https://burjeel.com/wp-content/uploads/sites/14/2024/02/Ahmed-Mousa.png",
+        "dr_speciality": [
+            "Consultant Orthopedic Surgeon"
+        ],
+        "distance": 101.10,
+        "dr_hospital": [
+            "Burjeel Medical City, Abu Dhabi"
+        ],
+        "dr_languages": [
+            "Arabic",
+            "German",
+            "English"
+        ],
+        "dr_education": [
+            "German Board of Orthopedics and Trauma Surgery from Medical Association of Brandenburg, Germany - 2013",
+            "Consultant of Orthopedic Surgery from Department of Health Abu Dhabi - 2022",
+            "Knee Surgeon from German Knee Society - 2022",
+            "Subspeciality Chirotherapy from Medical Association of Brandenburg, Germany - 2018",
+            "Subspeciality in Trauma Surgery from Medical Association of Brandenburg, Germany  - 2017",
+            "Advanced Trauma Life Support from German Akademie of Trauma Surgery - 2022",
+            "Consultant Orthopedic Surgery from Helios Kinikum Bad Saarow Germany - 2014",
+            "Doctor of Medicine from Damascus University - 2004"
+        ],
+        "dr_experience": [
+            "20 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "66269684819a7a5292187505"
+        },
+        "dr_name": "Dr. Rashmi Chandrakant Patil",
+        "dr_link": "https://burjeel.com/marinahpc/doctors/rashmi-chandrakant-patil/",
+        "dr_imgLink": "https://burjeel.com/wp-content/uploads/sites/12/2023/06/FG5I7993_ED.png",
+        "dr_speciality": [
+            "Specialist ENT"
+        ],
+        "distance": 101.01,
+        "dr_hospital": [
+            "Burjeel MHPC Health Center, Marina Mall"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Marathi",
+            "Urdu"
+        ],
+        "dr_education": [
+            "Not available"
+        ],
+        "dr_experience": [
+            "15 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6626968a819a7a5292187523"
+        },
+        "dr_name": "Dr. Ahmed Zaazoue",
+        "dr_link": "https://burjeel.com/marinahpc/doctors/dr-ahmed-zaazoue-urology-specialist-marina-mall/",
+        "dr_imgLink": "https://burjeel.com/wp-content/uploads/sites/12/2022/02/Ahmed-zaazuie-Urology.png",
+        "dr_speciality": [
+            "Specialist Urology "
+        ],
+        "distance": 29.59,
+        "dr_hospital": [
+            "Burjeel MHPC Health Center, Marina Mall"
+        ],
+        "dr_languages": [
+            "English",
+            "Arabic"
+        ],
+        "dr_education": [
+            "Not available"
+        ],
+        "dr_experience": [
+            "40 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "66269779087935f8f1d2abb9"
+        },
+        "dr_name": "Dr. Bino Mary Chacko",
+        "dr_link": "https://llhhospital.com/musaffah/doctors/bino-mary-chacko/",
+        "dr_imgLink": "https://llhhospital.com/wp-content/uploads/sites/3/2023/12/Website-images-2.png",
+        "dr_speciality": [
+            "Specialist Psychiatrist"
+        ],
+        "distance": 92.55,
+        "dr_hospital": [
+            "LLH Hospital, Musaffah"
+        ],
+        "dr_languages": [
+            "English"
+        ],
+        "dr_education": [
+            "MD Psychiatry | MBBS"
+        ],
+        "dr_experience": [
+            "5 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "66269775087935f8f1d2aba5"
+        },
+        "dr_name": "Dr. Prachi Bhattarai",
+        "dr_link": "https://llhhospital.com/musaffah/doctors/prachi-bhattarai/",
+        "dr_imgLink": "https://llhhospital.com/wp-content/uploads/sites/3/2023/04/Dr.-Prachi-GP-3-277x300-1-1.png",
+        "dr_speciality": [
+            "General Practitioner "
+        ],
+        "distance": 59.33,
+        "dr_hospital": [
+            "LLH Hospital, Musaffah"
+        ],
+        "dr_languages": [
+            "Nepali",
+            "English",
+            "Hindi"
+        ],
+        "dr_education": [
+            "Not available"
+        ],
+        "dr_experience": [
+            "9 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "66269779087935f8f1d2abb7"
+        },
+        "dr_name": "Dr. Kasfia Fatima",
+        "dr_link": "https://llhhospital.com/musaffah/doctors/kasfia-fatima/",
+        "dr_imgLink": "https://llhhospital.com/wp-content/uploads/sites/3/2024/04/Kasifa.png",
+        "dr_speciality": [
+            "General Practitioner"
+        ],
+        "distance": 45.33,
+        "dr_hospital": [
+            "LLH Hospital, Musaffah"
+        ],
+        "dr_languages": [
+            "English",
+            "Bengali",
+            "Hindi",
+            "Urdu"
+        ],
+        "dr_education": [
+            "MBBS"
+        ],
+        "dr_experience": [
+            "5+ years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "662697ec894aa315db9d791a"
+        },
+        "dr_name": "Dr. Deepak Pillai",
+        "dr_link": "https://medeor.ae/abu-dhabi/doctors/dr-deepak-pillai/",
+        "dr_imgLink": "https://medeor.ae/wp-content/uploads/sites/2/2024/01/Deepak-Pillai.png",
+        "dr_speciality": [
+            "Consultant Nephrology"
+        ],
+        "distance": 48.11,
+        "dr_hospital": [
+            "Medeor Hospital, Abu Dhabi"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Urdu",
+            "Malayalam"
+        ],
+        "dr_education": [
+            "Not available"
+        ],
+        "dr_experience": [
+            "15 years"
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "662697f2894aa315db9d793c"
+        },
+        "dr_name": "Dr. Abdul Majeed Patterkadavan",
+        "dr_link": "https://medeor.ae/dubai/doctors/abdul-majeed-patterkadavan/",
+        "dr_imgLink": "https://medeor.ae/wp-content/uploads/sites/4/2023/08/Dr.-Abdul.png",
+        "dr_speciality": [
+            "Specialist Gastroenterologist"
+        ],
+        "distance": 72.30,
+        "dr_hospital": [
+            "Medeor Hospital, Dubai"
+        ],
+        "dr_languages": [
+            "English",
+            "Hindi",
+            "Malayalam"
+        ],
+        "dr_education": [
+            "Not available"
+        ],
+        "dr_experience": [
+            "6 years"
+        ]
+    }
+]
