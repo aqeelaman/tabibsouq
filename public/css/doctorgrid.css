@@ -259,14 +259,8 @@ h2 {
     /* flex: 0 0 78%; Adjusted width to account for sidebar and gap */
 }
 
-/* Responsive adjustment */
-/* @media (max-width: 768px) {
-    .filter-sidebar,
-    .doctor-cards-container {
-        flex: 0 0 100%; /* Both sidebar and card take full width on small screens */
-        /* margin-right: 0; Remove the margin on small screens */
-    /* } */
-/* } */ 
+
+
 
 
 /* Reviews section styling */
