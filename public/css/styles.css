@@ -21,11 +21,42 @@ header {
     border-radius: 50%; /* Makes the image circular for profile pic */
 }
 
-.profile-pic img{
-    width: 50px; /* Adjust as needed */
+/* .profile-pic img{
+    width: 50px; 
     height: auto;
-    border-radius: 50%; /* Makes the image circular for profile pic */
+    border-radius: 50%; 
+} */
+
+.profile-pic img{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 50px; 
+    height: auto;
+    border-radius: 50%; 
 }
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.profile-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.profile-menu a:hover {
+    background-color: #ddd;
+}
+
 
 nav ul {
     list-style: none;
@@ -138,6 +169,11 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .doctors-table {

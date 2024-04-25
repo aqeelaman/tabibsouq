@@ -255,6 +255,9 @@ section {
     margin-right: 10px;
 }
 
+a{
+    text-decoration: none;
+}
 .view-profile-btn {
     display: block;
     width: 141px;
@@ -274,7 +277,11 @@ section {
 
 .view-profile-btn:hover {
     background-color: #003d82;
+<<<<<<< HEAD
     color:#fff
+=======
+    color: #fff;
+>>>>>>> 5b66c91e9abf7dcd52bc51500770f3a3f75a913e
 }
 
 
@@ -308,7 +315,6 @@ section {
     position:relative;
     display:block;
     height:100%;
-    
 }
 
 .filter-category {
