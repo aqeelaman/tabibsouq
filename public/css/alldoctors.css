@@ -164,7 +164,7 @@ section {
     background: linear-gradient(#EFF2FC, #ffffff);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* width: calc(33.333% - 20px);  */
+    width: calc(25% - 20px);
     /* Adjust width for three cards per row, accounting for gap */
     margin-bottom: 30px;
     /* Space below each card */
@@ -173,6 +173,8 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    padding-bottom: 60px;
 }
 
 /* Doctor image styles */
@@ -288,6 +290,8 @@ a {
 
 .view-profile-btn {
     display: block;
+    position: absolute;
+    bottom: 10px;
     width: 141px;
     height: 53.81px;
     margin: 10px auto 20px;
@@ -300,6 +304,8 @@ a {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size: medium;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -317,15 +323,6 @@ a {
     justify-content: space-between;
     /* Distribute items evenly with maximum space */
 }
-
-.doctor-card {
-    width: calc(25% - 20px);
-    /* Adjust width for four cards per row, accounting for gap */
-    margin-bottom: 30px;
-    /* Space below each card */
-}
-
-
 
 /* Add this CSS block at the end of your existing CSS */
 
