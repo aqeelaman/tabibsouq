@@ -91,13 +91,7 @@
             </div>
 
             <div class="doctor-cards-container" id="doctorCardsContainer">
-                <!-- Doctor cards will be appended here by JavaScript -->
-                <!-- Map Popup -->
-                <!-- <div id="mapPopup" class="map-popup">
-                    <div class="map-popup-content">
-                    <span class="close">&times;</span>
-                    <img src="../images/map.jpeg" alt="Map" class="map-image">
-                </div> -->
+
             </div>
 
             </div>
@@ -157,7 +151,8 @@ function createDoctorCard(doctor) {
             <div class="doctor-info">
                 <h2>${doctor.dr_name}</a></h2>
                 <p class="specialization"><b>Specialization:</b> ${doctor.dr_speciality.join(", ")}</p>
-                <p class="consulting"><b>Consulting at:</b> <span>${doctor.dr_hospital.join(", ")}</span> <button onclick="viewOnMaps()">View on maps</button></p>
+                <p class="consulting"><b>Consulting at:</b> <span>${doctor.dr_hospital.join(", ")}
+                </span> <button onclick="viewOnMaps()">View on maps</button></p>
                 <p class="languages"><b>Languages Spoken:</b> ${doctor.dr_languages.join(", ")}</p>
                 <p class="experience"><b>Experience:</b> ${doctor.dr_experience.join(", ")}</p>
                 <p class="education"><b>Education:</b> ${doctor.dr_education.join(", ")}</p>
@@ -201,33 +196,9 @@ function createDoctorCard(doctor) {
     `;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const mapBtns = document.querySelectorAll('button[onclick^="viewOnMaps"]');
-    const mapPopup = document.getElementById('mapPopup');
-    const closeBtn = document.querySelector('.map-popup .close');
 
-    mapBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            mapPopup.style.display = 'block';
-        });
-    });
 
-    closeBtn.addEventListener('click', function() {
-        mapPopup.style.display = 'none';
-    });
 
-    // Close the popup if outside click
-    window.onclick = function(event) {
-        if (event.target == mapPopup) {
-            mapPopup.style.display = 'none';
-        }
-    }
-});
-
-function viewOnMaps() {
-    // Optionally set dynamic content here
-    document.getElementById('mapPopup').style.display = 'block';
-}
 
 
 function toggleReviews(active, inactive, activeBtn, inactiveBtn) {
