@@ -92,6 +92,14 @@
 
             <div class="doctor-cards-container" id="doctorCardsContainer">
                 <!-- Doctor cards will be appended here by JavaScript -->
+                <!-- Map Popup -->
+                <div id="mapPopup" class="map-popup">
+                    <div class="map-popup-content">
+                    <span class="close">&times;</span>
+                    <img src="map.jpeg" alt="Map" class="map-image">
+                </div>
+            </div>
+
             </div>
         </section>
     </main>
@@ -192,6 +200,35 @@ function createDoctorCard(doctor) {
         </div>
     `;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mapBtns = document.querySelectorAll('button[onclick^="viewOnMaps"]');
+    const mapPopup = document.getElementById('mapPopup');
+    const closeBtn = document.querySelector('.map-popup .close');
+
+    mapBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            mapPopup.style.display = 'block';
+        });
+    });
+
+    closeBtn.addEventListener('click', function() {
+        mapPopup.style.display = 'none';
+    });
+
+    // Close the popup if outside click
+    window.onclick = function(event) {
+        if (event.target == mapPopup) {
+            mapPopup.style.display = 'none';
+        }
+    }
+});
+
+function viewOnMaps() {
+    // Optionally set dynamic content here
+    document.getElementById('mapPopup').style.display = 'block';
+}
+
 
 function toggleReviews(active, inactive, activeBtn, inactiveBtn) {
     active.classList.add('active');
