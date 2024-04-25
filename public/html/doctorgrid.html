@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/doctorgrid.css">
     <title>TabibSouq - Your Healthcare Connection</title>
+    <!-- Link to favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -139,7 +142,7 @@
             for (var i = 0; i < 100; i++) {
                 container.innerHTML += createDoctorCard(doctors[i]);
             }
-            //reviews();
+            initializeReviewFunctionality();
         }
 
         function createDoctorCard(doctor) {
@@ -158,9 +161,10 @@
                         <p class="education"><b>Education:</b> ${drEducation(doctor.dr_education)}</p>
                         <div class="review-form-section">
                             <h3>We value your reviews and ratings</h3>
-                            <form id="review-form">
+                            <form id="review-form" class="review-form">
                                 <div class="textarea-container">
-                                    <textarea id="review-text" name="review" placeholder="Write your review here..." required></textarea>
+                                    <textarea id="review-text" class="review-text" name="review" placeholder="Write your review here..." required></textarea>
+                                    <input type="hidden" class="rating-value">
                                     <div class="star-rating">
                                         <span class="fa fa-star-o" data-rating="1"></span>
                                         <span class="fa fa-star-o" data-rating="2"></span>
@@ -175,14 +179,14 @@
                     </div>
                     <div class="reviews-section">
                         <div class="review-buttons">
-                            <button id="online-reviews-btn" class="review-btn active">Online Reviews</button>
-                            <button id="app-reviews-btn" class="review-btn">Reviews from our app</button>
+                            <button id="online-reviews-btn" class="review-btn online active">Online Reviews</button>
+                            <button id="app-reviews-btn" class="review-btn app">Reviews from our app</button>
                         </div>
-                        <div id="online-reviews" class="review-content active">
+                        <div id="online-reviews" class="review-content online active">
                             <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
                             <p class="review-date">08/02/24</p>
                         </div>
-                        <div id="app-reviews" class="review-content">
+                        <div id="app-reviews" class="review-content app">
                             <p>“i was the doctor.”</p>
                             <p class="review-date">08/02/24</p>
                         </div>
@@ -192,52 +196,56 @@
             return cardHtml;
         };
 
-        // function reviews() {
-        // Initialize review tab toggling
-        // const onlineReviewsBtn = document.getElementById('online-reviews-btn');
-        // const appReviewsBtn = document.getElementById('app-reviews-btn');
-        // const onlineReviews = document.getElementById('online-reviews');
-        // const appReviews = document.getElementById('app-reviews');
-
-        // onlineReviewsBtn.addEventListener('click', () => toggleReviews(onlineReviews, appReviews, onlineReviewsBtn, appReviewsBtn));
-        // appReviewsBtn.addEventListener('click', () => toggleReviews(appReviews, onlineReviews, appReviewsBtn, onlineReviewsBtn));
-
         // Initialize star rating functionality
-
-
         function initializeReviewFunctionality() {
             // Initialize review tab toggling for each doctor card
             const doctorCards = document.querySelectorAll('.doctor-card');
             doctorCards.forEach(card => {
-                const onlineReviewsBtn = card.querySelector('.review-btn.online-reviews-btn');
-                const appReviewsBtn = card.querySelector('.review-btn.app-reviews-btn');
-                const onlineReviews = card.querySelector('.review-content.online-reviews');
-                const appReviews = card.querySelector('.review-content.app-reviews');
+                const onlineReviewsBtn = card.querySelector('.review-btn.online');
+                const appReviewsBtn = card.querySelector('.review-btn.app');
+                const onlineReviews = card.querySelector('.review-content.online');
+                const appReviews = card.querySelector('.review-content.app');
 
+                //toggle tabs
                 onlineReviewsBtn.addEventListener('click', () => toggleReviews(onlineReviews, appReviews, onlineReviewsBtn, appReviewsBtn));
                 appReviewsBtn.addEventListener('click', () => toggleReviews(appReviews, onlineReviews, appReviewsBtn, onlineReviewsBtn));
-            });
-        }
-        // const stars = document.querySelectorAll('.star-rating .fa');
-        // stars.forEach((star, index) => {
-        //     star.addEventListener('click', () => setRating(stars, index));
-        // });
 
-        // // Handle form submission
-        // const reviewForm = document.getElementById('review-form');
-        // reviewForm.addEventListener('submit', event => {
-        //     event.preventDefault();
-        //     const reviewText = document.getElementById('review-text').value;
-        //     const rating = document.querySelector('.rating-value').value;
-        //     console.log('Review:', reviewText, 'Rating:', rating);
-        // });
+                //stars functionality
+                const stars = card.querySelectorAll('.star-rating .fa');
+                stars.forEach((star, index) => {
+                    star.addEventListener('click', function () {
+                        // Remove active state from all stars
+                        stars.forEach(function (star) {
+                            star.classList.remove('fa-star');
+                            star.classList.add('fa-star-o');
+                        });
+                        // Add active state to the selected star and those before it
+                        for (var i = 0; i <= index; i++) {
+                            stars[i].classList.remove('fa-star-o');
+                            stars[i].classList.add('fa-star');
+                        }
+                        // Set the rating value
+                        document.querySelector('.rating-value').value = index + 1;
+                    });
+                });
+
+                // Handle form submission
+                const reviewForm = card.querySelector('.review-form');
+                reviewForm.addEventListener('submit', event => {
+                    event.preventDefault();
+                    const reviewText = card.querySelector('.review-text').value;
+                    const rating = card.querySelector('.rating-value').value;
+                    console.log('Review:', reviewText, 'Rating:', rating);
+                });
+            });
+        };
 
         function toggleReviews(active, inactive, activeBtn, inactiveBtn) {
             active.classList.add('active');
             inactive.classList.remove('active');
             activeBtn.classList.add('active');
             inactiveBtn.classList.remove('active');
-        }
+        };
 
         function setRating(stars, index) {
             stars.forEach((star, i) => {
@@ -245,7 +253,6 @@
             });
             document.querySelector('.rating-value').value = index + 1;
         }
-        // }
 
     </script>
     <script src="../js/main.js"></script>
