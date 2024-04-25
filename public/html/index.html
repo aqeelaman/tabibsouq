@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/styles.css">
     <!-- Link to favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArz60tNGmSkqT3K5kEq-ChsPpNhAxTgcw&callback=initMap"
+        async defer></script>
+    <script src="../js/main.js"></script>
     <title>TabibSouq - Your Healthcare Connection</title>
 </head>
 
@@ -58,8 +61,8 @@
     </section>
 
     <section id="doctors">
-        <div class="doctors-table">
-            <h2>Nearby Doctors</h2>
+        <div id="doctors-table" class="doctors-table">
+            <!-- <h2>Nearby Doctors</h2>
             <table>
                 <tr>
                     <th>Name</th>
@@ -111,41 +114,65 @@
                     <td>General Practitioner</td>
                     <td>NMC Hospital</td>
                 </tr>
-            </table>
+            </table> -->
         </div>
     </section>
-
     <footer>
         <a href="index.html">
             <p>© 2024 TabibSouq. All rights reserved.</p>
         </a>
     </footer>
-    <script src="../js/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArz60tNGmSkqT3K5kEq-ChsPpNhAxTgcw&callback=initMap"
-        async defer></script>
+    <script>
+        var doctors;
+        displayNearByDoctors();
+        function displayNearByDoctors() {
+            fetch('/getDoctors').then(
+                function (response) {
+                    response.json().then(
+                        function (json) {
+                            doctors = json;
+                            nearByDoctors();
+                        }
+                    )
+                }
+            )
+        }
+        function nearByDoctors() {
+            var doctorTable = document.getElementById("doctors-table");
+            doctorTable.innerHTML = "";
+            var str = "<h2>Nearby Doctors</h2><table><tr><th>Name</th><th>Speciality</th><th>Hospital</th></tr>";
+            for (let i = 0; i < 10; i++) {
+                //console.log(doctors[i]);
+                str += `<tr><td>${doctors[i].dr_name}</td>`;
+                str += `<td>${drSpeciality(doctors[i].dr_speciality)}</td>`;
+                str += `<td>${drHospital(doctors[i].dr_hospital).location}</td></tr>`;
+            }
+            str += "</table>";
+
+            doctorTable.innerHTML = str;
+        }
+    </script>
 </body>
 
 <script>
-    document.getElementById('profileMenuButton').onclick = function(event) {
-    document.getElementById('profileMenu').style.display = 'block';
-    event.stopPropagation(); // This stops the click from being detected elsewhere.
-};
+    document.getElementById('profileMenuButton').onclick = function (event) {
+        document.getElementById('profileMenu').style.display = 'block';
+        event.stopPropagation(); // This stops the click from being detected elsewhere.
+    };
 
-// This will hide the dropdown when you click outside of it.
-window.onclick = function(event) {
-    if (!event.target.matches('#profileMenuButton')) {
-        var dropdowns = document.getElementsByClassName("profile-menu");
-        for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.style.display === 'block') {
-                openDropdown.style.display = 'none';
+    // This will hide the dropdown when you click outside of it.
+    window.onclick = function (event) {
+        if (!event.target.matches('#profileMenuButton')) {
+            var dropdowns = document.getElementsByClassName("profile-menu");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
             }
         }
-    }
-};
+    };
 
 </script>
 
 </html>
-
-
