@@ -106,7 +106,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            fetch('http:/dummyData/doctors.json')  // Adjust the URL to where your JSON file is served
+            fetch('/dummyData/doctors.json')  // Adjust the URL to where your JSON file is served
                 .then(response => response.json())
                 .then(doctorData => {
                     var doctorContainer = document.getElementById("doctor-container");
