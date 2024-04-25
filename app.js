@@ -2,6 +2,8 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const path = require("path");
 
+var temp_hospitals = [];
+
 //create express js instance
 const app = express();
 //config express.js
@@ -24,6 +26,7 @@ MongoClient.connect('mongodb+srv://aa5226:tiger@tabibsouq.00kxfko.mongodb.net', 
     }
     db = client.db('tabibsouq');
     console.log("Connected to MongoDB TabibSouq");
+    getHospitalsInit();
 })
 
 //logger middleware
@@ -44,12 +47,123 @@ app.param('collectionName', (req, res, next, collectionName) => {
 })
 
 //retrieve all the objects from a collection
-app.get('/tabibsouq/:collectionName', (req, res, next) => {
-    req.collection.find({}).toArray((e, results) => {
-        if (e) return next(e)
-        res.send(results)
-    })
+// app.get('/tabibsouq/:collectionName', (req, res, next) => {
+//     req.collection.find({}).toArray((e, results) => {
+//         if (e) return next(e)
+//         res.send(results)
+//     })
+// })
+
+async function getHospitalsInit() {
+    try {
+        if (!db) { return }
+
+        temp_hospitals = await db.collection('hospitals').find({}).toArray();
+
+        // Assuming you have the user's coordinates stored somewhere or passed as a parameter
+        const userCoords = "25.204751, 55.270942"; // Example user coordinates
+
+        // Calculate distances and update distances in hospitals array
+        for (let i = 0; i < temp_hospitals.length; i++) {
+            const hospitalCoords = temp_hospitals[i].coordinates;
+            const distance = calculateDistance(userCoords, hospitalCoords);
+            temp_hospitals[i].distance = distance;
+        }
+
+        temp_hospitals.sort((a, b) => a.distance - b.distance);
+
+        // Update distances in MongoDB
+        //await db.collection('hospitals').updateMany({}, { $set: { distance: "$distance" } });
+
+        console.log('Hospitals sorted by distance');
+    } catch (error) {
+        console.error('Error updating distances:', error);
+    }
+}
+
+getHospitalsInit();
+
+// Function to calculate distance between two coordinates
+function calculateDistance(coord1, coord2) {
+    const R = 6371; // Radius of the Earth in kilometers
+    coord1 = coord1.split(', ').map(parseFloat);
+    coord2 = coord2.split(', ').map(parseFloat);
+
+    const dLat = (coord2[0] - coord1[0]) * Math.PI / 180; // Convert degrees to radians
+    const dLon = (coord2[1] - coord1[1]) * Math.PI / 180;
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(coord1[0] * Math.PI / 180) * Math.cos(coord2[0] * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c; // Distance in kilometers
+    return parseFloat(distance.toFixed(2));
+}
+
+app.get('/getHospitals', (req, res, next) => {
+    res.send(temp_hospitals);
 })
+
+app.post('/updateHospitals', (req, res, next) => {
+    //console.log(req.body);
+    try {
+        const { coordinates } = req.body; // Assuming coordinates are sent in the request body
+        // const userCoords = coordinates.split(', ').map(parseFloat);
+        // Update distances in the temporary hospitals array based on userCoords
+        for (let i = 0; i < temp_hospitals.length; i++) {
+            const hospitalCoords = temp_hospitals[i].coordinates;
+            const distance = calculateDistance(coordinates, hospitalCoords);
+            temp_hospitals[i].distance = distance;
+        }
+        temp_hospitals.sort((a, b) => a.distance - b.distance);
+        res.json({ message: 'Hospitals updated successfully' });
+    } catch (error) {
+        console.error('Error updating hospitals:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+})
+
+app.get('/getDoctors', async (req, res, next) => {
+    try {
+        // Retrieve the hospital IDs from temp_hospitals array
+        const hospitalData = temp_hospitals.map(hospital => ({ _id: hospital._id, distance: hospital.distance }));
+        //console.log(hospitalData);
+
+        // Query doctors collection with hospital IDs
+        const doctors = await db.collection('doctors')
+            .find({ "dr_hospital": { $in: hospitalData.map(hospital => hospital._id) } })
+            //.limit(100) // Limit the number of doctors to 100
+            .toArray();
+        //console.log(doctors);
+
+        // Associate each doctor with their hospital's distance
+        const doctorsWithDistance = doctors.map(doctor => {
+            const hospitalId = doctor.dr_hospital[0]; // Assuming the hospital ID is stored as a string
+            for (let i = 0; i < temp_hospitals.length; i++) {
+                if (temp_hospitals[i]._id.toString() === hospitalId.toString()) {
+                    const hospital = temp_hospitals[i];
+                    const distance = hospital ? hospital.distance : 0;
+                    return { ...doctor, distance };
+                };
+            }
+            return { ...doctor, distance :0 };
+        });
+
+        // Sort doctors by distance
+        const sortedDoctors = doctorsWithDistance.sort((a, b) => a.distance - b.distance);
+
+        // Limit the number of doctors to 100
+        const limitedDoctors = sortedDoctors.slice(0, 10);
+        //console.log(limitedDoctors)
+
+        //res.json(limitedDoctors);
+        res.json(sortedDoctors);
+    } catch (error) {
+        console.error('Error retrieving doctors:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+})
+
 
 //retrieve document by collection ObjectID
 const ObjectID = require('mongodb').ObjectID;
@@ -59,7 +173,6 @@ app.get('/tabibsouq/:collectionName/:id', (req, res, next) => {
         res.send(result)
     })
 })
-
 
 // Serve static files 
 var publicPath = path.resolve(__dirname, "public");
