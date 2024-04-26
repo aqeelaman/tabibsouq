@@ -148,6 +148,7 @@ app.get('/getDoctors', async (req, res, next) => {
     }
 })
 
+//Filter API
 app.post('/filterDoctors', async (req, res, next) => {
     try {
 
@@ -165,9 +166,9 @@ app.post('/filterDoctors', async (req, res, next) => {
         }
 
         if (specialties && specialties.length > 0) {
-            query["dr_speciality"] = { 
-                "$regex": specialties.join("|"), 
-                "$options": "i" 
+            query["dr_speciality"] = {
+                "$regex": specialties.join("|"),
+                "$options": "i"
             };
         }
 
@@ -188,7 +189,7 @@ app.post('/filterDoctors', async (req, res, next) => {
         console.log("Number of doctors:", doctorsCount);
 
         const sortedDoctors = await doctorsDistanceSort(doctorsArray);
-        const limitedDoctors = sortedDoctors.slice(0,100);
+        const limitedDoctors = sortedDoctors.slice(0, 100);
         res.json(limitedDoctors);
 
     } catch (error) {
@@ -197,10 +198,35 @@ app.post('/filterDoctors', async (req, res, next) => {
     }
 })
 
+//Search API
+app.get('/searchDoctors', async (req, res) => {
+    try {
+        const { term } = req.query; // Single search term
+        if (!term) {
+            return res.status(400).json({ error: 'Search term is required' });
+        }
+
+        let query = {
+            $or: [
+                { dr_name: { $regex: term, $options: "i" } }, // case-insensitive search
+                { dr_speciality: { $regex: term, $options: "i" } },
+                { dr_languages: { $regex: term, $options: "i" } }
+            ]
+        };
+
+        const doctors = await db.collection('doctors').find(query).toArray();
+        res.json(doctors);
+    } catch (error) {
+        console.error('Error searching doctors:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 function doctorsDistanceSort(unSortedoctorsArray) {
 
     const doctorsWithDistance = unSortedoctorsArray.filter(doctor => {
-        const hospitalId = doctor.dr_hospital[0]; 
+        const hospitalId = doctor.dr_hospital[0];
         if (hospitalId) {
             for (let i = 0; i < temp_hospitals.length; i++) {
                 if (temp_hospitals[i]._id.toString() === hospitalId.toString()) {

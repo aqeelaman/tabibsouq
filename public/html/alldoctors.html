@@ -31,7 +31,8 @@
     <main>
         <section>
             <div class="search-container">
-                <input type="text" placeholder="What are you looking for ?" name="search">
+                <input type="text" placeholder="Search doctors by name, specialty, or languages..."
+                    name="searchTerm" oninput="searchDoctors()">
             </div>
             <div class="sorting-options">
                 <p>Sort By:</p>
@@ -213,6 +214,17 @@
                 .catch(function (error) {
                     console.error('Error filtering data:', error);
                 });
+        }
+
+        function searchDoctors() {
+            const searchTerm = document.querySelector('input[name="searchTerm"]').value;
+
+            fetch(`/searchDoctors?term=${encodeURIComponent(searchTerm)}`)
+                .then(response => response.json())
+                .then(doctors => {
+                    displayDoctors(doctors);
+                })
+                .catch(error => console.error('Error fetching search results:', error));
         }
 
     </script>
