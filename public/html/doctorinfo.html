@@ -93,39 +93,38 @@
             </div>
             <div id="online-reviews" class="review-content active">
                 <!-- Content for Online Reviews -->
-                <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-                <p class="review-date">08/02/24</p>
-                <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-                <p class="review-date">08/02/24</p>
+                <h3>Reviews</h3>
+                <div id="online-reviews-list">
+
+                </div>
             </div>
             <div id="app-reviews" class="review-content">
                 <!-- Content for Reviews from App -->
-                <p>“i was the doctor.”</p>
-                <p class="review-date">08/02/24</p>
-                <p>“One of the best doc in Town, his advise itself will treat you halfway.”</p>
-                <p class="review-date">08/02/24</p>
-            </div>
-        </div>
+                <h3>Reviews</h3>
+                <div id="app-reviews-list">
 
-        <!-- Review Form Section -->
-        <div class="review-form-section">
-            <h3>To give us your reviews, please enter the following details</h3>
-            <p>We value your reviews and ratings</p>
-            <form id="review-form">
-                <div class="textarea-container">
-                    <textarea id="review-text" name="review" placeholder="Write your review here..."
-                        required></textarea>
-                    <div class="star-rating">
-                        <span class="fa fa-star-o" data-rating="1"></span>
-                        <span class="fa fa-star-o" data-rating="2"></span>
-                        <span class="fa fa-star-o" data-rating="3"></span>
-                        <span class="fa fa-star-o" data-rating="4"></span>
-                        <span class="fa fa-star-o" data-rating="5"></span>
-                    </div>
                 </div>
-                <input type="submit" value="Submit" class="submit-review">
-            </form>
-        </div>
+            </div>
+
+            <!-- Review Form Section -->
+            <div class="review-form-section">
+                <h3>To give us your reviews, please enter the following details</h3>
+                <p>We value your reviews and ratings</p>
+                <form id="review-form" onsubmit="submitReview(event)">
+                    <div class="textarea-container">
+                        <textarea id="review-text" name="review" placeholder="Write your review here..."
+                            required></textarea>
+                        <div class="star-rating">
+                            <span class="fa fa-star-o" data-rating="1"></span>
+                            <span class="fa fa-star-o" data-rating="2"></span>
+                            <span class="fa fa-star-o" data-rating="3"></span>
+                            <span class="fa fa-star-o" data-rating="4"></span>
+                            <span class="fa fa-star-o" data-rating="5"></span>
+                        </div>
+                    </div>
+                    <input type="submit" class="submit-review">
+                </form>
+            </div>
     </main>
 
     <footer>
@@ -171,7 +170,45 @@
                 // Call displayDoctorInfo function
                 displayDoctorInfo();
                 displayHospitalMap();
-            })
+            }).then(fetch(`http://localhost:3000/getreviews/${doctorId}`) // Update with your server's URL if different
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No Reviews found.');
+                    }
+                    return response.json();
+                })
+                .then(reviews => {
+                    const onlineReviewsContainer = document.getElementById('online-reviews-list');
+                    const appReviewsContainer = document.getElementById('app-reviews-list');
+
+                    // Initially assume no reviews available
+                    let onlineFound = false;
+                    let appFound = false;
+
+                    reviews.forEach(review => {
+                        const reviewElement = document.createElement('div');
+                        reviewElement.classList.add('review');
+                        reviewElement.innerHTML = `
+                <p>“ ${review.review_text} ”</p>
+                <p class="review-date">${review.review_date}</p>
+              `;
+                        if (review.review_source === "TabibSouq") {
+                            appFound = true;
+                            appReviewsContainer.appendChild(reviewElement);
+                        }
+                        else {
+                            onlineFound = true;
+                            onlineReviewsContainer.appendChild(reviewElement);
+                        }
+                    });
+                    // Only clear and update containers if reviews are found
+                    if (!onlineFound) {
+                        onlineReviewsContainer.innerHTML = '<p>No Reviews Available</p>';
+                    }
+                    if (!appFound) {
+                        appReviewsContainer.innerHTML = '<p>No Reviews Available</p>';
+                    }
+                }))
             .catch(function (error) {
                 // Handle errors
                 console.error('Error:', error);
@@ -309,4 +346,63 @@
         });
     });
     //});
+
+    //POST review to collection
+    function submitReview(event) {
+        event.preventDefault(); //Prevent the default form submission
+        // Retrieve doctorId from the query parameters
+        const params = new URLSearchParams(window.location.search);
+        const doctorId = params.get('doctorid');
+
+        // Retrieve patientId from session storage
+        let patientId = sessionStorage.getItem('patientId'); // get patientID from sessionStorage
+
+        // Check if the patient is logged in
+        if (!patientId) {
+            alert("Please log in to submit a review.");
+            return; // Exit the function if not logged in
+        }
+
+        // Generate the current date in dd/mm/yy format
+        var currentDate = new Date().toLocaleDateString('en-GB', {
+            day: '2-digit', month: '2-digit', year: '2-digit'
+        });
+
+        // Get the review text from the textarea with ID 'review-text'
+        let reviewText = document.getElementById('review-text').value;
+
+        //Creating newReview Array to send JSON data to backend
+        const newReview = {
+            dr_id: doctorId,
+            patient_id: patientId,
+            review_source: "TabibSouq",
+            review_date: currentDate,
+            review_text: reviewText
+        };
+
+        // fetch POST to add new review to reviews collection
+        fetch('http://localhost:3000/tabibsouq/collection/reviews', {
+            method: 'POST', // set the HTTP method as 'POST'
+            headers: {
+                'Content-Type': 'application/json', // set the data type as JSON
+            },
+            body: JSON.stringify(newReview), // need to stringify the JSON object
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to post review');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Review posted:', data);
+                reviewText.value = ''; // Clear the review text area
+                alert("Review Posted Successfully!");
+                location.reload(); // Reload the page to update the reviews list
+            })
+            .catch(error => {
+                console.error('Error posting review:', error);
+                alert("Failed to post review.");
+            });
+    }
 </script>
