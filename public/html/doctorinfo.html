@@ -93,14 +93,14 @@
             </div>
             <div id="online-reviews" class="review-content active">
                 <!-- Content for Online Reviews -->
-                <h3>Reviews</h3>
+                <h3>Online Reviews</h3>
                 <div id="online-reviews-list">
 
                 </div>
             </div>
             <div id="app-reviews" class="review-content">
                 <!-- Content for Reviews from App -->
-                <h3>Reviews</h3>
+                <h3>TabibSouq Reviews</h3>
                 <div id="app-reviews-list">
 
                 </div>
@@ -189,7 +189,8 @@
                         const reviewElement = document.createElement('div');
                         reviewElement.classList.add('review');
                         reviewElement.innerHTML = `
-                <p>“ ${review.review_text} ”</p>
+                <p>“ ${review.review_text} ”
+                    <br><br>Source: ${review.review_source}</p>
                 <p class="review-date">${review.review_date}</p>
               `;
                         if (review.review_source === "TabibSouq") {
