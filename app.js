@@ -173,7 +173,68 @@ app.get('/tabibsouq/:collectionName/:id', (req, res, next) => {
         res.send(result)
     })
 })
+// GET reviews by doctorId
+const { ObjectId } = require('mongodb');
 
+app.get('/getreviews/:doctorId', async (req, res) => {
+    const doctorId = req.params.doctorId;
+    try {
+        const reviews = await db.collection('reviews').find({ "dr_id": ObjectId(doctorId) }).toArray();
+        if (reviews.length > 0) {
+            res.status(200).json(reviews);
+        } else {
+            res.status(404).send('No Reviews found.');
+        }
+    } catch (error) {
+        console.error('Failed to retrieve reviews:', error);
+        res.status(500).send('Error fetching reviews');
+    }
+});
+
+//POST review into collection
+app.post('/tabibsouq/collection/:collectionName', (req, res, next) => {
+
+    //handling dr_id and patient_id as objectIDs
+    const { dr_id, patient_id, review_date, review_text, review_source } = req.body;
+    const review = {
+        dr_id: ObjectId(dr_id),
+        patient_id: ObjectId(patient_id),
+        review_source,
+        review_date,
+        review_text
+    };
+
+    req.collection.insertOne(review, (err, results) => {
+        if (err) return next(err)
+        res.send(results.ops) //to send unique id
+    })
+})
+// POST API to insert an object into /collections/patients
+app.post('/tabibsouq/registerPatient', (req, res) => {
+    const collection = db.collection('patients');
+
+    collection.insertOne(req.body, (err, result) => {
+        if (err) {
+            res.status(500).send({ message: 'Error inserting data', error: err });
+        } else {
+            res.status(201).send({ message: 'Data inserted successfully', result: result.ops });
+        }
+    });
+});
+// Login API
+app.post('/tabibsouq/login', async (req, res) => {
+    const { username, password } = req.body;
+    try {
+        const patient = await db.collection('patients').findOne({ username, password });
+        if (patient) {
+            res.send({ message: 'Logged in successfully', patientId: patient._id.toString() });  // Returning ObjectId as a string
+        } else {
+            res.status(401).send({ message: 'Invalid credentials' });
+        }
+    } catch (error) {
+        res.status(500).send({ message: 'Server error', error });
+    }
+});
 // Serve static files 
 var publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));
