@@ -50,46 +50,47 @@
             <div class="filter-sidebar">
                 <div class="filter-category">
                     <h3>Hospitals</h3>
-                    <label><input type="checkbox" name="hospital" value="aster-hospital"> Aster Hospital</label>
-                    <label><input type="checkbox" name="hospital" value="burjeel"> Burjeel</label>
-                    <label><input type="checkbox" name="hospital" value="saudi-german"> Saudi German</label>
-                    <label><input type="checkbox" name="hospital" value="aster-clinic"> Aster Clinic</label>
-                    <label><input type="checkbox" name="hospital" value="llh"> LLH</label>
-                    <label><input type="checkbox" name="hospital" value="medeor"> Medeor</label>
+                    <label><input type="checkbox" name="hospital" value="Aster Hospital"> Aster Hospital</label>
+                    <label><input type="checkbox" name="hospital" value="Burjeel"> Burjeel</label>
+                    <label><input type="checkbox" name="hospital" value="Saudi German"> Saudi German</label>
+                    <label><input type="checkbox" name="hospital" value="Aster Clinic"> Aster Clinic</label>
+                    <label><input type="checkbox" name="hospital" value="LLH"> LLH</label>
+                    <label><input type="checkbox" name="hospital" value="Medeor"> Medeor</label>
                 </div>
 
                 <div class="filter-category">
                     <h3>Specialty</h3>
                     <label><input type="checkbox" name="specialty" value="General Medicine">General Medicine</label>
                     <label><input type="checkbox" name="specialty" value="Internal Medicine">Internal Medicine</label>
-                    <label><input type="checkbox" name="specialty" value="Paediatrics">Paediatrics</label>
-                    <label><input type="checkbox" name="specialty" value="Gynaecology / Obstetrics">Gynaecology /
+                    <label><input type="checkbox" name="specialty" value="ediatric">Paediatrics</label>
+                    <label><input type="checkbox" name="specialty" value="Gyn">Gynaecology /
                         Obstetrics</label>
-                    <label><input type="checkbox" name="specialty" value="Dentistry">Dentistry</label>
-                    <label><input type="checkbox" name="specialty" value="Cardiology">Cardiology</label>
-                    <label><input type="checkbox" name="specialty" value="ENT">ENT</label>
-                    <label><input type="checkbox" name="specialty" value="Dermatology">Dermatology</label>
-                    <label><input type="checkbox" name="specialty" value="Orthopedics">Orthopedics</label>
+                    <label><input type="checkbox" name="specialty" value="Dent">Dentistry</label>
+                    <label><input type="checkbox" name="specialty" value="Cardiolog">Cardiology</label>
+                    <!-- <label><input type="checkbox" name="specialty" value="ENT">ENT</label> -->
+                    <label><input type="checkbox" name="specialty" value="Dermatolog">Dermatology</label>
+                    <label><input type="checkbox" name="specialty" value="Orthopedic">Orthopedics</label>
                     <label><input type="checkbox" name="specialty" value="Emergency">Emergency</label>
-                    <label><input type="checkbox" name="specialty" value="Ophthalmology">Ophthalmology</label>
+                    <label><input type="checkbox" name="specialty" value="Ophthalmolog">Ophthalmology</label>
                 </div>
 
                 <div class="filter-category">
                     <h3>Languages</h3>
-                    <label><input type="checkbox" name="language" value="english">English</label>
+                    <label><input type="checkbox" name="language" value="English">English</label>
                     <label><input type="checkbox" name="language" value="Arabic">Arabic</label>
-                    <label><input type="checkbox" name="language" value="hindi">Hindi</label>
+                    <label><input type="checkbox" name="language" value="Hindi">Hindi</label>
                     <label><input type="checkbox" name="language" value="French">French</label>
                     <label><input type="checkbox" name="language" value="German">German</label>
-                    <label><input type="checkbox" name="language" value="malayalam"> Malayalam</label>
+                    <label><input type="checkbox" name="language" value="Malayalam">Malayalam</label>
                     <label><input type="checkbox" name="language" value="Urdu">Urdu</label>
                     <label><input type="checkbox" name="language" value="Tamil">Tamil</label>
                     <label><input type="checkbox" name="language" value="Kannada">Kannada</label>
-                    <label><input type="checkbox" name="language" value="marathi"> Marathi</label>
+                    <label><input type="checkbox" name="language" value="Marathi">Marathi</label>
                     <label><input type="checkbox" name="language" value="Punjabi">Punjabi</label>
                     <label><input type="checkbox" name="language" value="Gujarati">Gujarati</label>
                     <label><input type="checkbox" name="language" value="Russian">Russian</label>
                 </div>
+                <button onclick="filter()" style="width: 100%; margin-left: auto; margin-right: auto;">Apply</button>
             </div>
             <!-- End of Filtering Sidebar -->
             <div class="doctor-cards">
@@ -131,7 +132,7 @@
                     // Update global variable with hospitals data
                     hospitals = hospitalsData;
                     // Call displayDoctors function
-                    displayDoctors();
+                    displayDoctors(doctors);
                 })
                 .catch(function (error) {
                     // Handle errors
@@ -139,13 +140,14 @@
                 });
         }
 
-        function displayDoctors() {
-            console.log(doctors);
+        function displayDoctors(doctorObjects) {
+            console.log(doctorObjects);
             console.log(hospitals);
             var doctorContainer = document.getElementById("doctor-container");
+            doctorContainer.innerHTML = '';
 
-            for (var i = 0; i < 100; i++) {
-                var doctor = doctors[i]; // Cycle through the doctor data
+            for (var i = 0; i < doctorObjects.length; i++) {
+                var doctor = doctorObjects[i]; // Cycle through the doctor data
                 var doctorCard = document.createElement("div");
                 doctorCard.classList.add("doctor-card");
                 doctorCard.innerHTML = `
@@ -171,6 +173,48 @@
                 doctorContainer.appendChild(doctorCard);
             }
         }
+
+        function filter() {
+            // Get the values of checked checkboxes
+            var selectedHospitals = Array.from(document.querySelectorAll('input[name="hospital"]:checked')).map(function (checkbox) {
+                return checkbox.value;
+            });
+
+            var selectedSpecialties = Array.from(document.querySelectorAll('input[name="specialty"]:checked')).map(function (checkbox) {
+                return checkbox.value;
+            });
+
+            var selectedLanguages = Array.from(document.querySelectorAll('input[name="language"]:checked')).map(function (checkbox) {
+                return checkbox.value;
+            });
+
+            console.log("hospitals: ", selectedHospitals);
+            console.log("specialties: ", selectedSpecialties);
+            console.log("languages: ", selectedLanguages);
+
+            fetch('/filterDoctors', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    hospitals: selectedHospitals,
+                    specialties: selectedSpecialties,
+                    languages: selectedLanguages
+                })
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (filteredData) {
+                    // Call the function to display filtered doctors
+                    displayDoctors(filteredData);
+                })
+                .catch(function (error) {
+                    console.error('Error filtering data:', error);
+                });
+        }
+
     </script>
     <script src="../js/main.js"></script>
 </body>

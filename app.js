@@ -132,38 +132,92 @@ app.get('/getDoctors', async (req, res, next) => {
         // Query doctors collection with hospital IDs
         const doctors = await db.collection('doctors')
             .find({ "dr_hospital": { $in: hospitalData.map(hospital => hospital._id) } })
-            //.limit(100) // Limit the number of doctors to 100
             .toArray();
         //console.log(doctors);
 
-        // Associate each doctor with their hospital's distance
-        const doctorsWithDistance = doctors.map(doctor => {
-            const hospitalId = doctor.dr_hospital[0]; // Assuming the hospital ID is stored as a string
-            for (let i = 0; i < temp_hospitals.length; i++) {
-                if (temp_hospitals[i]._id.toString() === hospitalId.toString()) {
-                    const hospital = temp_hospitals[i];
-                    const distance = hospital ? hospital.distance : 0;
-                    return { ...doctor, distance };
-                };
-            }
-            return { ...doctor, distance :0 };
-        });
-
-        // Sort doctors by distance
-        const sortedDoctors = doctorsWithDistance.sort((a, b) => a.distance - b.distance);
-
+        sortedDoctors = await doctorsDistanceSort(doctors);
         // Limit the number of doctors to 100
-        const limitedDoctors = sortedDoctors.slice(0, 10);
+        const limitedDoctors = sortedDoctors.slice(0, 100);
         //console.log(limitedDoctors)
 
-        //res.json(limitedDoctors);
-        res.json(sortedDoctors);
+        res.json(limitedDoctors);
+        //res.json(sortedDoctors);
     } catch (error) {
         console.error('Error retrieving doctors:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 })
 
+app.post('/filterDoctors', async (req, res, next) => {
+    try {
+
+        const { hospitals, specialties, languages } = req.body;
+        let query = {};
+
+        if (hospitals && hospitals.length > 0) {
+            const hospitalIds = [];
+            for (let i = 0; i < hospitals.length; i++) {
+                const matchingHospitals = temp_hospitals.filter(h => h.location.includes(hospitals[i]));
+                hospitalIds.push(...matchingHospitals.map(hospital => hospital._id));
+            }
+            console.log(hospitalIds.length);
+            query["dr_hospital"] = { "$in": hospitalIds };
+        }
+
+        if (specialties && specialties.length > 0) {
+            query["dr_speciality"] = { 
+                "$regex": specialties.join("|"), 
+                "$options": "i" 
+            };
+        }
+
+        if (languages && languages.length > 0) {
+            query["dr_languages"] = {
+                "$regex": languages.join("|"),
+                "$options": "i"
+            };
+        }
+
+        console.log(JSON.stringify(query));
+        const doctorsCursor = db.collection('doctors').find(query);
+
+        const doctorsArray = await doctorsCursor.toArray();
+        //console.log("Doctors:", doctorsArray);
+
+        const doctorsCount = await doctorsCursor.count();
+        console.log("Number of doctors:", doctorsCount);
+
+        const sortedDoctors = await doctorsDistanceSort(doctorsArray);
+        const limitedDoctors = sortedDoctors.slice(0,100);
+        res.json(limitedDoctors);
+
+    } catch (error) {
+        console.error('Error retrieving doctors:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+})
+
+function doctorsDistanceSort(unSortedoctorsArray) {
+
+    const doctorsWithDistance = unSortedoctorsArray.filter(doctor => {
+        const hospitalId = doctor.dr_hospital[0]; 
+        if (hospitalId) {
+            for (let i = 0; i < temp_hospitals.length; i++) {
+                if (temp_hospitals[i]._id.toString() === hospitalId.toString()) {
+                    const hospital = temp_hospitals[i];
+                    const distance = hospital ? hospital.distance : 0;
+                    doctor.distance = distance;
+                    return true; // Keep this doctor in the filtered array
+                }
+            }
+        }
+        return false; // Remove this doctor from the filtered array
+    });
+
+    // Sort doctors by distance
+    const sortedDoctors = doctorsWithDistance.sort((a, b) => a.distance - b.distance);
+    return sortedDoctors;
+}
 
 //retrieve document by collection ObjectID
 const ObjectID = require('mongodb').ObjectID;
