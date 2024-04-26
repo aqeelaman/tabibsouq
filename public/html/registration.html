@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <title>TabibSouq - Your Healthcare Connection</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -26,32 +28,32 @@
             <img src="../images/pfp-patient.png" alt="Profile Picture">
         </div>
     </header>
-    
+
     <!-- Auth Container -->
     <div class="auth-container">
         <!-- Sign Up Form -->
         <div id="sign-up-form" class="auth-form">
             <h2>Sign Up</h2>
-            <input type="text" placeholder="Username">
-            <input type="text" placeholder="Phone Number">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Username" id="username">
+            <input type="text" placeholder="Phone Number" id="phone">
+            <input type="email" placeholder="Email" id="email">
+            <input type="password" placeholder="Password" id="password">
             <input type="password" placeholder="Confirm Password">
             <a href="index.html">
-                <button>Sign Up</button>
-            </a>       
+                <button onclick="registerUser()">Sign Up</button>
+            </a>
         </div>
-        
+
         <!-- Sign In Form -->
         <div id="sign-in-form" class="auth-form" style="display:none;">
             <h2>Sign In</h2>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Username" id="login-username">
+            <input type="password" placeholder="Password" id="login-password">
             <a href="index.html">
-                <button>Sign In</button>
-            </a>  
+                <button onclick="loginUser()">Sign In</button>
+            </a>
         </div>
-        
+
         <!-- Toggle Links -->
         <div class="toggle-links">
             <a href="javascript:void(0);" onclick="showSignUp()">Sign Up</a> |
@@ -64,11 +66,61 @@
             document.getElementById('sign-up-form').style.display = 'block';
             document.getElementById('sign-in-form').style.display = 'none';
         }
-        
+
         function showSignIn() {
             document.getElementById('sign-in-form').style.display = 'block';
             document.getElementById('sign-up-form').style.display = 'none';
         }
+        //POST User to collection
+        function registerUser() {
+            let inputUsername = document.getElementById("username").value;
+            let inputPhone = document.getElementById("phone").value;
+            let inputEmail = document.getElementById("email").value;
+            let inputPassword = document.getElementById("password").value;
+
+            //Creating newOrder Array to send JSON data to backend
+            const newUser = {
+                username: inputUsername,
+                phone: inputPhone,
+                email: inputEmail,
+                password: inputPassword
+            };
+
+            // fetch POST to add new patient to patients collection
+            fetch('http://localhost:3000/tabibsouq/registerPatient', {
+                method: 'POST', // set the HTTP method as 'POST'
+                headers: {
+                    'Content-Type': 'application/json', // set the data type as JSON
+                },
+                body: JSON.stringify(newUser), // need to stringify the JSON object
+            })
+                .then(alert("User Registered Successfully!"))
+        }
+
+        //Login User
+        function loginUser() {
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            fetch('http://localhost:3000/tabibsouq/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.patientId) {
+                        sessionStorage.setItem('patientId', data.patientId);  // Storing the ObjectId in session storage
+                        alert('Login successful!');
+                    } else {
+                        alert('Login failed: ' + data.message);
+                    }
+                })
+                .catch(error => alert('Error logging in: ' + error));
+        }
     </script>
 </body>
+
 </html>
