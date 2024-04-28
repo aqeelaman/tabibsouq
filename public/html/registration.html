@@ -38,9 +38,9 @@
             <input type="text" placeholder="Phone Number" id="phone">
             <input type="email" placeholder="Email" id="email">
             <input type="password" placeholder="Password" id="password">
-            <input type="password" placeholder="Confirm Password">
-            <button onclick="registerUser()">Sign Up<a href="index.html"></a></button>
-            
+            <input type="password" placeholder="Confirm Password" id="confirmPassword">
+            <button onclick="registerUser()">Sign Up</button>
+
         </div>
 
         <!-- Sign In Form -->
@@ -48,7 +48,7 @@
             <h2>Sign In</h2>
             <input type="text" placeholder="Username" id="login-username">
             <input type="password" placeholder="Password" id="login-password">
-            <button onclick="loginUser()">Sign In<a href="index.html"></a></button>
+            <button onclick="loginUser()">Sign In</button>
         </div>
 
         <!-- Toggle Links -->
@@ -74,6 +74,21 @@
             let inputPhone = document.getElementById("phone").value;
             let inputEmail = document.getElementById("email").value;
             let inputPassword = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Validation
+            if (!inputUsername || !inputPhone || !inputEmail || !inputPassword) {
+                alert("All fields must be filled out");
+                return;
+            }
+            if (!inputEmail.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)) {
+                alert("Please enter a valid email address");
+                return;
+            }
+            if (inputPassword !== confirmPassword) {
+                alert("Passwords do not match");
+                return;
+            }
 
             //Creating newOrder Array to send JSON data to backend
             const newUser = {
@@ -91,8 +106,17 @@
                 },
                 body: JSON.stringify(newUser), // need to stringify the JSON object
             })
-                .then(alert("User Registered Successfully!"))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("User Registered Successfully!");
+                    } else {
+                        alert('Registration failed: ' + data.message);
+                    }
+                })
+                .catch(error => alert('Error registering: ' + error));
         }
+
 
         //Login User
         function loginUser() {
@@ -111,6 +135,7 @@
                     if (data.patientId) {
                         sessionStorage.setItem('patientId', data.patientId);  // Storing the ObjectId in session storage
                         alert('Login successful!');
+                        window.location.href = 'index.html'; // Redirect on successful login
                     } else {
                         alert('Login failed: ' + data.message);
                     }
