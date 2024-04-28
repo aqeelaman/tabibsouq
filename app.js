@@ -46,22 +46,14 @@ app.param('collectionName', (req, res, next, collectionName) => {
     return next()
 })
 
-//retrieve all the objects from a collection
-// app.get('/tabibsouq/:collectionName', (req, res, next) => {
-//     req.collection.find({}).toArray((e, results) => {
-//         if (e) return next(e)
-//         res.send(results)
-//     })
-// })
-
 async function getHospitalsInit() {
     try {
         if (!db) { return }
 
+        //retrieve hospitals from db
         temp_hospitals = await db.collection('hospitals').find({}).toArray();
 
-        // Assuming you have the user's coordinates stored somewhere or passed as a parameter
-        const userCoords = "25.204751, 55.270942"; // Example user coordinates
+        const userCoords = "25.204751, 55.270942"; // coordinates
 
         // Calculate distances and update distances in hospitals array
         for (let i = 0; i < temp_hospitals.length; i++) {
@@ -69,15 +61,12 @@ async function getHospitalsInit() {
             const distance = calculateDistance(userCoords, hospitalCoords);
             temp_hospitals[i].distance = distance;
         }
-
+        //sort by distance ascending
         temp_hospitals.sort((a, b) => a.distance - b.distance);
-
-        // Update distances in MongoDB
-        //await db.collection('hospitals').updateMany({}, { $set: { distance: "$distance" } });
 
         console.log('Hospitals sorted by distance');
     } catch (error) {
-        console.error('Error updating distances:', error);
+        console.error('Error getting hospitals:', error);
     }
 }
 
@@ -107,9 +96,9 @@ app.get('/getHospitals', (req, res, next) => {
 app.post('/updateHospitals', (req, res, next) => {
     //console.log(req.body);
     try {
-        const { coordinates } = req.body; // Assuming coordinates are sent in the request body
-        // const userCoords = coordinates.split(', ').map(parseFloat);
-        // Update distances in the temporary hospitals array based on userCoords
+        const { coordinates } = req.body; // coordinates are sent in the request body
+
+        // Update distances in the temporary hospitals array based on coordinates
         for (let i = 0; i < temp_hospitals.length; i++) {
             const hospitalCoords = temp_hospitals[i].coordinates;
             const distance = calculateDistance(coordinates, hospitalCoords);
@@ -126,7 +115,7 @@ app.post('/updateHospitals', (req, res, next) => {
 app.get('/getDoctors', async (req, res, next) => {
     try {
         // Retrieve the hospital IDs from temp_hospitals array
-        const hospitalData = temp_hospitals.map(hospital => ({ _id: hospital._id, distance: hospital.distance }));
+        const hospitalData = temp_hospitals.map(hospital => ({ _id: hospital._id}));
         //console.log(hospitalData);
 
         // Query doctors collection with hospital IDs
@@ -138,10 +127,8 @@ app.get('/getDoctors', async (req, res, next) => {
         sortedDoctors = await doctorsDistanceSort(doctors);
         // Limit the number of doctors to 100
         const limitedDoctors = sortedDoctors.slice(0, 100);
-        //console.log(limitedDoctors)
 
         res.json(limitedDoctors);
-        //res.json(sortedDoctors);
     } catch (error) {
         console.error('Error retrieving doctors:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -166,17 +153,11 @@ app.post('/filterDoctors', async (req, res, next) => {
         }
 
         if (specialties && specialties.length > 0) {
-            query["dr_speciality"] = {
-                "$regex": specialties.join("|"),
-                "$options": "i"
-            };
+            query["dr_speciality"] = { "$regex": specialties.join("|") , "$options": "i" };
         }
 
         if (languages && languages.length > 0) {
-            query["dr_languages"] = {
-                "$regex": languages.join("|"),
-                "$options": "i"
-            };
+            query["dr_languages"] = { "$regex": languages.join("|") , "$options": "i" };
         }
 
         console.log(JSON.stringify(query));
@@ -184,7 +165,6 @@ app.post('/filterDoctors', async (req, res, next) => {
 
         const doctorsArray = await doctorsCursor.toArray();
         //console.log("Doctors:", doctorsArray);
-
         const doctorsCount = await doctorsCursor.count();
         console.log("Number of doctors:", doctorsCount);
 
